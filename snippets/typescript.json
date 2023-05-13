@@ -1,0 +1,12 @@
+{
+  "exportDefaultAsyncFunction": {
+    "prefix": "edaf",
+    "body"  : [
+      "export default async function $1 (",
+      "  $2",
+      ") {",
+      "  $3",
+      "};"
+    ]
+  }
+}
