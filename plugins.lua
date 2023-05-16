@@ -73,6 +73,8 @@ local plugins = {
 
   {
     "andweeb/presence.nvim",
+    lazy = true,
+    event = "VeryLazy",
     config = function()
       require "custom.configs.presence"
     end,

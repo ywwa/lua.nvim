@@ -12,8 +12,19 @@ M.general = {
 
     ["<C-r>"] = { "<cmd> lua require('rest-nvim').run()<CR>", "RestNvim run" },
     ["<C-T>"] = { "<cmd> PeekOpen<CR>", "Open markdown preview window"},
-    ["<C-Y>"] = { "<cmd> PeekClose<CR>", "Close markdown preview window"}
+    ["<C-Y>"] = { "<cmd> PeekClose<CR>", "Close markdown preview window"},
+    ["<Up>"]    = { "<Nop>" },
+    ["<Down>"]  = { "<Nop>" },
+    ["<Left>"]  = { "<Nop>" },
+    ["<Right>"] = { "<Nop>" }
   },
+  i = {
+    ["<Up>"]    = { "<Nop>" },
+    ["<Down>"]  = { "<Nop>" },
+    ["<Left>"]  = { "<Nop>" },
+    ["<Right>"] = { "<Nop>" }
+
+  }
 }
 
 -- more keybinds!
