@@ -5,7 +5,7 @@ local M = {}
 local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "bearded-arc",
+  theme = "catppuccin",
   transparency = false,
   statusline = {
     theme = "vscode_colored"

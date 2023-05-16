@@ -18,9 +18,6 @@ M.treesitter = {
   },
   indent = {
     enable = true,
-    -- disable = {
-    --   "python"
-    -- },
   },
 }
 
@@ -55,6 +52,21 @@ M.nvimtree = {
       },
     },
   },
+}
+
+M.nvterm = {
+  terminals = {
+    type_opts = {
+      float = {
+        relative = 'editor',
+        row = 0.15,
+        col = 0.1,
+        width = 0.8,
+        height = 0.6,
+        border = "single"
+      }
+    }
+  }
 }
 
 return M

@@ -38,6 +38,11 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
+  {
+    "NvChad/nvterm",
+    opts = overrides.nvterm
+  },
+
   -- Install a plugin
   {
     "max397574/better-escape.nvim",
@@ -54,6 +59,7 @@ local plugins = {
 
   {
     "rest-nvim/rest.nvim",
+    ft = "http",
     dependencies = {
       "nvim-lua/plenary.nvim",
       config = function()
@@ -61,40 +67,12 @@ local plugins = {
       end,
     },
     config = function()
-      require("rest-nvim").setup({
-      result_split_horizontal = false,
-      result_split_in_place   = false,
-      skip_ssl_verification   = false,
-      encode_url              =  true,
-      highlight = {
-        enabled = true,
-        timeout = 150
-      },
-      result = {
-        show_url = true,
-        show_http_info = true,
-        show_headers = true,
-
-        formatters = {
-          json = "jq",
-          html = function(body)
-            return vim.fn.system({"tidy", "-i", "-q", "-"}, body)
-          end,
-        }
-      },
-
-      jump_to_request = false,
-      env_file = ".rest.env",
-      custom_dynamic_variables = {},
-      yank_dry_run = true
-    })
+      require "custom.configs.rest"
     end,
-    lazy = false
   },
 
   {
     "andweeb/presence.nvim",
-    lazy = false,
     config = function()
       require "custom.configs.presence"
     end,
@@ -107,24 +85,12 @@ local plugins = {
 
   {
     "toppair/peek.nvim",
-    lazy = false,
-    build = "deno task --quiet build:fast",
+    build = "deno task --quiet build:debug",
+    ft = "markdown",
     config = function()
-      vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
-      vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
-      require("peek").setup({
-        auto_load = true,
-        close_on_bdelete = true,
-        syntax = true,
-        theme = 'dark',
-        update_on_change = true,
-        app = 'webview',
-        filetype={ 'markdown' },
-        throttle_at = 200000,
-        throttle_time = 'auto'
-      })
+      require "custom.configs.peek"
     end,
-  }
+  },
 
 }
 

@@ -21,7 +21,7 @@ require("rest-nvim").setup({
   },
 
   jump_to_request = false,
-  env_file = ".env",
+  env_file = ".rest.env",
   custom_dynamic_variables = {},
   yank_dry_run = true
 })
