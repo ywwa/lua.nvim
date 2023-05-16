@@ -6,7 +6,6 @@ local highlights = require "custom.highlights"
 
 M.ui = {
   theme = "catppuccin",
-  transparency = false,
   statusline = {
     theme = "vscode_colored"
   },

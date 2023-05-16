@@ -3,7 +3,7 @@ local overrides = require("custom.configs.overrides")
 ---@type NvPluginSpec[]
 local plugins = {
 
-  -- Override plugin definition options
+  -- Override plugin definition options --------------------------------------
 
   {
     "neovim/nvim-lspconfig",
@@ -22,7 +22,7 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
 
-  -- override plugin configs
+  -- override plugin configs -------------------------------------------------
   {
     "williamboman/mason.nvim",
     opts = overrides.mason
@@ -43,7 +43,7 @@ local plugins = {
     opts = overrides.nvterm
   },
 
-  -- Install a plugin
+  -- Install a plugin --------------------------------------------------------
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -52,7 +52,7 @@ local plugins = {
     end,
   },
 
-  {
+  { -- to be changed to "alexghergh/nvim-tmux-navigation"
     "christoomey/vim-tmux-navigator",
     lazy = false
   },
@@ -72,25 +72,28 @@ local plugins = {
   },
 
   {
-    "andweeb/presence.nvim",
-    lazy = true,
-    event = "VeryLazy",
+    "toppair/peek.nvim",
+    build = "deno task --quiet build:debug",
     config = function()
-      require "custom.configs.presence"
+      require "custom.configs.peek"
     end,
   },
 
-  -- {
-  --   "vimpostor/vim-tpipeline",
-  --   lazy = false,
-  -- },
+  {
+    "andreadev-it/shade.nvim",
+    keys = "<Bslash>",
+    config = function()
+      require("shade").setup {
+        exclude_filetypes = { "NvimTree" },
+      }
+    end,
+  },
 
   {
-    "toppair/peek.nvim",
-    build = "deno task --quiet build:debug",
-    ft = "markdown",
+    "andweeb/presence.nvim",
+    event = "VeryLazy",
     config = function()
-      require "custom.configs.peek"
+      require "custom.configs.presence"
     end,
   },
 
