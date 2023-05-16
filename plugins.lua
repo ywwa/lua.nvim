@@ -52,9 +52,20 @@ local plugins = {
     end,
   },
 
-  { -- to be changed to "alexghergh/nvim-tmux-navigation"
-    "christoomey/vim-tmux-navigator",
-    lazy = false
+  {
+    "alexghergh/nvim-tmux-navigation",
+    lazy = false, -- BRO STOP! USE LAZY LOAD { later }
+    config = function()
+      require("nvim-tmux-navigation").setup({
+        disable_when_zoomed = false,
+        keybinding = {
+          left = "<C-h>",
+          down = "<C-j>",
+          up   = "<C-k>",
+          right= "<C-l>"
+        }
+      })
+    end,
   },
 
   {
