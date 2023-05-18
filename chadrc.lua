@@ -15,6 +15,21 @@ M.ui = {
 
   hl_override = highlights.override,
   hl_add = highlights.add,
+  nvdash = {
+    load_on_startup = true,
+    header = {
+      "▓██   ██▓ █     █░ █     █░ ▄▄▄      ",
+      " ▒██  ██▒▓█░ █ ░█░▓█░ █ ░█░▒████▄    ",
+      "  ▒██ ██░▒█░ █ ░█ ▒█░ █ ░█ ▒██  ▀█▄  ",
+      "  ░ ▐██▓░░█░ █ ░█ ░█░ █ ░█ ░██▄▄▄▄██ ",
+      "  ░ ██▒▓░░░██▒██▓ ░░██▒██▓  ▓█   ▓██▒",
+      "   ██▒▒▒ ░ ▓░▒ ▒  ░ ▓░▒ ▒   ▒▒   ▓▒█░",
+      " ▓██ ░▒░   ▒ ░ ░    ▒ ░ ░    ▒   ▒▒ ░",
+      " ▒ ▒ ░░    ░   ░    ░   ░    ░   ▒   ",
+      " ░ ░         ░        ░          ░  ░",
+      " ░ ░   git@github.com:yuukilla       ",
+    }
+  }
 }
 
 M.plugins = "custom.plugins"

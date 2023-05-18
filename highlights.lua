@@ -9,6 +9,14 @@ M.override = {
   Comment = {
     italic = true,
   },
+  NvDashAscii = {
+    bg = "none",
+    fg = "pink"
+  },
+  NvDashButtons = {
+    fg = "grey_fg",
+    bg = "none"
+  }
 }
 
 ---@type HLTable

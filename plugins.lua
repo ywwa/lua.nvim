@@ -70,9 +70,6 @@ local plugins = {
 
   {
     "rest-nvim/rest.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
     config = function()
       require "custom.configs.rest"
     end,
@@ -81,12 +78,8 @@ local plugins = {
   {
     "folke/noice.nvim",
     dependencies = {
-      {
-        "MunifTanjim/nui.nvim",
-      },
-      -- {
-      --   "rcarriga/nvim-notify",
-      -- }
+      { "MunifTanjim/nui.nvim" },
+      -- { "rcarriga/nvim-notify" }
     },
     event = "VeryLazy",
     config = function()
