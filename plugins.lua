@@ -137,6 +137,16 @@ local plugins = {
     end,
   },
 
+  {
+    "lukas-reineke/virt-column.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("virt-column").setup({
+        char = "┃"
+      })
+    end,
+  },
+
   -- Useless plugins ( better delete them kekw ) ------------------------------
   {
     "andweeb/presence.nvim",

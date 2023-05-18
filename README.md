@@ -18,6 +18,8 @@
   "folke/zen-mode.nvim",                 -- Zen mode
   "karb94/neoscroll.nvim",               -- Smooooooth
   "andweeb/presence.nvim",               -- Avarage discord user
+  "elkowar/yuck.vim",                    -- Eww configuration yuck language support
+  "lukas-reineke/virt-column.nvim",      -- Better colorcolumn (wont make eyes bleed)
 }
 ```
 
@@ -27,6 +29,8 @@
   "C-j"     -- NvimTmuxNavigateDown
   "C-k"     -- NvimTmuxNavigateUp
   "C-l"     -- NvimTmuxNavigateRight
+
+  "SPC c c" -- Toggle colorcolumn display
 
   "C-r"     -- RestRun
   "C-t"     -- PeekOpen

@@ -13,6 +13,7 @@ M.general = {
     ["<C-r>"]   = { "<cmd> RestRun <CR>", "RestNvim Run" },
     ["<C-T>"]   = { "<cmd> PeekOpen <CR>", "Open markdown preview window" },
     ["<C-Y>"]   = { "<cmd> PeekClose <CR>", "Close markdown preview window" },
+    ["<leader>cc"] = { "<cmd> CCToggle <CR>", "Toggle ColorColumn display"},
     ["<Up>"]    = { "<Nop>" },
     ["<Down>"]  = { "<Nop>" },
     ["<Left>"]  = { "<Nop>" },

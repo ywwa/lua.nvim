@@ -40,7 +40,7 @@ M.mason = {
 -- git support in nvimtree
 M.nvimtree = {
   view = {
-    side = "right",
+    side = "left",
     signcolumn = "no"
   },
   git = {

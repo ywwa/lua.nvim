@@ -30,6 +30,17 @@ create_cmd("AutosaveToggle", function ()
   end
 end, {})
 
+-- Toggle colorcolumn display
+create_cmd("CCToggle", function ()
+  vim.g.ccenabled = not vim.g.ccenabled
+
+  if vim.g.ccenabled then
+    vim.opt.colorcolumn = "80"
+  else
+    vim.opt.colorcolumn = "0"
+  end
+end, {})
+
 
 -- Commands for "peek.nvim" plugin
 create_cmd("PeekOpen", function ()
@@ -44,3 +55,4 @@ end, {})
 create_cmd("RestRun", function ()
   require("rest-nvim").run()
 end, {})
+
