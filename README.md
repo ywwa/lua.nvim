@@ -5,10 +5,11 @@
 {
   "alexghergh/nvim-tmux-navigation",     // <-- Self explanatory
   "rest-nvim/rest.nvim",                 // <-- Plugin for testing api (basically curl wrapper)
-    dependency: "nvim-lua/plenary.nvim", // - i have zero clue tf does this pluggin but its needed
   "andreadev-it/shade.nvim",             // <--- grays out inactive buffers
   "andweeb/presence.nvim",               // <-- Discord rich presence
-  "toppair/peek.nvim"                    // <-- Markdown live preview
+  "toppair/peek.nvim",                   // <-- Markdown live preview
+  "folke/trouble.nvim",                  // <-- A pretty diagnostics, references, telescope results...
+  "folke/zen-mode.nvim",                 // <-- Distraction-free coding for Neovim
 }
 ```
 
