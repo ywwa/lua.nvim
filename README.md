@@ -9,17 +9,18 @@
 ### plugins.lua
 ```lua
 {
-  "alexghergh/nvim-tmux-navigation",     -- Navigation between tmux and neovim
-  "rest-nvim/rest.nvim",                 -- Run HTTP Requests inside neovim
-  "folke/noice.nvim",                    -- Noice.
-  "toppair/peek.nvim",                   -- Live markdown preview
-  "andreadev-it/shade.nvim",             -- Darken unfocused buffers
-  "folke/trouble.nvim",                  -- Make debugging more comfortable
-  "folke/zen-mode.nvim",                 -- Zen mode
-  "karb94/neoscroll.nvim",               -- Smooooooth
-  "andweeb/presence.nvim",               -- Avarage discord user
-  "elkowar/yuck.vim",                    -- Eww configuration yuck language support
-  "lukas-reineke/virt-column.nvim",      -- Better colorcolumn (wont make eyes bleed)
+   1 "alexghergh/nvim-tmux-navigation",     -- Navigation between tmux and neovim
+   2 "rest-nvim/rest.nvim",                 -- Run HTTP Requests inside neovim
+   3 "folke/noice.nvim",                    -- Noice.
+   4 "toppair/peek.nvim",                   -- Live markdown preview
+   5 "andreadev-it/shade.nvim",             -- Darken unfocused buffers
+   6 "folke/trouble.nvim",                  -- Make debugging more comfortable
+   7 "folke/zen-mode.nvim",                 -- Zen mode
+   8 "karb94/neoscroll.nvim",               -- Smooooooth
+   9 "andweeb/presence.nvim",               -- Avarage discord user
+  10 "elkowar/yuck.vim",                    -- Eww configuration yuck language support
+  11 "lukas-reineke/virt-column.nvim",      -- Better colorcolumn (wont make eyes bleed)
+  12 "f-person/git-blame.nvim"              -- Git Blame
 }
 ```
 
@@ -31,6 +32,7 @@
   "C-l"     -- NvimTmuxNavigateRight
 
   "SPC c c" -- Toggle colorcolumn display
+  "SPC g b" -- Toggle gitblame display
 
   "C-r"     -- RestRun
   "C-t"     -- PeekOpen
