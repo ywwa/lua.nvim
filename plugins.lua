@@ -147,6 +147,11 @@ local plugins = {
     end,
   },
 
+  {
+    "f-person/git-blame.nvim",
+    cmd = "GitBlameToggle"
+  },
+
   -- Useless plugins ( better delete them kekw ) ------------------------------
   {
     "andweeb/presence.nvim",
