@@ -101,6 +101,22 @@ local plugins = {
   },
 
   {
+    "folke/trouble.nvim",
+    cmd = "Trouble",
+    config = function()
+      require("trouble").setup()
+    end,
+  },
+
+  {
+    "folke/zen-mode.nvim",
+    cmd = "ZenMode",
+    config = function()
+      require "custom.configs.zenmode"
+    end,
+  },
+
+  {
     "andweeb/presence.nvim",
     event = "VeryLazy",
     config = function()
