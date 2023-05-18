@@ -5,7 +5,7 @@
 {
   "alexghergh/nvim-tmux-navigation",     // <-- Self explanatory
   "rest-nvim/rest.nvim",                 // <-- Plugin for testing api (basically curl wrapper)
-  "andreadev-it/shade.nvim",             // <--- grays out inactive buffers
+  "andreadev-it/shade.nvim",             // <-- grays out inactive buffers
   "andweeb/presence.nvim",               // <-- Discord rich presence
   "toppair/peek.nvim",                   // <-- Markdown live preview
   "folke/trouble.nvim",                  // <-- A pretty diagnostics, references, telescope results...
