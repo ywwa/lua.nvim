@@ -1,7 +1,8 @@
 <h1 align="center">Nv[im/Chad] custom config</h1>
+
 <h3 align="center">
-   <img src="https://raw.githubusercontent.com/yuukilla/nvchad-config/master/.github/img/prv.png" />
-   <img src="https://raw.githubusercontent.com/yuukilla/nvchad-config/master/.github/img/prv1.png" />
+   <img src="https://github.com/yuukilla/nvchad-config/blob/master/.github/img/prv.png" />
+   <img src="https://github.com/yuukilla/nvchad-config/blob/master/.github/img/prv1.png" />
 </h3>
 <hr>
 
