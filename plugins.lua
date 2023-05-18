@@ -3,7 +3,7 @@ local overrides = require("custom.configs.overrides")
 ---@type NvPluginSpec[]
 local plugins = {
 
-  -- Override plugin definition options --------------------------------------
+  -- Override plugin definition options ---------------------------------------
 
   {
     "neovim/nvim-lspconfig",
@@ -22,7 +22,7 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
 
-  -- override plugin configs -------------------------------------------------
+  -- override plugin configs --------------------------------------------------
   {
     "williamboman/mason.nvim",
     opts = overrides.mason
@@ -43,7 +43,7 @@ local plugins = {
     opts = overrides.nvterm
   },
 
-  -- Install a plugin --------------------------------------------------------
+  -- Custom plugins -----------------------------------------------------------
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -52,7 +52,7 @@ local plugins = {
     end,
   },
 
-  {
+  { -- fix this, idiot
     "alexghergh/nvim-tmux-navigation",
     lazy = false, -- BRO STOP! USE LAZY LOAD { later }
     config = function()
@@ -70,15 +70,27 @@ local plugins = {
 
   {
     "rest-nvim/rest.nvim",
-    ft = "http",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      config = function()
-        require("plenary")
-      end,
     },
     config = function()
       require "custom.configs.rest"
+    end,
+  },
+
+  {
+    "folke/noice.nvim",
+    dependencies = {
+      {
+        "MunifTanjim/nui.nvim",
+      },
+      -- {
+      --   "rcarriga/nvim-notify",
+      -- }
+    },
+    event = "VeryLazy",
+    config = function()
+      require "custom.configs.noice"
     end,
   },
 
@@ -90,6 +102,7 @@ local plugins = {
     end,
   },
 
+  -- Yoinked from siducks .'s -------------------------------------------------
   {
     "andreadev-it/shade.nvim",
     keys = "<Bslash>",
@@ -116,6 +129,15 @@ local plugins = {
     end,
   },
 
+  {
+    "karb94/neoscroll.nvim",
+    keys = { "<C-d>", "<C-u>" },
+    config = function()
+      require("neoscroll").setup()
+    end,
+  },
+
+  -- Useless plugins ( better delete them kekw ) ------------------------------
   {
     "andweeb/presence.nvim",
     event = "VeryLazy",

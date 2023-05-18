@@ -7,7 +7,5 @@ vim.g.vscode_snippets_path = snippetpath
 
 
 -- vim.cmd("set nowrap")
-
-vim.opt.colorcolumn = "80"
 vim.opt.rnu = true
 

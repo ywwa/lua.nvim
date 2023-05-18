@@ -39,3 +39,8 @@ end, {})
 create_cmd("PeekClose", function ()
   require("peek").close()
 end, {})
+
+-- "rest-nvim" plugins command
+create_cmd("RestRun", function ()
+  require("rest-nvim").run()
+end, {})
