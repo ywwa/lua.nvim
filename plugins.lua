@@ -130,6 +130,13 @@ local plugins = {
     end,
   },
 
+  {
+    "elkowar/yuck.vim",
+    config = function()
+      vim.opt.ft = "yuck"
+    end,
+  },
+
   -- Useless plugins ( better delete them kekw ) ------------------------------
   {
     "andweeb/presence.nvim",
