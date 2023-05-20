@@ -1,4 +1,5 @@
 local create_cmd = vim.api.nvim_create_user_command
+local create_autocmd = vim.api.nvim_create_autocmd
 
 -- Autosave files command { yoinked from siduck's dotfiles }
 create_cmd("AutosaveToggle", function ()
@@ -56,3 +57,12 @@ create_cmd("RestRun", function ()
   require("rest-nvim").run()
 end, {})
 
+create_autocmd({ "BufEnter" }, {
+  callback = function ()
+    vim.o.scrolloff = (
+      vim.bo.filetype == "NvimTree" or
+      vim.bo.filetype == "nvdash"   or
+      vim.bo.filetype == "terminal")
+      and 0 or 10
+  end
+})

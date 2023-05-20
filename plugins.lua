@@ -152,6 +152,16 @@ local plugins = {
     cmd = "GitBlameToggle"
   },
 
+  {
+    "Aasim-A/scrollEOF.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("scrollEOF").setup({
+        insert_mode = true
+      })
+    end,
+  },
+
   -- Useless plugins ( better delete them kekw ) ------------------------------
   {
     "andweeb/presence.nvim",

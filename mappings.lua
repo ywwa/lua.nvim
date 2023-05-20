@@ -4,6 +4,7 @@ local M = {}
 M.general = {
   n = {
     [";"]       = { ":", "enter command mode", opts = { nowait = true } },
+    ["<Esc>"]   = { ":noh <CR>", "Clear highlights", opts = { silent = true } },
 
     ["<C-h>"]      = { "<cmd> NvimTmuxNavigateLeft <CR>", "Nvim-Tmux Navigation Left" },
     ["<C-j>"]      = { "<cmd> NvimTmuxNavigateDown <CR>", "Nvim-Tmux Navigation Down" },
