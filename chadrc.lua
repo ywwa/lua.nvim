@@ -7,7 +7,7 @@ local highlights = require "custom.highlights"
 M.ui = {
   theme = "catppuccin",
   statusline = {
-    theme = "vscode_colored"
+    theme = "default"
   },
   telescope = {
     style = "bordered"
@@ -29,12 +29,15 @@ M.ui = {
       " ░ ░         ░        ░          ░  ░",
       " ░ ░   git@github.com:yuukilla       ",
     }
-  }
+  },
+  -- cheatsheet = {
+  --   load_on_startup = true
+  -- }
 }
-
-M.plugins = "custom.plugins"
 
 -- check core.mappings for table structure
 M.mappings = require "custom.mappings"
+
+M.plugins = "custom.plugins"
 
 return M
