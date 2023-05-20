@@ -44,7 +44,7 @@ bind-key -T copy-mode-vi 'C-k' if -F '#{pane_at_top}' '' 'select-pane -U'
 bind-key -T copy-mode-vi 'C-l' if -F '#{pane_at_right}' '' 'select-pane -R'
 ```
 
-More information can be found here (aserowy/tmux.nvim)[https://github.com/aserowy/tmux.nvim#navigation]
+More information can be found here [aserowy/tmux.nvim](https://github.com/aserowy/tmux.nvim#navigation)
 
 ### mappings.lua
 ```lua
