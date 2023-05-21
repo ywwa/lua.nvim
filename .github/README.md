@@ -1,5 +1,5 @@
 <h1 align="center">Nvim(Chad) configuration</h1>
-
+<p align="center">Laziest <a href="https://github.com/NvChad/NvChad">git@github.com:NvChad/NvChad</a> config on the west<p>
 <h3 align="center">
     
 ![prv-min](./img/prv-min.png)
@@ -22,8 +22,7 @@
    9 "andweeb/presence.nvim",               -- Avarage discord user
   10 "elkowar/yuck.vim",                    -- Eww configuration yuck language support
   11 "lukas-reineke/virt-column.nvim",      -- Better colorcolumn (wont make eyes bleed)
-  12 "f-person/git-blame.nvim",             -- Git Blame
-  13 "Aasim-A/scrollEOF.nvim",              -- Better scrolloff what goes past EOF
+  12 "Aasim-A/scrollEOF.nvim",              -- Better scrolloff what goes past EOF
 }
 ```
 
@@ -49,7 +48,7 @@ More information can be found here [aserowy/tmux.nvim](https://github.com/aserow
 ### mappings.lua
 ```lua
   "SPC c c"     -- Toggle colorcolumn display
-  "SPC g b"     -- Toggle gitblame displayer
+  "SPC g b"     -- Toggle Current line blame display
 
   "CTRL  R"     -- Run HTTP Request (RestRun)
   "CTRL  T"     -- Open Markdown preview (PeekOpen)

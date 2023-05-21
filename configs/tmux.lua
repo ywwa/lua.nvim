@@ -15,7 +15,7 @@ M.setup = function()
       persist_zoom = false
     },
     resize = {
-      enable_default_keybindings = true,
+      enable_default_keybindings = false,
       resize_step_x = 2,
       resize_step_y = 2
     }
@@ -23,6 +23,7 @@ M.setup = function()
 end
 
 M.keys = {
+  -- navigation keymaps
   {
     "<C-h>",
     "<cmd> lua require('tmux').move_left() <CR>",
@@ -42,8 +43,28 @@ M.keys = {
     "<C-l>",
     "<cmd> lua require('tmux').move_right() <CR>",
     desc = "Move Right"
+  },
+  -- resize keymaps
+  {
+    "<M-h>",
+    "<cmd> lua require('tmux').resize_left() <CR>",
+    desc = "Resize Left"
+  },
+  {
+    "<M-j>",
+    "<cmd> lua require('tmux').resize_bottom() <CR>",
+    desc = "Resize Down"
+  },
+  {
+    "<M-k>",
+    "<cmd> lua require('tmux').resize_top() <CR>",
+    desc = "Resize Up"
+  },
+  {
+    "<M-l>",
+    "<cmd> lua require('tmux').resize_right() <CR>",
+    desc = "Resize Right"
   }
-
 }
 
 return M

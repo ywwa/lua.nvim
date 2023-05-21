@@ -12,7 +12,7 @@ M.general = {
 
     ["<leader>cc"] = { "<cmd> CCToggle <CR>", "Toggle ColorColumn display"},
 
-    ["<leader>gb"] = { "<cmd> GitBlameToggle <CR>", "Toggle GitBlame display"},
+    ["<leader>gb"] = { "<cmd> Gitsigns toggle_current_line_blame <CR>", "Toggle Current Line Blame"},
 
     ["<Up>"]       = { "<Nop>" },
     ["<Down>"]     = { "<Nop>" },

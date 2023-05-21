@@ -87,13 +87,6 @@ local plugins = {
   },
 
 
-  -- Github -------------------------------------------------------------------
-  {
-    "f-person/git-blame.nvim",
-    cmd = "GitBlameToggle"
-  },
-
-
   -- Smoother workflow --------------------------------------------------------
   {
     "aserowy/tmux.nvim",
