@@ -52,30 +52,12 @@ local plugins = {
     end,
   },
 
-  {
-    "aserowy/tmux.nvim",
-    keys = require "custom.configs.tmux".keys,
-    config = function()
-      require "custom.configs.tmux".setup()
-    end,
-  },
 
+  -- Utilities ----------------------------------------------------------------
   {
     "rest-nvim/rest.nvim",
     config = function()
       require "custom.configs.rest"
-    end,
-  },
-
-  {
-    "folke/noice.nvim",
-    dependencies = {
-      { "MunifTanjim/nui.nvim" },
-      -- { "rcarriga/nvim-notify" }
-    },
-    event = "VeryLazy",
-    config = function()
-      require "custom.configs.noice"
     end,
   },
 
@@ -88,16 +70,6 @@ local plugins = {
   },
 
   -- Yoinked from siducks .'s -------------------------------------------------
-  {
-    "andreadev-it/shade.nvim",
-    keys = "<Bslash>",
-    config = function()
-      require("shade").setup {
-        exclude_filetypes = { "NvimTree" },
-      }
-    end,
-  },
-
   {
     "folke/trouble.nvim",
     cmd = "Trouble",
@@ -114,6 +86,33 @@ local plugins = {
     end,
   },
 
+
+  -- Github -------------------------------------------------------------------
+  {
+    "f-person/git-blame.nvim",
+    cmd = "GitBlameToggle"
+  },
+
+
+  -- Smoother workflow --------------------------------------------------------
+  {
+    "aserowy/tmux.nvim",
+    keys = require "custom.configs.tmux".keys,
+    config = function()
+      require "custom.configs.tmux".setup()
+    end,
+  },
+
+  {
+    "andreadev-it/shade.nvim",
+    keys = "<Bslash>",
+    config = function()
+      require("shade").setup {
+        exclude_filetypes = { "NvimTree" },
+      }
+    end,
+  },
+
   {
     "karb94/neoscroll.nvim",
     keys = { "<C-d>", "<C-u>" },
@@ -123,30 +122,8 @@ local plugins = {
   },
 
   {
-    "elkowar/yuck.vim",
-    config = function()
-      vim.opt.ft = "yuck"
-    end,
-  },
-
-  {
-    "lukas-reineke/virt-column.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("virt-column").setup({
-        char = "┃"
-      })
-    end,
-  },
-
-  {
-    "f-person/git-blame.nvim",
-    cmd = "GitBlameToggle"
-  },
-
-  {
     "Aasim-A/scrollEOF.nvim",
-    event = "VeryLazy",
+    keys = { "<C-d>", "<C-u>" },
     config = function()
       require("scrollEOF").setup({
         insert_mode = true
@@ -154,10 +131,43 @@ local plugins = {
     end,
   },
 
+  {
+    "lukas-reineke/virt-column.nvim",
+    keys = "<leader>cc",
+    config = function()
+      require("virt-column").setup({
+        char = "┃"
+      })
+    end,
+  },
+
+
+  -- Language support ---------------------------------------------------------
+  {
+    "elkowar/yuck.vim",
+    config = function()
+      vim.opt.ft = "yuck"
+    end,
+  },
+
+
+  -- UI -----------------------------------------------------------------------
+  {
+    "folke/noice.nvim",
+    dependencies = {
+      { "MunifTanjim/nui.nvim" },
+      -- { "rcarriga/nvim-notify" }
+    },
+    event = "VeryLazy",
+    config = function()
+      require "custom.configs.noice"
+    end,
+  },
+
+
   -- Useless plugins ( better delete them kekw ) ------------------------------
   {
     "andweeb/presence.nvim",
-    event = "VeryLazy",
     config = function()
       require "custom.configs.presence"
     end,

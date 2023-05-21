@@ -75,4 +75,14 @@ create_autocmd({ "BufEnter" }, {
       and 0 or 10
   end
 })
+
+-- As soon as client enters UI, checks if its first instance of nvim
+-- If true then starts discord rpc, else does nothing (Neovide unsupported)
+create_autocmd({ "UIEnter" }, {
+  callback = function ()
+    if tonumber(getcmd_output("pgrep nvim | wc -l")) == 2 then
+      require("lazy").load { plugins = { "presence.nvim" } }
+    end
+  end
+})
 ```

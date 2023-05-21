@@ -6,7 +6,7 @@ create_cmd("AutosaveToggle", function ()
   vim.g.autosave = not vim.g.autosave
 
   if vim.g.autosave then
-    vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+    create_autocmd({ "InsertLeave", "TextChanged" }, {
       group = vim.api.nvim_create_augroup("Autosave", {}),
       callback = function ()
         if vim.api.nvim_buf_get_name(0) and #vim.bo.buftype ==0 then
@@ -64,5 +64,20 @@ create_autocmd({ "BufEnter" }, {
       vim.bo.filetype == "nvdash"   or
       vim.bo.filetype == "terminal")
       and 0 or 10
+  end
+})
+
+local function getcmd_output(command)
+  local handle = io.popen(command)
+  local output = handle:read "*a"
+  handle:close()
+  return output
+end
+
+create_autocmd({ "UIEnter" }, {
+  callback = function ()
+    if tonumber(getcmd_output("pgrep nvim | wc -l")) == 2 then
+      require("lazy").load { plugins = { "presence.nvim" } }
+    end
   end
 })
