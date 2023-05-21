@@ -86,4 +86,5 @@ create_autocmd({ "UIEnter" }, {
       end, 0)
     end
   end
-})```
+})
+```
