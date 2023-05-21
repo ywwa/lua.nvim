@@ -81,8 +81,9 @@ create_autocmd({ "BufEnter" }, {
 create_autocmd({ "UIEnter" }, {
   callback = function ()
     if tonumber(getcmd_output("pgrep nvim | wc -l")) == 2 then
-      require("lazy").load { plugins = { "presence.nvim" } }
+      vim.defer_fn(function ()
+        require("lazy").load { plugins = { "presence.nvim" } }
+      end, 0)
     end
   end
-})
-```
+})```

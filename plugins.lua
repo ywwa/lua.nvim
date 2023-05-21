@@ -133,7 +133,7 @@ local plugins = {
 
   {
     "lukas-reineke/virt-column.nvim",
-    keys = "<leader>cc",
+    event = "VeryLazy",
     config = function()
       require("virt-column").setup({
         char = "┃"
