@@ -6,9 +6,10 @@ M.general = {
     [";"]       = { ":", "enter command mode", opts = { nowait = true } },
     ["<Esc>"]   = { ":noh <CR>", "Clear highlights", opts = { silent = true } },
 
-    ["<C-r>"]      = { "<cmd> RestRun <CR>", "RestNvim Run" },
-    ["<C-T>"]      = { "<cmd> PeekOpen <CR>", "Open markdown preview window" },
-    ["<C-Y>"]      = { "<cmd> PeekClose <CR>", "Close markdown preview window" },
+    ["<leader>sr"] = { "<cmd> Ship <CR>", "Run .ship request"},
+
+    ["<leader>mo"] = { "<cmd> PeekOpen <CR>", "Open markdown preview window" },
+    ["<leader>mc"] = { "<cmd> PeekClose <CR>", "Close markdown preview window" },
 
     ["<leader>cc"] = { "<cmd> CCToggle <CR>", "Toggle ColorColumn display"},
 

@@ -6,8 +6,12 @@ local highlights = require "custom.highlights"
 
 M.ui = {
   theme = "catppuccin",
+  cmp = {
+    style = "atom_colored",
+    selected_item_bg = "simple"
+  },
   statusline = {
-    theme = "default"
+    theme = "minimal"
   },
   telescope = {
     style = "bordered"
@@ -30,9 +34,6 @@ M.ui = {
       " ░ ░   git@github.com:yuukilla       ",
     }
   },
-  -- cheatsheet = {
-  --   load_on_startup = true
-  -- }
 }
 
 -- check core.mappings for table structure

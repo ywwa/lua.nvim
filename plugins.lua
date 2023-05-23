@@ -22,6 +22,7 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
 
+
   -- override plugin configs --------------------------------------------------
   {
     "williamboman/mason.nvim",
@@ -43,6 +44,7 @@ local plugins = {
     opts = overrides.nvterm
   },
 
+
   -- Custom plugins -----------------------------------------------------------
   {
     "max397574/better-escape.nvim",
@@ -54,10 +56,16 @@ local plugins = {
 
 
   -- Utilities ----------------------------------------------------------------
+
   {
-    "rest-nvim/rest.nvim",
-    config = function()
-      require "custom.configs.rest"
+    "javiorfo/nvim-ship",
+    ft = "ship",
+    dependencies = {
+      "javiorfo/nvim-spinetta",
+      "javiorfo/nvim-popcorn"
+    },
+    config = function ()
+      require "custom.configs.ship"
     end,
   },
 
@@ -68,6 +76,7 @@ local plugins = {
       require "custom.configs.peek"
     end,
   },
+
 
   -- Yoinked from siducks .'s -------------------------------------------------
   {

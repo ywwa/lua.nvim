@@ -9,7 +9,6 @@ M.treesitter = {
     "javascript",
     "typescript",
     "tsx",
-    "c",
     "markdown",
     "markdown_inline",
     "prisma",
@@ -41,13 +40,14 @@ M.mason = {
 M.nvimtree = {
   view = {
     side = "left",
-    signcolumn = "no"
+    signcolumn = "no",
   },
   git = {
     enable = true,
   },
 
   renderer = {
+    root_folder_label = true,
     group_empty = true,
     highlight_git = true,
     icons = {
