@@ -42,7 +42,7 @@ M.disabled = {
   "<C-h>", "<C-j>", "<C-k>", "<C-l>"
 }
 ```
-**Default behaviour of `<C-hjkl>` is DISABLED and handled by `tmux.nvim` plugin**
+**Default behaviour of `<C-hjkl>` is DISABLED and handled by `tmux.nvim` plugin**<br>
 if you're not going to use **`tmux.nvim`** plugin, please **re-enable** default mappings.
 
 
