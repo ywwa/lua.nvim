@@ -5,16 +5,17 @@ local M = {}
 local highlights = require "custom.highlights"
 
 M.ui = {
+  -- transparency = true,
   theme = "catppuccin",
   cmp = {
     style = "atom_colored",
-    selected_item_bg = "simple"
+    selected_item_bg = "simple",
   },
   -- statusline = {
   --   theme = "minimal"
   -- },
   telescope = {
-    style = "bordered"
+    style = "bordered",
   },
 
   hl_override = highlights.override,
@@ -32,7 +33,7 @@ M.ui = {
       " ▒ ▒ ░░    ░   ░    ░   ░    ░   ▒   ",
       " ░ ░         ░        ░          ░  ░",
       " ░ ░   git@github.com:yuukilla       ",
-    }
+    },
   },
 }
 

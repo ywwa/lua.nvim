@@ -6,19 +6,19 @@ M.setup = function()
       enable = true,
       sync_clipboard = true,
       sync_registers = true,
-      sync_deletes   = true,
-      sync_unnamed   = true
+      sync_deletes = true,
+      sync_unnamed = true,
     },
     navigation = {
       cycle_navigation = true,
       enable_default_keybindings = false,
-      persist_zoom = false
+      persist_zoom = false,
     },
     resize = {
       enable_default_keybindings = false,
       resize_step_x = 2,
-      resize_step_y = 2
-    }
+      resize_step_y = 2,
+    },
   }
 end
 
@@ -27,44 +27,44 @@ M.keys = {
   {
     "<C-h>",
     "<cmd> lua require('tmux').move_left() <CR>",
-    desc = "Move Left"
+    desc = "Move Left",
   },
   {
     "<C-j>",
     "<cmd> lua require('tmux').move_bottom() <CR>",
-    desc = "Move Down"
+    desc = "Move Down",
   },
   {
     "<C-k>",
     "<cmd> lua require('tmux').move_top() <CR>",
-    desc = "Move Up"
+    desc = "Move Up",
   },
   {
     "<C-l>",
     "<cmd> lua require('tmux').move_right() <CR>",
-    desc = "Move Right"
+    desc = "Move Right",
   },
   -- resize keymaps
   {
     "<M-h>",
     "<cmd> lua require('tmux').resize_left() <CR>",
-    desc = "Resize Left"
+    desc = "Resize Left",
   },
   {
     "<M-j>",
     "<cmd> lua require('tmux').resize_bottom() <CR>",
-    desc = "Resize Down"
+    desc = "Resize Down",
   },
   {
     "<M-k>",
     "<cmd> lua require('tmux').resize_top() <CR>",
-    desc = "Resize Up"
+    desc = "Resize Up",
   },
   {
     "<M-l>",
     "<cmd> lua require('tmux').resize_right() <CR>",
-    desc = "Resize Right"
-  }
+    desc = "Resize Right",
+  },
 }
 
 return M

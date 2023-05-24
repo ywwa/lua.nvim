@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -26,7 +26,7 @@ local plugins = {
   -- override plugin configs --------------------------------------------------
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -41,7 +41,7 @@ local plugins = {
 
   {
     "NvChad/nvterm",
-    opts = overrides.nvterm
+    opts = overrides.nvterm,
   },
 
 
@@ -62,9 +62,9 @@ local plugins = {
     ft = "ship",
     dependencies = {
       "javiorfo/nvim-spinetta",
-      "javiorfo/nvim-popcorn"
+      "javiorfo/nvim-popcorn",
     },
-    config = function ()
+    config = function()
       require "custom.configs.ship"
     end,
   },
@@ -99,9 +99,9 @@ local plugins = {
   -- Smoother workflow --------------------------------------------------------
   {
     "aserowy/tmux.nvim",
-    keys = require "custom.configs.tmux".keys,
+    keys = require("custom.configs.tmux").keys,
     config = function()
-      require "custom.configs.tmux".setup()
+      require("custom.configs.tmux").setup()
     end,
   },
 
@@ -127,9 +127,9 @@ local plugins = {
     "Aasim-A/scrollEOF.nvim",
     keys = { "<C-d>", "<C-u>" },
     config = function()
-      require("scrollEOF").setup({
-        insert_mode = true
-      })
+      require("scrollEOF").setup {
+        insert_mode = true,
+      }
     end,
   },
 
@@ -137,9 +137,9 @@ local plugins = {
     "lukas-reineke/virt-column.nvim",
     event = "VeryLazy",
     config = function()
-      require("virt-column").setup({
-        char = "┃"
-      })
+      require("virt-column").setup {
+        char = "┃",
+      }
     end,
   },
 
@@ -174,7 +174,6 @@ local plugins = {
       require "custom.configs.presence"
     end,
   },
-
 }
 
 return plugins

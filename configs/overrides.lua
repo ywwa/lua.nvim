@@ -13,7 +13,7 @@ M.treesitter = {
     "markdown_inline",
     "prisma",
     "http",
-    "json"
+    "json",
   },
   indent = {
     enable = true,
@@ -30,9 +30,10 @@ M.mason = {
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
+    "tailwindcss-language-server",
+    "prisma-language-server",
     "deno",
     "prettier",
-
   },
 }
 
@@ -47,7 +48,9 @@ M.nvimtree = {
   },
 
   renderer = {
-    -- root_folder_label = true,
+    root_folder_label = function()
+      return ""
+    end,
     group_empty = true,
     highlight_git = true,
     icons = {
@@ -62,15 +65,15 @@ M.nvterm = {
   terminals = {
     type_opts = {
       float = {
-        relative = 'editor',
+        relative = "editor",
         row = 0.15,
         col = 0.1,
         width = 0.8,
         height = 0.6,
-        border = "single"
-      }
-    }
-  }
+        border = "single",
+      },
+    },
+  },
 }
 
 return M

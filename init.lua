@@ -5,7 +5,6 @@ require "custom.neovide"
 local snippetpath = vim.fn.stdpath "config" .. "/lua/custom/snippets"
 vim.g.vscode_snippets_path = snippetpath
 
-
 -- vim.cmd("set nowrap")
 vim.opt.rnu = true
 vim.wo.wrap = false
