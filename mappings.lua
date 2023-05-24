@@ -40,12 +40,12 @@ M.general = {
       "Yarn Develop",
     },
 
-    ["<leader>h"] = {
-      function()
-        require("nvterm.terminal").toggle "horizontal"
-      end,
-      "Toggle horizontal term",
-    },
+    -- ["<leader>h"] = {
+    --   function()
+    --     require("nvterm.terminal").toggle "horizontal"
+    --   end,
+    --   "Toggle horizontal term",
+    -- },
 
     ["<leader>to"] = {
       "<cmd> tabnew <CR>",
@@ -84,11 +84,13 @@ M.general = {
 }
 
 M.disabled = {
-  ["<C-h>"] = { "<Nop>" },
-  ["<C-j>"] = { "<Nop>" },
-  ["<C-k>"] = { "<Nop>" },
-  ["<C-l>"] = { "<Nop>" },
-  ["<leader>h"] = { "<Nop>" },
+  n = {
+    ["<C-h>"] = { "<Nop>" },
+    ["<C-j>"] = { "<Nop>" },
+    ["<C-k>"] = { "<Nop>" },
+    ["<C-l>"] = { "<Nop>" },
+    ["<leader>h"] = { "<Nop>" },
+  },
 }
 
 -- more keybinds!

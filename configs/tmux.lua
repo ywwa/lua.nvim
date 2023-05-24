@@ -46,22 +46,22 @@ M.keys = {
   },
   -- resize keymaps
   {
-    "<M-h>",
+    "<A-h>",
     "<cmd> lua require('tmux').resize_left() <CR>",
     desc = "Resize Left",
   },
   {
-    "<M-j>",
+    "<A-j>",
     "<cmd> lua require('tmux').resize_bottom() <CR>",
     desc = "Resize Down",
   },
   {
-    "<M-k>",
+    "<A-k>",
     "<cmd> lua require('tmux').resize_top() <CR>",
     desc = "Resize Up",
   },
   {
-    "<M-l>",
+    "<A-l>",
     "<cmd> lua require('tmux').resize_right() <CR>",
     desc = "Resize Right",
   },
