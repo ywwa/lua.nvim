@@ -10,9 +10,9 @@ M.ui = {
     style = "atom_colored",
     selected_item_bg = "simple"
   },
-  statusline = {
-    theme = "minimal"
-  },
+  -- statusline = {
+  --   theme = "minimal"
+  -- },
   telescope = {
     style = "bordered"
   },

@@ -6,6 +6,9 @@ local M = {}
 
 ---@type Base46HLGroupsList
 M.override = {
+  Visual = {
+    bg="one_bg2"
+  },
   Comment = {
     italic = true,
   },
@@ -16,12 +19,15 @@ M.override = {
   NvDashButtons = {
     fg = "grey_fg",
     bg = "none"
+  },
+  ColorColumn = {
+    bg = "NONE"
   }
 }
 
 ---@type HLTable
 M.add = {
-  NvimTreeOpenedFolderName = { fg = "green", bold = true },
+  -- NvimTreeOpenedFolderName = { fg = "green", bold = true },
 }
 
 return M

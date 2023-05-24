@@ -1,0 +1,26 @@
+{
+  "Base": {
+    "prefix": "ba",
+    "body": [
+      "~[BASE]~",
+      "url {{host}}/$1",
+      "method $2",
+      "env ./tests/environment/dev.lua"
+    ]
+  },
+  "Headers": {
+    "prefix": "he",
+    "body": [
+      "~[HEADERS]~",
+      "accept application/json",
+      "content-type application/json"
+    ]
+  },
+  "Body": {
+    "prefix": "bo",
+    "body": [
+      "~[BODY]~",
+      "$1"
+    ]
+  }
+}

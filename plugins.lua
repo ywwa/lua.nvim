@@ -154,17 +154,17 @@ local plugins = {
 
 
   -- UI -----------------------------------------------------------------------
-  {
-    "folke/noice.nvim",
-    dependencies = {
-      { "MunifTanjim/nui.nvim" },
-      -- { "rcarriga/nvim-notify" }
-    },
-    event = "VeryLazy",
-    config = function()
-      require "custom.configs.noice"
-    end,
-  },
+  -- {
+  --   "folke/noice.nvim",
+  --   dependencies = {
+  --     { "MunifTanjim/nui.nvim" },
+  --     -- { "rcarriga/nvim-notify" }
+  --   },
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require "custom.configs.noice"
+  --   end,
+  -- },
 
 
   -- Useless plugins ( better delete them kekw ) ------------------------------
