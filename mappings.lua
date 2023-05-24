@@ -40,12 +40,12 @@ M.general = {
       "Yarn Develop",
     },
 
-    -- ["<leader>h"] = {
-    --   function()
-    --     require("nvterm.terminal").toggle "horizontal"
-    --   end,
-    --   "Toggle horizontal term",
-    -- },
+    ["<leader>h"] = {
+      function()
+        require("nvterm.terminal").toggle "horizontal"
+      end,
+      "Toggle horizontal term",
+    },
 
     ["<leader>to"] = {
       "<cmd> tabnew <CR>",
