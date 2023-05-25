@@ -22,11 +22,9 @@ M.treesitter = {
 
 M.mason = {
   ensure_installed = {
-    -- lua stuff
     "lua-language-server",
     "stylua",
 
-    -- web dev stuff
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
@@ -65,12 +63,12 @@ M.nvterm = {
   terminals = {
     type_opts = {
       float = {
-        relative = "editor",
-        row = 0.15,
-        col = 0.1,
-        width = 0.8,
-        height = 0.6,
-        border = "single",
+        -- relative = "editor",
+        -- row = 0.15,
+        -- col = 0.1,
+        -- width = 0.8,
+        -- height = 0.6,
+        border = "none"
       },
     },
   },

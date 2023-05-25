@@ -65,7 +65,7 @@ local plugins = {
       "javiorfo/nvim-popcorn",
     },
     config = function()
-      require "custom.configs.ship"
+      require "custom.configs.external.ship"
     end,
   },
 
@@ -73,7 +73,7 @@ local plugins = {
     "toppair/peek.nvim",
     build = "deno task --quiet build:debug",
     config = function()
-      require "custom.configs.peek"
+      require "custom.configs.external.peek"
     end,
   },
 
@@ -91,7 +91,7 @@ local plugins = {
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
     config = function()
-      require "custom.configs.zenmode"
+      require "custom.configs.external.zenmode"
     end,
   },
 
@@ -99,9 +99,9 @@ local plugins = {
   -- Smoother workflow --------------------------------------------------------
   {
     "aserowy/tmux.nvim",
-    keys = require("custom.configs.tmux").keys,
+    keys = require("custom.configs.external.tmux").keys,
     config = function()
-      require("custom.configs.tmux").setup()
+      require("custom.configs.external.tmux").setup()
     end,
   },
 
@@ -143,6 +143,14 @@ local plugins = {
     end,
   },
 
+  {
+    "abecodes/tabout.nvim",
+    event = "BufEnter",
+    config = function()
+      require("tabout").setup()
+    end,
+  },
+
 
   -- Language support ---------------------------------------------------------
   {
@@ -171,7 +179,7 @@ local plugins = {
   {
     "andweeb/presence.nvim",
     config = function()
-      require "custom.configs.presence"
+      require "custom.configs.external.presence"
     end,
   },
 }
