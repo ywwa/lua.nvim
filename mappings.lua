@@ -117,6 +117,13 @@ M.custom = {
       "<cmd> CCToggle <CR>",
       "Toggle Color column",
     },
+
+    ["<leader>td"] = {
+      function ()
+        vim.api.nvim_input(":tcd ")
+      end,
+      "Run tcd command",
+    },
   },
 }
 

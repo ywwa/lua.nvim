@@ -6,7 +6,7 @@ local highlights = require "custom.highlights"
 
 M.ui = {
   -- transparency = true,
-  theme = "bearded-arc",
+  theme = "doomchad",
   cmp = {
     style = "flat_dark",
     selected_item_bg = "simple",
