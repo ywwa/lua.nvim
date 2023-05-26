@@ -22,5 +22,11 @@
       "~[BODY]~",
       "$1"
     ]
+  },
+  "ExternalJson": {
+    "prefix": "json",
+    "body": [
+      "ship_body_file ./tests/data/$1"
+    ]
   }
 }

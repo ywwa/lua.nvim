@@ -6,9 +6,9 @@ local highlights = require "custom.highlights"
 
 M.ui = {
   -- transparency = true,
-  theme = "catppuccin",
+  theme = "chadracula",
   cmp = {
-    style = "atom_colored",
+    style = "flat_dark",
     selected_item_bg = "simple",
   },
   -- statusline = {

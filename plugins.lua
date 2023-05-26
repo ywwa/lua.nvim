@@ -3,6 +3,23 @@ local overrides = require "custom.configs.overrides"
 ---@type NvPluginSpec[]
 local plugins = {
 
+  -- Disable and replace base plugins -----------------------------------------
+
+  {
+    "NvChad/ui",
+    enabled = false
+  },
+
+  {
+    "yuukilla/nvchad-ui",
+    branch = "prettify_str",
+    lazy = false,
+    config = function()
+      require "nvchad_ui"
+    end,
+  },
+
+
   -- Override plugin definition options ---------------------------------------
 
   {
@@ -162,17 +179,17 @@ local plugins = {
 
 
   -- UI -----------------------------------------------------------------------
-  -- {
-  --   "folke/noice.nvim",
-  --   dependencies = {
-  --     { "MunifTanjim/nui.nvim" },
-  --     -- { "rcarriga/nvim-notify" }
-  --   },
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require "custom.configs.noice"
-  --   end,
-  -- },
+  {
+    "folke/noice.nvim",
+    dependencies = {
+      { "MunifTanjim/nui.nvim" },
+      -- { "rcarriga/nvim-notify" }
+    },
+    event = "VeryLazy",
+    config = function()
+      require "custom.configs.external.noice"
+    end,
+  },
 
 
   -- Useless plugins ( better delete them kekw ) ------------------------------

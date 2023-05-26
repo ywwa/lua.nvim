@@ -5,55 +5,86 @@ M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<Esc>"] = { ":noh <CR>", "Clear highlights", opts = { silent = true } },
-
-    ["<leader>sr"] = {
-      "<cmd> Ship <CR>",
-      "Run .ship request",
-    },
-
-    ["<leader>ct"] = {
-      "<cmd> TroubleToggle <CR>",
-      "Toggle Trouble",
-    },
-
-    ["<leader>mo"] = {
-      "<cmd> PeekOpen <CR>",
-      "Open markdown preview window",
-    },
-    ["<leader>mc"] = {
-      "<cmd> PeekClose <CR>",
-      "Close markdown preview window",
-    },
-
-    ["<leader>cc"] = {
-      "<cmd> CCToggle <CR>",
-      "Toggle ColorColumn display",
-    },
-
-    ["<leader>gb"] = {
-      "<cmd> Gitsigns toggle_current_line_blame <CR>",
-      "Toggle Current Line Blame",
-    },
-
-    ["<leader>cy"] = {
-      "<cmd> lua require('nvterm.terminal').send('yarn develop', 'horizontal') <CR>",
-      "Yarn Develop",
-    },
-
     ["<leader>h"] = {
       function()
         require("nvterm.terminal").toggle "horizontal"
       end,
-      "Toggle horizontal term",
+      "Toggle horizontal terminal",
     },
+    ["<leader>v"] = {
+      function()
+        require("nvterm.terminal").toggle "vertical"
+      end,
+      "Toggle vertical terminal",
+    },
+  },
+}
 
+M.disabled = {
+  n = {
+    ["<leader>h"] = "",
+    ["<leader>v"] = "",
+    ["<C-h>"] = "",
+    ["<C-j>"] = "",
+    ["<C-k>"] = "",
+    ["<C-l>"] = "",
+    ["<Up>"] = "",
+    ["<Down>"] = "",
+    ["<Left>"] = "",
+    ["<Right>"] = "",
+    ["<leader>gb"] = "",
+  },
+
+  i = {
+    ["<Up>"] = "",
+    ["<Down>"] = "",
+    ["<Left>"] = "",
+    ["<Right>"] = "",
+  },
+
+  v = {
+    ["<Up>"] = "",
+    ["<Down>"] = "",
+    ["<Left>"] = "",
+    ["<Right>"] = "",
+  },
+}
+
+M.ship = {
+  n = {
+    ["<leader>sr"] = {
+      "<cmd> Ship <CR>",
+      "Run Http request",
+    },
+    ["<leader>sq"] = {
+      "<cmd> ShipCloseResponse <CR>",
+      "Close Ship response",
+    },
+  },
+}
+
+M.peek = {
+  n = {
+    ["<leader>mo"] = {
+      "<cmd> PeekOpen <CR>",
+      "Open markdown preview",
+    },
+    ["<leader>mq"] = {
+      "<cmd> PeekClose <CR>",
+      "Close markdown preview",
+    },
+  },
+}
+
+M.tabufline = {
+  n = {
     ["<leader>to"] = {
       "<cmd> tabnew <CR>",
-      "Open New Tab",
+      "Open new Tab",
     },
-    ["<leader>tc"] = {
+    ["<leader>tq"] = {
       "<cmd> tabclose <CR>",
-      "Close Tab",
+      "Close tab",
     },
     ["<leader>tn"] = {
       "<cmd> tabnext <CR>",
@@ -63,35 +94,34 @@ M.general = {
       "<cmd> tabprevious <CR>",
       "Previous Tab",
     },
-
-    ["<Up>"] = { "<Nop>" },
-    ["<Down>"] = { "<Nop>" },
-    ["<Left>"] = { "<Nop>" },
-    ["<Right>"] = { "<Nop>" },
-  },
-  i = {
-    ["<Up>"] = { "<Nop>" },
-    ["<Down>"] = { "<Nop>" },
-    ["<Left>"] = { "<Nop>" },
-    ["<Right>"] = { "<Nop>" },
-  },
-  v = {
-    ["<Up>"] = { "<Nop>" },
-    ["<Down>"] = { "<Nop>" },
-    ["<Left>"] = { "<Nop>" },
-    ["<Right>"] = { "<Nop>" },
   },
 }
 
-M.disabled = {
+M.trouble = {
   n = {
-    ["<C-h>"] = { "<Nop>" },
-    ["<C-j>"] = { "<Nop>" },
-    ["<C-k>"] = { "<Nop>" },
-    ["<C-l>"] = { "<Nop>" },
-    ["<leader>h"] = { "<Nop>" },
+    ["<leader>to"] = {
+      "<cmd> TroubleToggle <CR>",
+      "Toggle Trouble",
+    },
   },
 }
 
--- more keybinds!
+M.custom = {
+  n = {
+    ["<leader>tc"] = {
+      "<cmd> CCToggle <CR>",
+      "Toggle Color column",
+    },
+  },
+}
+
+M.git = {
+  n = {
+    ["<leader>gb"] = {
+      "<cmd> Gitsigns toggle_current_line_blame <CR>",
+      "Toggle Current line blame",
+    },
+  },
+}
+
 return M
