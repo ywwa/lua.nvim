@@ -35,6 +35,25 @@ M.mason = {
   },
 }
 
+M.cmp = {
+  sources = {
+    {
+      name = "cmp-spell",
+      option = {
+        keep_all_entries = true,
+        enable_in_context = function()
+          return true
+        end,
+      },
+    },
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "nvim_lua" },
+    { name = "path" },
+  },
+}
+
 -- git support in nvimtree
 M.nvimtree = {
   view = {
@@ -68,7 +87,7 @@ M.nvterm = {
         -- col = 0.1,
         -- width = 0.8,
         -- height = 0.6,
-        border = "none"
+        border = "none",
       },
     },
   },

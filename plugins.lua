@@ -61,6 +61,11 @@ local plugins = {
     opts = overrides.nvterm,
   },
 
+  {
+    "hrsh7th/nvim-cmp",
+    opts = overrides.cmp,
+  },
+
 
   -- Custom plugins -----------------------------------------------------------
   {
