@@ -6,9 +6,9 @@ local M = {}
 
 ---@type Base46HLGroupsList
 M.override = {
-  Visual = {
-    bg = "one_bg2",
-  },
+  -- Visual = {
+  --   bg = "one_bg2",
+  -- },
   Comment = {
     italic = true,
   },
@@ -29,6 +29,10 @@ M.override = {
   },
   TBTabTitle = {
     bg = "darker_black",
+  },
+  Folded = {
+    bg = "NONE",
+    fg = "pink"
   },
 }
 
