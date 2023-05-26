@@ -173,6 +173,25 @@ local plugins = {
     end,
   },
 
+  {
+    "anuvyklack/pretty-fold.nvim",
+    event = "BufWinEnter",
+    dependencies = {
+      {
+        "anuvyklack/fold-preview.nvim",
+        dependencies = {
+          "anuvyklack/keymap-amend.nvim",
+        },
+        opts = {
+          border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+        },
+      },
+    },
+    config = function()
+      require "custom.configs.external.pretty-fold"
+    end,
+  },
+
 
   -- Language support ---------------------------------------------------------
   {
