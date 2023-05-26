@@ -17,7 +17,26 @@ M.general = {
       end,
       "Toggle vertical terminal",
     },
+
+    ["<Up>"] = { "<Nop>" },
+    ["<Down>"] = { "<Nop>" },
+    ["<Left>"] = { "<Nop>" },
+    ["<Right>"] = { "<Nop>" },
   },
+
+  i = {
+    ["<Up>"] = { "<Nop>" },
+    ["<Down>"] = { "<Nop>" },
+    ["<Left>"] = { "<Nop>" },
+    ["<Right>"] = { "<Nop>" },
+  },
+  v = {
+    ["<Up>"] = { "<Nop>" },
+    ["<Down>"] = { "<Nop>" },
+    ["<Left>"] = { "<Nop>" },
+    ["<Right>"] = { "<Nop>" },
+  },
+
 }
 
 M.disabled = {
@@ -33,20 +52,6 @@ M.disabled = {
     ["<Left>"] = "",
     ["<Right>"] = "",
     ["<leader>gb"] = "",
-  },
-
-  i = {
-    ["<Up>"] = "",
-    ["<Down>"] = "",
-    ["<Left>"] = "",
-    ["<Right>"] = "",
-  },
-
-  v = {
-    ["<Up>"] = "",
-    ["<Down>"] = "",
-    ["<Left>"] = "",
-    ["<Right>"] = "",
   },
 }
 
@@ -99,7 +104,7 @@ M.tabufline = {
 
 M.trouble = {
   n = {
-    ["<leader>to"] = {
+    ["<leader>tt"] = {
       "<cmd> TroubleToggle <CR>",
       "Toggle Trouble",
     },

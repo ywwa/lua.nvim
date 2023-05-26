@@ -6,7 +6,7 @@ local highlights = require "custom.highlights"
 
 M.ui = {
   -- transparency = true,
-  theme = "chadracula",
+  theme = "bearded-arc",
   cmp = {
     style = "flat_dark",
     selected_item_bg = "simple",

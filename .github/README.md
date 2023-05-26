@@ -24,6 +24,7 @@
   10 "elkowar/yuck.vim",                -- Eww configuration yuck language support
   11 "lukas-reineke/virt-column.nvim",  -- Better colorcolumn (wont make eyes bleed)
   12 "Aasim-A/scrollEOF.nvim",          -- Better scrolloff what goes past EOF
+  13 "yuukilla/nvchad-ui"               -- Fork of Nvchad/ui with customized cheatsheet
 }
 ```
 
@@ -31,15 +32,41 @@
 ### mappings.lua
 ```lua
 M.general = {
-  "SPC c c",    -- Enable/Disable colorcolumn
-  "SPC g b",    -- Enable/DIsable git blame
-  "SPC s r",    -- Run .ship request (nvim-ship)
-  "SPC m o",    -- Open markdown preview (peek)
-  "SPC m c",    -- Close Markdown preview (peek)
+  "SPC h"       -- Toggle Horizontal Terminal
+  "SPC v"       -- Toggle Vertical Terminal
 }
-M.disabled = {
-  "<Left>", "<Down>", "<Up>", "<Right>",
-  "<C-h>", "<C-j>", "<C-k>", "<C-l>"
+
+-- "javiorfo/nvim-ship"
+M.ship = {
+  "SPC s r"     -- Send Http Request
+  "SPC s q"     -- Close Ship Response
+}
+
+-- "toppair/peek.nvim"
+M.peek = {
+  "SPC m o"     -- Open Markdown Preview
+  "SPC m q"     -- Close Markdown Preview
+}
+
+-- "tabufline"
+M.tabufline = {
+  "SPC t o"     -- Open New Tab
+  "SPC t q"     -- Close Tab
+  "SPC t n"     -- Next Tab
+  "SPC t p"     -- Previous Tab
+}
+
+-- "folke/trouble.nvim"
+M.trouble = {
+  "SPC t t"     -- Toggle Trouble
+}
+
+M.custom = {
+  "SPC t c"     -- Toggle Color column
+}
+
+M.git = {
+  "SPC g b"     -- Toggle Current line blame
 }
 ```
 **Default behaviour of `<C-hjkl>` is DISABLED and handled by `tmux.nvim` plugin**<br>
