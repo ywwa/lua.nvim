@@ -63,6 +63,7 @@ M.trouble = {
 
 M.custom = {
   "SPC t c"     -- Toggle Color column
+  "SPC t d"     -- Open cmd line with ":tcd" in it
 }
 
 M.git = {
