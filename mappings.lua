@@ -18,25 +18,24 @@ M.general = {
       "Toggle vertical terminal",
     },
 
-    ["<Up>"] = { "<Nop>" },
-    ["<Down>"] = { "<Nop>" },
-    ["<Left>"] = { "<Nop>" },
-    ["<Right>"] = { "<Nop>" },
+    ["<Up>"] = { "<Nop>", "Disabled" },
+    ["<Down>"] = { "<Nop>", "Disabled" },
+    ["<Left>"] = { "<Nop>", "Disabled" },
+    ["<Right>"] = { "<Nop>", "Disabled" },
   },
 
   i = {
-    ["<Up>"] = { "<Nop>" },
-    ["<Down>"] = { "<Nop>" },
-    ["<Left>"] = { "<Nop>" },
-    ["<Right>"] = { "<Nop>" },
+    ["<Up>"] = { "<Nop>", "Disabled" },
+    ["<Down>"] = { "<Nop>", "Disabled" },
+    ["<Left>"] = { "<Nop>", "Disabled" },
+    ["<Right>"] = { "<Nop>", "Disabled" },
   },
   v = {
-    ["<Up>"] = { "<Nop>" },
-    ["<Down>"] = { "<Nop>" },
-    ["<Left>"] = { "<Nop>" },
-    ["<Right>"] = { "<Nop>" },
+    ["<Up>"] = { "<Nop>", "Disabled" },
+    ["<Down>"] = { "<Nop>", "Disabled" },
+    ["<Left>"] = { "<Nop>", "Disabled" },
+    ["<Right>"] = { "<Nop>", "Disabled" },
   },
-
 }
 
 M.disabled = {
@@ -119,8 +118,8 @@ M.custom = {
     },
 
     ["<leader>td"] = {
-      function ()
-        vim.api.nvim_input(":tcd ")
+      function()
+        vim.api.nvim_input ":tcd "
       end,
       "Run tcd command",
     },

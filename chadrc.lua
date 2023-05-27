@@ -6,7 +6,7 @@ local highlights = require "custom.highlights"
 
 M.ui = {
   -- transparency = true,
-  theme = "doomchad",
+  theme = "gruvbox",
   cmp = {
     style = "flat_dark",
     selected_item_bg = "simple",
@@ -17,6 +17,7 @@ M.ui = {
   telescope = {
     style = "bordered",
   },
+
 
   hl_override = highlights.override,
   hl_add = highlights.add,

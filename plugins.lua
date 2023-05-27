@@ -48,6 +48,9 @@ local plugins = {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "windwp/nvim-ts-autotag",
+    },
     opts = overrides.treesitter,
   },
 
@@ -64,6 +67,11 @@ local plugins = {
   {
     "hrsh7th/nvim-cmp",
     opts = overrides.cmp,
+  },
+
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = overrides.blankline
   },
 
 
@@ -97,6 +105,12 @@ local plugins = {
     config = function()
       require "custom.configs.external.peek"
     end,
+  },
+
+  {
+    "vuki656/package-info.nvim",
+    ft = { "json", "lua" },
+    config = true,
   },
 
 
@@ -192,6 +206,51 @@ local plugins = {
     end,
   },
 
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = {
+      "kevinhwang91/promise-async",
+      {
+        "luukvbaal/statuscol.nvim",
+        config = function()
+          local builtin = require "statuscol.builtin"
+          require("statuscol").setup {
+            relculright = true,
+            segments = {
+              { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
+              { text = { "%s" }, click = "v:lua.ScSa" },
+              { text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
+            },
+          }
+        end,
+      },
+    },
+    event = "BufReadPost",
+    keys = { "zf", "zo", "za", "zc", "zM", "zR" },
+    config = function()
+      require("ufo").setup {
+        provider_selector = function()
+          return { "treesitter", "indent" }
+        end,
+      }
+    end,
+  },
+
+  {
+    "code-biscuits/nvim-biscuits",
+    event = "BufRead",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      require "custom.configs.external.biscuits"
+    end,
+  },
+
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "BufReadPost",
+    config = true,
+  },
+
 
   -- Language support ---------------------------------------------------------
   {
@@ -199,6 +258,22 @@ local plugins = {
     config = function()
       vim.opt.ft = "yuck"
     end,
+  },
+
+  {
+    "numToStr/Comment.nvim",
+    dependencies = { "JoosepAlviste/nvim-ts-context-commentstring", ft = "javascriptreact" },
+    config = function()
+      require("Comment").setup {
+        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+      }
+    end,
+  },
+
+  {
+    "kristijanhusak/vim-js-file-import",
+    ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    build = "npm install",
   },
 
 
@@ -214,7 +289,63 @@ local plugins = {
       require "custom.configs.external.noice"
     end,
   },
+  {
+    "m-demare/hlargs.nvim",
+    event = "BufWinEnter",
+    config = function()
+      require("hlargs").setup()
+    end,
+  },
 
+  {
+    "kevinhwang91/nvim-hlslens",
+    event = "BufReadPost",
+    config = function()
+      require("hlslens").setup()
+    end,
+  },
+
+  {
+    "petertriho/nvim-scrollbar",
+    event = "VimEnter",
+    config = true,
+  },
+
+  {
+    "shellRaining/hlchunk.nvim",
+    event = "BufReadPost",
+    config = function()
+      require "custom.configs.external.hlchunk"
+    end,
+  },
+
+  {
+    "mrjones2014/nvim-ts-rainbow",
+    event = "BufReadPost",
+  },
+
+  {
+    "mg979/vim-visual-multi",
+    cmd = "VisualMulti",
+    setup = function()
+      require "custom.configs.external.visual-multi"
+    end,
+  },
+
+  {
+    "danilamihailov/beacon.nvim",
+    event = "BufReadPost"
+  },
+
+  { 'echasnovski/mini.surround', event = "VeryLazy"},
+
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    event = "BufWinEnter",
+    config = function()
+      require "custom.configs.external.ts-context"
+    end,
+  },
 
   -- Useless plugins ( better delete them kekw ) ------------------------------
   {
