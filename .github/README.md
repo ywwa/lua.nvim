@@ -8,6 +8,8 @@
 </h3>
 <hr>
 
+#### Currently main and work-in-progress branches are broken
+fixing this later
 
 ### plugins.lua
 ```lua
@@ -25,6 +27,7 @@
   11 "lukas-reineke/virt-column.nvim",  -- Better colorcolumn (wont make eyes bleed)
   12 "Aasim-A/scrollEOF.nvim",          -- Better scrolloff what goes past EOF
   13 "yuukilla/nvchad-ui"               -- Fork of Nvchad/ui with customized cheatsheet
+  14 "anuvyklack/pretty-fold.nvim"      -- Better fold than defauklt
 }
 ```
 
