@@ -1,4 +1,10 @@
-require("peek").setup {
+local present, peek = pcall(require, "peek")
+
+if not present then
+  return
+end
+
+peek.setup {
   auto_load = true,
   close_on_bdelete = true,
   syntax = true,

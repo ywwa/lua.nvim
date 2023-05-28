@@ -1,4 +1,10 @@
-require("ship").setup {
+local present, ship = pcall(require, "ship")
+
+if not present then
+  return
+end
+
+ship.setup {
   request = {
     timeout = 30,
     autosave = false,
@@ -19,16 +25,4 @@ require("ship").setup {
   internal = {
     log_debug = false,
   },
-
-  -- special = {
-  --   name = "authentication_service",
-  --   take = {
-  --     ship_file = "/home/yuukiwwa/app@Deskify/backend/tests/routes/users/POST.login.ship",
-  --     ship_field = "user.token"
-  --   },
-  --   update = {
-  --     lua_file = "/home/yuukiwwa/app@Deskify/backend/tests/environment/dev.lua",
-  --     lua_field = "token"
-  --   }
-  -- },
 }

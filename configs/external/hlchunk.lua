@@ -9,13 +9,10 @@ hlchunk.setup {
     enable = true,
     support_filetypes = {
       "*.ts",
-      "*.tsx",
-      "*.jsx",
       "*.js",
-      "*.json",
+      -- "*.json",
       "*.lua",
       "*.vue",
-      "*.php",
     },
     chars = {
       horizontal_line = "─",
@@ -24,7 +21,7 @@ hlchunk.setup {
       left_bottom = "╰",
       right_arrow = ">",
     },
-    style = "#83a598",
+    style = "#806d9c",
   },
 
   indent = {
@@ -39,6 +36,9 @@ hlchunk.setup {
       vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID "Whitespace"), "fg", "gui"),
     },
     exclude_filetype = {
+      nvdash = true,
+      nvcheatsheet = true,
+      terminal = true,
       dashboard = true,
       help = true,
       lspinfo = true,
@@ -70,3 +70,4 @@ hlchunk.setup {
     exclude_filetype = "...",
   },
 }
+

@@ -51,7 +51,7 @@ create_autocmd({ "BufEnter" }, {
   callback = function()
     vim.o.scrolloff = (vim.bo.filetype == "NvimTree" or vim.bo.filetype == "nvdash" or vim.bo.filetype == "terminal")
         and 0
-      or 4
+      or 10
   end,
 })
 

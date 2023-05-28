@@ -3,8 +3,8 @@ local M = {}
 
 M.general = {
   n = {
-    [";"] = { ":", "enter command mode", opts = { nowait = true } },
-    ["<Esc>"] = { ":noh <CR>", "Clear highlights", opts = { silent = true } },
+    [";"] = { ":", "Enter command mode", opts = { nowait = true } },
+    ["<ESC>"] = { ":noh <CR>", "Clear highlights", opts = { silent = true } },
     ["<leader>h"] = {
       function()
         require("nvterm.terminal").toggle "horizontal"
@@ -17,13 +17,11 @@ M.general = {
       end,
       "Toggle vertical terminal",
     },
-
     ["<Up>"] = { "<Nop>", "Disabled" },
     ["<Down>"] = { "<Nop>", "Disabled" },
     ["<Left>"] = { "<Nop>", "Disabled" },
     ["<Right>"] = { "<Nop>", "Disabled" },
   },
-
   i = {
     ["<Up>"] = { "<Nop>", "Disabled" },
     ["<Down>"] = { "<Nop>", "Disabled" },

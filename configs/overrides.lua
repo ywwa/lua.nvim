@@ -1,32 +1,72 @@
 local M = {}
 
+M.mason = {
+  ensure_installed = {
+    "lua-language-server",
+    "stylua",
+
+    "css-lsp",
+    "html-lsp",
+
+    "typescript-language-server",
+    "eslint-lsp",
+    "deno",
+
+    "prisma-language-server",
+    "prettier",
+
+    "tailwindcss-language-server",
+  },
+
+  ui = {
+    icons = {
+      package_pending = " ",
+      package_installed = "󰄳 ",
+      package_uninstalled = " 󰇚",
+    },
+    keymaps = {
+      toggle_server_expand = "<CR>",
+      install_server = "i",
+      update_server = "u",
+      check_server_version = "c",
+      update_all_servers = "U",
+      check_outdated_servers = "C",
+      uninstall_server = "X",
+      cancel_installation = "<C-c>",
+    },
+  },
+}
+
 M.treesitter = {
   ensure_installed = {
     "vim",
     "lua",
+    "bash",
     "html",
     "css",
+    "json",
+    "jq",
     "javascript",
     "typescript",
     "tsx",
+    "regex",
     "markdown",
     "markdown_inline",
     "prisma",
-    "http",
-    "json",
   },
   indent = {
-    enable = true,
+    enabled = true,
   },
   rainbow = {
-    enable = true,
+    enabled = true,
     extended_mode = false,
     max_file_lines = 1000,
     query = {
       "rainbow-parens",
-      html = "rainbow-tags",
+      html = "rainbow-tags-react",
       javascript = "rainbow-tags-react",
-      tsx = "rainbow-tags",
+      typescript = "rainbow-tags-react",
+      tsx = "rainbow-tags-react",
     },
   },
   context_commentstring = {
@@ -38,41 +78,6 @@ M.treesitter = {
   },
 }
 
-M.mason = {
-  ensure_installed = {
-    "lua-language-server",
-    "stylua",
-
-    "css-lsp",
-    "html-lsp",
-    "typescript-language-server",
-    "tailwindcss-language-server",
-    "prisma-language-server",
-    "deno",
-    "prettier",
-  },
-}
-
-M.cmp = {
-  sources = {
-    {
-      name = "cmp-spell",
-      option = {
-        keep_all_entries = true,
-        enable_in_context = function()
-          return true
-        end,
-      },
-    },
-    { name = "nvim_lsp" },
-    { name = "luasnip" },
-    { name = "buffer" },
-    { name = "nvim_lua" },
-    { name = "path" },
-  },
-}
-
--- git support in nvimtree
 M.nvimtree = {
   view = {
     side = "left",
@@ -81,11 +86,7 @@ M.nvimtree = {
   git = {
     enable = true,
   },
-
   renderer = {
-    root_folder_label = function()
-      return ""
-    end,
     group_empty = true,
     highlight_git = true,
     icons = {
@@ -94,7 +95,6 @@ M.nvimtree = {
       },
     },
   },
-
   tab = {
     sync = {
       open = true,
@@ -107,12 +107,30 @@ M.nvterm = {
   terminals = {
     type_opts = {
       float = {
-        -- relative = "editor",
-        -- row = 0.15,
-        -- col = 0.1,
-        -- width = 0.8,
-        -- height = 0.6,
         border = "none",
+      },
+    },
+  },
+}
+
+M.cmp = {
+  sources = {
+    { name = "nvim_lsp" },
+    { name = "nvim_lua" },
+    { name = "vim_lsp" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "path" },
+    { name = "treesitter" },
+    { name = 'emoji' },
+    { name = "nvim_lsp_signature_help" },
+    {
+      name = "cmp-spell",
+      option = {
+        keep_all_entries = false,
+        enable_in_context = function()
+          return true
+        end,
       },
     },
   },
@@ -123,25 +141,33 @@ M.blankline = {
     "help",
     "terminal",
     "lspinfo",
-    "TelescopePrompt",
-    "TelescopeResults",
-    "nvcheatsheet",
-    "lsp-installer",
-    "norg",
     "Empty",
-    "",
+    "nvcheatsheet",
+    "nvdash",
+    "TelescopePrompt",
+    "TelescropeResults",
+    "lsp-installer",
   },
-  -- char = "¦",
-  -- context_char = "¦",
-  buftype_exclude = { "terminal", "nofile" },
+
+  buftype_exclude = {
+    "terminal",
+    "nofile",
+  },
   show_end_of_line = true,
   show_foldtext = true,
   show_trailing_blankline_indent = false,
   show_first_indent_level = false,
   show_current_context = true,
   show_current_context_start = true,
-  vim.api.nvim_set_hl(0, "IndentBlanklineContextChar", { nocombine = true, fg = "none" }),
-  vim.api.nvim_set_hl(0, "IndentBlanklineContextStart", { nocombine = false, underline = false, special = "none" }),
+  vim.api.nvim_set_hl(0, "IndentBlanklineContextChar", {
+    nocombine = true,
+    fg = "none",
+  }),
+  vim.api.nvim_set_hl(0, "IndentBlanklineContextStart", {
+    nocombine = false,
+    underline = false,
+    special = "none",
+  }),
 }
 
 return M

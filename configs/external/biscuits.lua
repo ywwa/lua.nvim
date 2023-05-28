@@ -1,4 +1,4 @@
-local present, biscuits = pcall(require, "nvim-biscuits")
+local present, biscuits = pcall(require, "biscuits")
 
 if not present then
   return
@@ -7,7 +7,7 @@ end
 biscuits.setup {
   cursor_line_only = true,
   default_config = {
-    min_distance = 10,
+    min_distance = 2,
     max_length = 50,
     prefix_string = " 󰆘 ",
     prefix_highlight = "Comment",

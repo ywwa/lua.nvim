@@ -1,0 +1,15 @@
+{
+  "name": "yuukillas-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./typescript.json"
+      },
+      {
+        "language": "ship",
+        "path": "./ship.json"
+      }
+    ]
+  }
+}
