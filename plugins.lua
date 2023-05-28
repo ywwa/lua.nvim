@@ -65,9 +65,9 @@ local plugins = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-vsnip",
-      "delphinus/cmp-ctags",
+      -- "delphinus/cmp-ctags",
       "ray-x/cmp-treesitter",
-      "hrsh7th/cmp-nvim-lsp-signature-help",
+      -- "hrsh7th/cmp-nvim-lsp-signature-help",
     },
     opts = overrides.cmp,
   },
@@ -78,13 +78,13 @@ local plugins = {
   },
 
   -- User Interface -----------------------------------------------------------
-  {
-    "code-biscuits/nvim-biscuits",
-    event = "BufRead",
-    config = function()
-      require "custom.configs.external.biscuits"
-    end,
-  },
+  -- {
+  --   "code-biscuits/nvim-biscuits",
+  --   event = "BufRead",
+  --   config = function()
+  --     require "custom.configs.external.biscuits"
+  --   end,
+  -- },
 
   {
     "anuvyklack/pretty-fold.nvim",
@@ -265,10 +265,10 @@ local plugins = {
     end,
   },
 
-  {
-    "folke/todo-comments.nvim",
-    event = "BufRead",
-  },
+  -- {
+  --   "folke/todo-comments.nvim",
+  --   event = "BufRead",
+  -- },
 
   -----------------------------------------------------------------------------
 
@@ -336,27 +336,27 @@ local plugins = {
     end,
   },
 
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "BufReadPost",
-    config = true,
-  },
+  -- {
+  --   "ray-x/lsp_signature.nvim",
+  --   event = "BufReadPost",
+  --   config = true,
+  -- },
 
-  {
-    "kristijanhusak/vim-js-file-import",
-    ft = {
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact",
-    },
-    build = "npm install",
-  },
+  -- {
+  --   "kristijanhusak/vim-js-file-import",
+  --   ft = {
+  --     "javascript",
+  --     "javascriptreact",
+  --     "typescript",
+  --     "typescriptreact",
+  --   },
+  --   build = "npm install",
+  -- },
 
-  {
-    "hrsh7th/cmp-cmdline",
-    event = "CmdLineEnter",
-  },
+  -- {
+  --   "hrsh7th/cmp-cmdline",
+  --   event = "CmdLineEnter",
+  -- },
 
   {
     "numToStr/Comment.nvim",
@@ -405,10 +405,10 @@ local plugins = {
     event = "BufReadPost",
   },
 
-  {
-    "ludovicchabant/vim-gutentags",
-    lazy = false,
-  },
+  -- {
+  --   "ludovicchabant/vim-gutentags",
+  --   lazy = false,
+  -- },
 
   {
     "nvim-treesitter/nvim-treesitter-context",

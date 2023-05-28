@@ -6,7 +6,7 @@ local lspconfig = require "lspconfig"
 local servers = {
   "html",
   "cssls",
-  "tsserver",
+  -- "tsserver",
   "eslint",
   "prismals",
   "tailwindcss",
@@ -28,8 +28,6 @@ lspconfig.eslint.setup {
     "typescript",
     "typescriptreact",
     "typescript.tsx",
-    "vue",
-    "astro",
   },
   cmd = { "vscode-eslint-language-server", "--stdio" },
   handlers = {

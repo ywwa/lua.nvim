@@ -23,9 +23,9 @@ local sources = {
   b.diagnostics.jsonlint,
 
   b.completion.luasnip,
-  b.completion.spell,
+  -- b.completion.spell,
 
-  b.code_actions.gitsigns,
+  -- b.code_actions.gitsigns,
   b.code_actions.eslint,
   b.code_actions.refactoring,
 }
