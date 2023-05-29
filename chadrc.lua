@@ -58,6 +58,12 @@ M.ui = {
   },
 }
 
+M.lazy_nvim = {
+  ui = {
+    border = "solid",
+  },
+}
+
 M.mappings = require "custom.mappings"
 
 M.plugins = "custom.plugins"
