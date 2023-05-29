@@ -40,7 +40,7 @@
     10 "danilamihailov/beacon.nvim",                -- Jumping cursor animation
     11 "nvimdev/lspsaga.nvim",                      -- Winbar.
     12 "aserowy/tmux.nvim",                         -- Navigation between nvim and tmux panes
-  --  13 "folke/todo-comments.nvim",                -- Todo comments.
+    13 "folke/todo-comments.nvim",                  -- Todo comments.
     14 "javiorfo/nvim-ship",                        -- Send HTTP request just like in postman
     15 "toppair/peek.nvim",                         -- Markdown preview plugin
     16 "vuki656/package-info.nvim",                 -- Versions of packages in package.json
@@ -58,7 +58,10 @@
     28 "mrjones2014/nvim-ts-rainbow",               -- Colors for blankline
   --  29 "ludovicchabant/vim-gutentags",            -- Needed for lsp
     30 "nvim-treesitter/nvim-treesitter-context",   -- Keep first line of function, class etc on top
+    -- FUN
     31 "andweeb/presence.nvim",                     -- Discord Rich Presence
+    32 "alanfortlink/blackjack.nvim",               -- Play classic blackjack inside neovim
+    33 "alec-gibson/nvim-tetris",                   -- Play tetris inside neovim
 }
 ```
 

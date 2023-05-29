@@ -207,10 +207,13 @@ local plugins = {
     end,
   },
 
-  -- {
-  --   "folke/todo-comments.nvim",
-  --   event = "BufRead",
-  -- },
+  {
+    "folke/todo-comments.nvim",
+    event = "BufRead",
+    config = function()
+      require("custom.configs.external.todo").setup()
+    end,
+  },
 
   -----------------------------------------------------------------------------
 
