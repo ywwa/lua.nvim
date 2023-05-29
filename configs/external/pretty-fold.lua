@@ -16,4 +16,10 @@ prettyFold.setup {
     },
     right = {},
   },
+  ft_ignore = {
+    "nvdash",
+    "terminal",
+    "NvimTree",
+    "nvcheatsheet"
+  }
 }

@@ -112,26 +112,14 @@ local plugins = {
       {
         "luukvbaal/statuscol.nvim",
         config = function()
-          local builtin = require "statuscol.builtin"
-          require("statuscol").setup {
-            relculright = true,
-            segments = {
-              { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
-              { text = { "%s" }, click = "v:lua.ScSa" },
-              { text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
-            },
-          }
+          require("custom.configs.external.nvim-ufo").statuscolSetup()
         end,
       },
     },
     event = "BufReadPost",
-    keys = { "zf", "zo", "za", "zc", "zM", "zR" },
+    keys = require("custom.configs.external.nvim-ufo").ufoKeys,
     config = function()
-      require("ufo").setup {
-        provider_selector = function()
-          return { "treesitter", "indent" }
-        end,
-      }
+      require("custom.configs.external.nvim-ufo").ufoSetup()
     end,
   },
 
@@ -173,14 +161,7 @@ local plugins = {
     event = "LspAttach",
     branch = "v2",
     config = function()
-      require("neodim").setup {
-        refresh_delay = 75,
-        alpha = 0.75,
-        blend_color = "#000000",
-        hide = { underline = true, virtual_text = true, signs = true },
-        priority = 100,
-        disable = {},
-      }
+      require("custom.configs.external.neodim").setup()
     end,
   },
 
@@ -205,6 +186,9 @@ local plugins = {
   {
     "danilamihailov/beacon.nvim",
     event = "BufReadPost",
+    config = function()
+      require "custom.configs.external.beacon"
+    end,
   },
 
   {
@@ -217,51 +201,9 @@ local plugins = {
 
   {
     "aserowy/tmux.nvim",
-    keys = {
-      {
-        "<C-h>",
-        "<cmd> lua require('tmux').move_left() <CR>",
-        desc = "Move Left",
-      },
-      {
-        "<C-j>",
-        "<cmd> lua require('tmux').move_bottom() <CR>",
-        desc = "Move Down",
-      },
-      {
-        "<C-k>",
-        "<cmd> lua require('tmux').move_top() <CR>",
-        desc = "Move Up",
-      },
-      {
-        "<C-l>",
-        "<cmd> lua require('tmux').move_right() <CR>",
-        desc = "Move Right",
-      },
-      -- resize keymaps
-      {
-        "<A-h>",
-        "<cmd> lua require('tmux').resize_left() <CR>",
-        desc = "Resize Left",
-      },
-      {
-        "<A-j>",
-        "<cmd> lua require('tmux').resize_bottom() <CR>",
-        desc = "Resize Down",
-      },
-      {
-        "<A-k>",
-        "<cmd> lua require('tmux').resize_top() <CR>",
-        desc = "Resize Up",
-      },
-      {
-        "<A-l>",
-        "<cmd> lua require('tmux').resize_right() <CR>",
-        desc = "Resize Right",
-      },
-    },
+    keys = require("custom.configs.external.tmux").keys,
     config = function()
-      require "custom.configs.external.tmux"
+      require("custom.configs.external.tmux").setup()
     end,
   },
 
@@ -426,6 +368,22 @@ local plugins = {
     config = function()
       require "custom.configs.external.presence"
     end,
+  },
+
+  {
+    "alanfortlink/blackjack.nvim",
+    cmd = { "BlackJackNewGame" },
+    config = function()
+      require("blackjack").setup {
+        card_style = "large",
+        suit_style = "white",
+      }
+    end,
+  },
+
+  {
+    "alec-gibson/nvim-tetris",
+    cmd = { "Tetris" },
   },
 }
 

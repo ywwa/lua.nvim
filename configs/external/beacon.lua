@@ -1,3 +1,1 @@
-local persist, beacon = pcall(require, "beacon")
-
-beacon.setup {}
+vim.g.beacon_size = 25

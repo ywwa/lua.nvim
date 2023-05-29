@@ -33,6 +33,9 @@ M.add = {
   FoldColumn = {
     bg = "black",
   },
+  SagaWinbarFolder = {
+    fg="blue"
+  },
 }
 
 return M

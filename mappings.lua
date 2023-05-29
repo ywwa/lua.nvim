@@ -17,22 +17,6 @@ M.general = {
       end,
       "Toggle vertical terminal",
     },
-    ["<Up>"] = { "<Nop>", "Disabled" },
-    ["<Down>"] = { "<Nop>", "Disabled" },
-    ["<Left>"] = { "<Nop>", "Disabled" },
-    ["<Right>"] = { "<Nop>", "Disabled" },
-  },
-  i = {
-    ["<Up>"] = { "<Nop>", "Disabled" },
-    ["<Down>"] = { "<Nop>", "Disabled" },
-    ["<Left>"] = { "<Nop>", "Disabled" },
-    ["<Right>"] = { "<Nop>", "Disabled" },
-  },
-  v = {
-    ["<Up>"] = { "<Nop>", "Disabled" },
-    ["<Down>"] = { "<Nop>", "Disabled" },
-    ["<Left>"] = { "<Nop>", "Disabled" },
-    ["<Right>"] = { "<Nop>", "Disabled" },
   },
 }
 
@@ -40,15 +24,45 @@ M.disabled = {
   n = {
     ["<leader>h"] = "",
     ["<leader>v"] = "",
+
     ["<C-h>"] = "",
     ["<C-j>"] = "",
     ["<C-k>"] = "",
     ["<C-l>"] = "",
+
     ["<Up>"] = "",
     ["<Down>"] = "",
     ["<Left>"] = "",
     ["<Right>"] = "",
+
     ["<leader>gb"] = "",
+
+    ["H"] = "",
+    ["J"] = "",
+    ["K"] = "",
+    ["L"] = "",
+  },
+}
+
+M.typing = {
+  n = {
+    ["<A-j>"] = { "<cmd> m+1<CR>==", "Move line down" },
+    ["<A-k>"] = { "<cmd> m-2<CR>==", "Move line up" },
+  },
+
+  i = {
+    ["<A-j>"] = { "<cmd> m+1<CR>==", "Move line down" },
+    ["<A-k>"] = { "<cmd> m-2<CR>==", "Move line up" },
+  },
+
+  x = {
+    ["<A-j>"] = { "<cmd> m+1<CR>==", "Move line down" },
+    ["<A-k>"] = { "<cmd> m-2<CR>==", "Move line up" },
+  },
+
+  v = {
+    ["<A-j>"] = { "<cmd> m+1<CR>==", "Move line down" },
+    ["<A-k>"] = { "<cmd> m-2<CR>==", "Move line up" },
   },
 }
 

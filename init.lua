@@ -1,5 +1,5 @@
 require "custom.commands"
-
+require "custom.extras"
 
 local opt = vim.opt
 local g = vim.g

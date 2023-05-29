@@ -9,18 +9,18 @@ lspsaga.setup {
     lines_above = 0,
     lines_below = 10,
   },
-  scroll_preview = {
-    scroll_down = "<C-f>",
-    scroll_up = "<C-b>",
-  },
-  definition = {
-    edit = "<C-c>o",
-    vsplit = "<C-c>v",
-    split = "<C-c>i",
-    tabe = "<C-c>t",
-    quit = "q",
-    close = "<Esc>",
-  },
+  -- scroll_preview = {
+  --   scroll_down = "<C-f>",
+  --   scroll_up = "<C-b>",
+  -- },
+  -- definition = {
+  --   edit = "<C-c>o",
+  --   vsplit = "<C-c>v",
+  --   split = "<C-c>i",
+  --   tabe = "<C-c>t",
+  --   quit = "q",
+  --   close = "<Esc>",
+  -- },
   code_action = {
     num_shortcut = true,
     keys = {
@@ -110,6 +110,6 @@ lspsaga.setup {
       white = "#d1d4cf",
       black = "#1c1c19",
     },
-    kind = {},
+    kind = { ["Folder"] = { "  ", "@comment" } },
   },
 }
