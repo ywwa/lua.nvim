@@ -28,6 +28,8 @@
 ## List of plugins
 ```lua
 { -- comented lines -> disabled
+
+    -- User Interface 
   --   1 "code-biscuits/nvim-biscuits",             -- MMMM biscuits
      2 "anuvyklack/pretty-fold.nvim",               -- VSCode like folding
      3 "kevinhwang91/nvim-ufo",                     -- VSCode like folding x2
@@ -41,11 +43,17 @@
     11 "nvimdev/lspsaga.nvim",                      -- Winbar.
     12 "aserowy/tmux.nvim",                         -- Navigation between nvim and tmux panes
     13 "folke/todo-comments.nvim",                  -- Todo comments.
+
+    -- Development
     14 "javiorfo/nvim-ship",                        -- Send HTTP request just like in postman
     15 "toppair/peek.nvim",                         -- Markdown preview plugin
     16 "vuki656/package-info.nvim",                 -- Versions of packages in package.json
     17 "folke/trouble.nvim",                        -- Debugger
+
+    -- Language support
     18 "elkowar/yuck.vim",                          -- Eww configuration language
+
+    -- Quality of life
     19 "abecodes/tabout.nvim",                      -- Tab out of "" () [] {} etc.
     20 "max397574/better-escape.nvim",              -- idk how to describe
   --  21 "ray-x/lsp_signature.nvim",                -- same here
@@ -58,6 +66,7 @@
     28 "mrjones2014/nvim-ts-rainbow",               -- Colors for blankline
   --  29 "ludovicchabant/vim-gutentags",            -- Needed for lsp
     30 "nvim-treesitter/nvim-treesitter-context",   -- Keep first line of function, class etc on top
+
     -- FUN
     31 "andweeb/presence.nvim",                     -- Discord Rich Presence
     32 "alanfortlink/blackjack.nvim",               -- Play classic blackjack inside neovim
