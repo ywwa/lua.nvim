@@ -219,11 +219,11 @@ local plugins = {
 
   -- Development --------------------------------------------------------------
   {
-    "javiorfo/nvim-ship",
+    "charkuils/nvim-ship",
     ft = "ship",
     dependencies = {
-      "javiorfo/nvim-spinetta",
-      "javiorfo/nvim-popcorn",
+      "charkuils/nvim-spinetta",
+      "charkuils/nvim-popcorn",
     },
     config = function()
       require "custom.configs.external.ship"
