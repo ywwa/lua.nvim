@@ -151,7 +151,7 @@ that contains some minor changes that are not included in original plugin
 }
 ```
 
-#### Help
+## Help
 In case you need any help with my config you can contact me in official
 <a href="https://discord.com/invite/gADmkJb9Fb">Discord Server</a> or 
 <a href="https://t.me/nvchad_tg">Telegram channel</a> of <a href="https://nvchad.com">NvChad</a>
