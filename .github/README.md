@@ -45,7 +45,7 @@
     13 "folke/todo-comments.nvim",                  -- Todo comments.
 
     -- Development
-    14 "javiorfo/nvim-ship",                        -- Send HTTP request just like in postman
+    14 "charkuils/nvim-ship",                        -- Send HTTP request just like in postman
     15 "toppair/peek.nvim",                         -- Markdown preview plugin
     16 "vuki656/package-info.nvim",                 -- Versions of packages in package.json
     17 "folke/trouble.nvim",                        -- Debugger
