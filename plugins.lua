@@ -1,7 +1,15 @@
+---@diagnostic disable: different-requires
 local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
+
+  --{{
+
+  -- "kdheepak/lazygit.nvim" -- lazy git
+  -- "pwntester/octo.nvim" -- github integration
+  -- "phaazon/hop.nvim" -- navigation in code
+  --}}
 
   -- Replace core plugins -----------------------------------------------------
 
@@ -64,7 +72,7 @@ local plugins = {
       "hrsh7th/cmp-emoji",
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-nvim-lua",
-      "hrsh7th/cmp-vsnip",
+      -- "hrsh7th/cmp-vsnip",
       -- "delphinus/cmp-ctags",
       "ray-x/cmp-treesitter",
       -- "hrsh7th/cmp-nvim-lsp-signature-help",
@@ -215,6 +223,14 @@ local plugins = {
     end,
   },
 
+  {
+    "mawkler/modicator.nvim",
+    event = "BufReadPost",
+    config = function()
+      require("custom.configs.external.modicator").setup()
+    end,
+  },
+
   -----------------------------------------------------------------------------
 
   -- Development --------------------------------------------------------------
@@ -360,6 +376,22 @@ local plugins = {
     event = "BufWinEnter",
     config = function()
       require "custom.configs.external.ts-context"
+    end,
+  },
+
+  {
+    "ofirgall/open.nvim",
+    config = function()
+      require("open").setup()
+      -- require("custom.configs.external.open").openers() -- add custom openers
+    end,
+  },
+
+  {
+    "ethanholz/nvim-lastplace",
+    event = "VeryLazy",
+    config = function()
+      require("custom.configs.external.lastplace").setup()
     end,
   },
 

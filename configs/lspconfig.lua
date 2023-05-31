@@ -100,4 +100,7 @@ lspconfig.eslint.setup {
       mode = "location",
     },
   },
+  diagnostics = {
+    enable = false
+  }
 }

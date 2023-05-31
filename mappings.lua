@@ -147,4 +147,15 @@ M.git = {
   },
 }
 
+M.open = {
+  n = {
+    ["<leader>og"] = {
+      function ()
+        require("open").open_cword()
+      end,
+      "Test"
+    }
+  },
+}
+
 return M

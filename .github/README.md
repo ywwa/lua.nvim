@@ -66,11 +66,13 @@
     28 "mrjones2014/nvim-ts-rainbow",               -- Colors for blankline
   --  29 "ludovicchabant/vim-gutentags",            -- Needed for lsp
     30 "nvim-treesitter/nvim-treesitter-context",   -- Keep first line of function, class etc on top
+    31 "ofirgall/open.nvim",                        -- I use this to open plugin repos from plugins.lua
+    32 "ethanholz/nvim-lastplace",                  -- Restore last place of cursor
 
     -- FUN
-    31 "andweeb/presence.nvim",                     -- Discord Rich Presence
-    32 "alanfortlink/blackjack.nvim",               -- Play classic blackjack inside neovim
-    33 "alec-gibson/nvim-tetris",                   -- Play tetris inside neovim
+    33 "andweeb/presence.nvim",                     -- Discord Rich Presence
+    34 "alanfortlink/blackjack.nvim",               -- Play classic blackjack inside neovim
+    35 "alec-gibson/nvim-tetris",                   -- Play tetris inside neovim
 }
 ```
 
@@ -111,6 +113,8 @@ that contains some minor changes that are not included in original plugin
     "SPC t d"         -- Open cmd promt for quick cd
 
     "SPC g b"         -- Toggle Cuurrent line blame
+
+    "SPC O G"         -- Open plugin repo in browser
 }
 ```
 
