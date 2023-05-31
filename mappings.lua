@@ -82,11 +82,15 @@ M.ship = {
 M.peek = {
   n = {
     ["<leader>mo"] = {
-      "<cmd> PeekOpen <CR>",
+      function()
+        require("peek").open()
+      end,
       "Open markdown preview",
     },
     ["<leader>mq"] = {
-      "<cmd> PeekClose <CR>",
+      function()
+        require("peek").close()
+      end,
       "Close markdown preview",
     },
   },
@@ -125,7 +129,7 @@ M.trouble = {
 M.custom = {
   n = {
     ["<leader>tc"] = {
-      "<cmd> CCToggle <CR>",
+      "<cmd> ColorcolumnToggle <CR>",
       "Toggle Color column",
     },
 
@@ -150,11 +154,11 @@ M.git = {
 M.open = {
   n = {
     ["<leader>og"] = {
-      function ()
+      function()
         require("open").open_cword()
       end,
-      "Test"
-    }
+      "Test",
+    },
   },
 }
 

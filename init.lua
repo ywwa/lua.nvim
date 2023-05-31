@@ -1,4 +1,4 @@
-require "custom.commands"
+-- require "custom.commands"
 require "custom.extras"
 
 local opt = vim.opt

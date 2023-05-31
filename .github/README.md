@@ -114,7 +114,7 @@ that contains some minor changes that are not included in original plugin
 
     "SPC g b"         -- Toggle Cuurrent line blame
 
-    "SPC O G"         -- Open plugin repo in browser
+    "SPC o g"         -- Open plugin repo in browser
 }
 ```
 
@@ -122,38 +122,56 @@ that contains some minor changes that are not included in original plugin
 ```lua
 {
     "AutosaveToggle"    -- Toggles file autosave on insert mode leave
-    "CCToggle"          -- Toggle colorcolumn display
-    "PeekOpen"          -- Opens markdown preview
-    "PeekClose"         -- Closes markdown preview
+    "ColorcolumnToggle" -- Toggle colorcolumn display
 
-    -- auto commands
-
-    -- QOL autocommand that removes scrolloff in certain filetypes
-    -- yes. scrolloff amount is hardcoded, cry about it
-    create_autocmd({ "BufEnter" }, {
-      callback = function()
-        vim.o.scrolloff = (
-          vim.bo.filetype == "NvimTree" or
-          vim.bo.filetype == "nvdash" or
-          vim.bo.filetype == "terminal"
-        ) and 0 or 10
-      end,
-    })
-
-    -- Autocommand that starts discord RPC only in first instance of nvim
-    -- neovide unsupported ( but if you want to change 2 to 1 )
+   
+    -- Autocommand that handles loading of discordRPC
     create_autocmd({ "UIEnter" }, {
+      once = true,
       callback = function()
-        if tonumber(getcmd_output "pgrep nvim | wc -l") == 2 then
-          vim.defer_fn(function()
-            require("lazy").load { plugins = { "presence.nvim" } }
-          end, 0)
+        local function getcmd_output()
+          local handle = io.popen "pgrep nvim | wc -l"
+          local output = handle:read "*a"
+          handle:close()
+          return output
+        end
+
+        if tonumber(getcmd_output()) == settings.discord_rpc then
+          require("lazy").load { plugins = { "presence.nvim" } }
         end
       end,
     })
 
+    -- Disable colorcolumn in blacklisted filetypes
+    create_autocmd({ "FileType" }, {
+      callback = function()
+        if vim.g.ccenable then
+          vim.opt_local.cc = (vim.tbl_contains(settings.blacklist, vim.bo.ft) and "0" or settings.cc_size)
+        end
+      end,
+    })
+
+    -- Disable scrolloff in blacklisted filetypes
+    create_autocmd({ "BufEnter" }, {
+      callback = function()
+        vim.o.scrolloff = (vim.tbl_contains(settings.blacklist, vim.bo.ft) and 0 or settings.so_size)
+      end,
+    })
+
+    -- Toggle colorcolumn
+    create_cmd("ColorcolumnToggle", function()
+      vim.g.ccenable = not vim.g.ccenable
+
+      if vim.g.ccenable then
+        vim.opt.cc = settings.cc_size
+      else
+        vim.opt.cc = "0"
+      end
+    end, {})
 }
 ```
+
+to change values of colorcolumn, scrolloff, blacklist or discord_rc please check `config.lua` file!
 
 ## Help
 In case you need any help with my config you can contact me in official
