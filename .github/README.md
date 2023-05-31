@@ -171,7 +171,7 @@ that contains some minor changes that are not included in original plugin
 }
 ```
 
-to change values of colorcolumn, scrolloff, blacklist or discord_rc please check `config.lua` file!
+to change values of `colorcolumn`, `scrolloff`, `blacklist` or `discord_rpc` please check `config.lua` file!
 
 ## Help
 In case you need any help with my config you can contact me in official
