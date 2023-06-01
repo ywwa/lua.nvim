@@ -157,7 +157,7 @@ M.open = {
       function()
         require("open").open_cword()
       end,
-      "Test",
+      "Open github repo",
     },
   },
 }

@@ -30,25 +30,27 @@
 { -- comented lines -> disabled
 
     -- User Interface 
-  --   1 "code-biscuits/nvim-biscuits",             -- MMMM biscuits
-     2 "anuvyklack/pretty-fold.nvim",               -- VSCode like folding
-     3 "kevinhwang91/nvim-ufo",                     -- VSCode like folding x2
-     4 "lukas-reineke/virt-column.nvim",            -- Color column with custom content
-     5 "karb94/neoscroll.nvim",                     -- Smooth scrolling
-     6 "Aasim-A/scrollEOF.nvim",                    -- Scroll past End of file
-     7 "zbirenbaum/neodim",                         -- Dim unused functions variables etc
-     8 "andreadev-it/shade.nvim",                   -- Darken inactive buffers
-     9 "folke/zen-mode.nvim",                       -- ZenMode
-    10 "danilamihailov/beacon.nvim",                -- Jumping cursor animation
-    11 "nvimdev/lspsaga.nvim",                      -- Winbar.
-    12 "aserowy/tmux.nvim",                         -- Navigation between nvim and tmux panes
-    13 "folke/todo-comments.nvim",                  -- Todo comments.
+     1 "anuvyklack/pretty-fold.nvim",               -- VSCode like folding
+     2 "kevinhwang91/nvim-ufo",                     -- VSCode like folding x2
+     3 "lukas-reineke/virt-column.nvim",            -- Color column with custom content
+     4 "andreadev-it/shade.nvim",                   -- Darken inactive buffers
+     5 "zbirenbaum/neodim",                         -- Dim unused functions variables etc
+     6 "karb94/neoscroll.nvim",                     -- Smooth scrolling
+     7 "Aasim-A/scrollEOF.nvim",                    -- Scroll past End of file
+     8 "folke/zen-mode.nvim",                       -- ZenMode
+     9 "danilamihailov/beacon.nvim",                -- Jumping cursor animation
+    10 "nvimdev/lspsaga.nvim",                      -- Winbar.
+    11 "aserowy/tmux.nvim",                         -- Navigation between nvim and tmux panes
+    12 "folke/todo-comments.nvim",                  -- Todo comments.
 
     -- Development
-    14 "charkuils/nvim-ship",                        -- Send HTTP request just like in postman
-    15 "toppair/peek.nvim",                         -- Markdown preview plugin
-    16 "vuki656/package-info.nvim",                 -- Versions of packages in package.json
-    17 "folke/trouble.nvim",                        -- Debugger
+    13 "charkuils/nvim-ship",                       -- Send HTTP request just like in postman
+    14 "toppair/peek.nvim",                         -- Markdown preview plugin
+    15 "vuki656/package-info.nvim",                 -- Versions of packages in package.json
+    16 "vuki656/lazygit.nvim",                      -- Lazygit
+
+    -- Debugging
+    17 "folke/trouble.nvim",                        -- Code diagnostics
 
     -- Language support
     18 "elkowar/yuck.vim",                          -- Eww configuration language
@@ -56,24 +58,22 @@
     -- Quality of life
     19 "abecodes/tabout.nvim",                      -- Tab out of "" () [] {} etc.
     20 "max397574/better-escape.nvim",              -- idk how to describe
-  --  21 "ray-x/lsp_signature.nvim",                -- same here
-  --  22 "kristijanhusak/vim-js-file-import",       -- Plugin name self explanatory
-  --  23 "hrsh7th/cmp-cmdline",                     -- same here too
-    24 "numToStr/Comment.nvim",                     -- Comment.
-    25 "m-demare/hlargs.nvim",                      -- better highlighting of args
-    26 "kevinhwang91/nvim-hlslens",                 -- ok
-    27 "tpope/vim-surround",                        -- Auto surround of things
-    28 "mrjones2014/nvim-ts-rainbow",               -- Colors for blankline
-  --  29 "ludovicchabant/vim-gutentags",            -- Needed for lsp
-    30 "nvim-treesitter/nvim-treesitter-context",   -- Keep first line of function, class etc on top
-    31 "ofirgall/open.nvim",                        -- I use this to open plugin repos from plugins.lua
-    32 "ethanholz/nvim-lastplace",                  -- Restore last place of cursor
+    21 "numToStr/Comment.nvim",                     -- Comment.
+    22 "m-demare/hlargs.nvim",                      -- better highlighting of args
+    23 "kevinhwang91/nvim-hlslens",                 -- ok
+    24 "shellRaining/hlchunk.nvim",                 -- highlight chuck of code (makes folds look cleaner)
+    25 "mrjones2014/nvim-ts-rainbow",               -- Colors for blankline
+    26 "nvim-treesitter/nvim-treesitter-context",   -- Keep first line of function, class etc on top
+    27 "ofirgall/open.nvim",                        -- I use this to open plugin repos from plugins.lua
+    28 "ethanholz/nvim-lastplace",                  -- Restore last place of cursor
+    29 "nvim-treesitter/nvim-treesitter-textobjects",
+    30 "kylechui/nvim-surround",                    -- Surround
 
     -- FUN
-    33 "andweeb/presence.nvim",                     -- Discord Rich Presence
-    34 "alanfortlink/blackjack.nvim",               -- Play classic blackjack inside neovim
-    35 "alec-gibson/nvim-tetris",                   -- Play tetris inside neovim
-}
+    31 "andweeb/presence.nvim",                     -- Discord Rich Presence
+    32 "alanfortlink/blackjack.nvim",               -- Play classic blackjack inside neovim
+    33 "alec-gibson/nvim-tetris",                   -- Play tetris inside neovim
+ 
 ```
 
 <h4 align="center">

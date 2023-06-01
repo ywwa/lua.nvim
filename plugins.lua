@@ -6,7 +6,6 @@ local plugins = {
 
   --{{
 
-  -- "kdheepak/lazygit.nvim" -- lazy git
   -- "pwntester/octo.nvim" -- github integration
   -- "phaazon/hop.nvim" -- navigation in code
   --}}
@@ -72,10 +71,7 @@ local plugins = {
       "hrsh7th/cmp-emoji",
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-nvim-lua",
-      -- "hrsh7th/cmp-vsnip",
-      -- "delphinus/cmp-ctags",
       "ray-x/cmp-treesitter",
-      -- "hrsh7th/cmp-nvim-lsp-signature-help",
     },
     opts = overrides.cmp,
   },
@@ -86,14 +82,6 @@ local plugins = {
   },
 
   -- User Interface -----------------------------------------------------------
-  -- {
-  --   "code-biscuits/nvim-biscuits",
-  --   event = "BufRead",
-  --   config = function()
-  --     require "custom.configs.external.biscuits"
-  --   end,
-  -- },
-
   {
     "anuvyklack/pretty-fold.nvim",
     event = "BufWinEnter",
@@ -142,6 +130,24 @@ local plugins = {
   },
 
   {
+    "andreadev-it/shade.nvim",
+    keys = "<Bslash>",
+    config = function()
+      require("shade").setup {
+        exclude_filetypes = { "NvimTree" },
+      }
+    end,
+  },
+
+  {
+    "zbirenbaum/neodim",
+    event = "LspAttach",
+    branch = "v2",
+    config = function()
+      require("custom.configs.external.neodim").setup()
+    end,
+  },
+  {
     "karb94/neoscroll.nvim",
     keys = { "<C-d>", "<C-u>" },
     config = function()
@@ -160,25 +166,6 @@ local plugins = {
     config = function()
       require("scrollEOF").setup {
         insert_mode = true,
-      }
-    end,
-  },
-
-  {
-    "zbirenbaum/neodim",
-    event = "LspAttach",
-    branch = "v2",
-    config = function()
-      require("custom.configs.external.neodim").setup()
-    end,
-  },
-
-  {
-    "andreadev-it/shade.nvim",
-    keys = "<Bslash>",
-    config = function()
-      require("shade").setup {
-        exclude_filetypes = { "NvimTree" },
       }
     end,
   },
@@ -223,14 +210,6 @@ local plugins = {
     end,
   },
 
-  {
-    "mawkler/modicator.nvim",
-    event = "BufReadPost",
-    config = function()
-      require("custom.configs.external.modicator").setup()
-    end,
-  },
-
   -----------------------------------------------------------------------------
 
   -- Development --------------------------------------------------------------
@@ -258,6 +237,11 @@ local plugins = {
     "vuki656/package-info.nvim",
     ft = { "json", "lua" },
     config = true,
+  },
+
+  {
+    "kdheepak/lazygit.nvim",
+    cmd = "LazyGit",
   },
 
   -- Debugging ----------------------------------------------------------------
@@ -289,6 +273,7 @@ local plugins = {
       require("tabout").setup()
     end,
   },
+
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -296,28 +281,6 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
-
-  -- {
-  --   "ray-x/lsp_signature.nvim",
-  --   event = "BufReadPost",
-  --   config = true,
-  -- },
-
-  -- {
-  --   "kristijanhusak/vim-js-file-import",
-  --   ft = {
-  --     "javascript",
-  --     "javascriptreact",
-  --     "typescript",
-  --     "typescriptreact",
-  --   },
-  --   build = "npm install",
-  -- },
-
-  -- {
-  --   "hrsh7th/cmp-cmdline",
-  --   event = "CmdLineEnter",
-  -- },
 
   {
     "numToStr/Comment.nvim",
@@ -357,19 +320,9 @@ local plugins = {
   },
 
   {
-    "tpope/vim-surround",
-    event = "VeryLazy",
-  },
-
-  {
     "mrjones2014/nvim-ts-rainbow",
     event = "BufReadPost",
   },
-
-  -- {
-  --   "ludovicchabant/vim-gutentags",
-  --   lazy = false,
-  -- },
 
   {
     "nvim-treesitter/nvim-treesitter-context",
@@ -395,6 +348,22 @@ local plugins = {
     end,
   },
 
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    event = "BufWinEnter",
+    config = function()
+      require "custom.configs.external.textobjects"
+    end,
+  },
+
+  {
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup {}
+    end,
+  },
   -----------------------------------------------------------------------------
 
   -- Fun ----------------------------------------------------------------------
