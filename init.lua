@@ -17,6 +17,8 @@ opt.relativenumber = true
 opt.wrap = false
 vim.o.spelllang = "en_us"
 
+opt.cmdheight=0
+
 opt.foldcolumn = "1"
 opt.foldlevel = 1
 opt.foldnestmax = 2

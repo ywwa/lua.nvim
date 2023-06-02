@@ -210,15 +210,27 @@ local plugins = {
     end,
   },
 
+  -- {
+  --   "folke/noice.nvim",
+  --   event = "UIEnter",
+  --   dependencies = {
+  --     "MunifTanjim/nui.nvim",
+  --     -- "rcarriga/nvim-notify",
+  --   },
+  --   config = function()
+  --     require "custom.configs.external.noice"
+  --   end,
+  -- },
+
   -----------------------------------------------------------------------------
 
   -- Development --------------------------------------------------------------
   {
-    "charkuils/nvim-ship",
+    "javiorfo/nvim-ship",
     ft = "ship",
     dependencies = {
-      "charkuils/nvim-spinetta",
-      "charkuils/nvim-popcorn",
+      "javiorfo/nvim-spinetta",
+      "javiorfo/nvim-popcorn",
     },
     config = function()
       require "custom.configs.external.ship"
@@ -250,6 +262,14 @@ local plugins = {
     cmd = { "TroubleToggle", "Trouble" },
     config = function()
       require "custom.configs.external.trouble"
+    end,
+  },
+
+  {
+    "CRAG666/code_runner.nvim",
+    cmd = { "RunCode" },
+    config = function()
+      require "custom.configs.external.codeRunner"
     end,
   },
 

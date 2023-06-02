@@ -74,6 +74,13 @@ create_autocmd({ "UIEnter" }, {
   end,
 })
 
+-- create_autocmd({ "UIEnter" }, {
+--   once = true,
+--   callback = function ()
+--     
+--   end
+-- })
+
 -- Disable arrow keys
 vim.keymap.set({ "n", "v", "x", "i" }, "<Up>", "<Nop>")
 vim.keymap.set({ "n", "v", "x", "i" }, "<Down>", "<Nop>")

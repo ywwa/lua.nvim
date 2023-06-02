@@ -4,8 +4,8 @@ local M = {}
 local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "chadracula",
-  theme_toggle = { "chadracula", "chadracula" },
+  theme = "catppuccin",
+  theme_toggle = { "catppuccin", "catppuccin" },
   transparency = false,
   hl_add = highlights.add,
   hl_override = highlights.override,
@@ -34,7 +34,7 @@ M.ui = {
   telescope = { style = "bordered" },
 
   statusline = {
-    theme = "vscode_colored",
+    theme = "minimal",
   },
 
   cheatsheet = {

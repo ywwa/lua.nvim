@@ -71,10 +71,12 @@ M.ship = {
     ["<leader>sr"] = {
       "<cmd> Ship <CR>",
       "Run Http request",
+      opts = { silent = true },
     },
     ["<leader>sq"] = {
       "<cmd> ShipCloseResponse <CR>",
       "Close Ship response",
+      opts = { silent = true },
     },
   },
 }
