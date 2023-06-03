@@ -210,17 +210,18 @@ local plugins = {
     end,
   },
 
-  -- {
-  --   "folke/noice.nvim",
-  --   event = "UIEnter",
-  --   dependencies = {
-  --     "MunifTanjim/nui.nvim",
-  --     -- "rcarriga/nvim-notify",
-  --   },
-  --   config = function()
-  --     require "custom.configs.external.noice"
-  --   end,
-  -- },
+  {
+    "folke/noice.nvim",
+    event = "UIEnter",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      -- "rcarriga/nvim-notify",
+    },
+    config = function()
+      require "custom.configs.external.noice"
+    end,
+  },
+
   {
     "anuvyklack/windows.nvim",
     event = "WinNew",

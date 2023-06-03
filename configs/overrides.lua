@@ -122,7 +122,7 @@ M.cmp = {
     { name = "buffer" },
     { name = "path" },
     -- { name = "treesitter" },
-    { name = 'emoji' },
+    { name = "emoji" },
     -- { name = "nvim_lsp_signature_help" },
     -- {
     --   name = "cmp-spell",
