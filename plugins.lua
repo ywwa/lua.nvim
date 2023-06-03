@@ -221,7 +221,22 @@ local plugins = {
   --     require "custom.configs.external.noice"
   --   end,
   -- },
-
+  {
+    "anuvyklack/windows.nvim",
+    event = "WinNew",
+    dependencies = {
+      { "anuvyklack/middleclass" },
+      { "anuvyklack/animation.nvim", enabled = true },
+    },
+    keys = { { "<leader>Z", "<cmd>WindowsMaximize<cr>", desc = "Zoom" } },
+    config = function()
+      vim.o.winwidth = 5
+      vim.o.equalalways = false
+      require("windows").setup {
+        animation = { enable = true, duration = 150 },
+      }
+    end,
+  },
   -----------------------------------------------------------------------------
 
   -- Development --------------------------------------------------------------
