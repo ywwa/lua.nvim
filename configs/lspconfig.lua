@@ -10,6 +10,7 @@ local servers = {
   "eslint",
   "prismals",
   "tailwindcss",
+  "taplo",
 }
 
 for _, lsp in ipairs(servers) do
@@ -101,6 +102,6 @@ lspconfig.eslint.setup {
     },
   },
   diagnostics = {
-    enable = false
-  }
+    enable = false,
+  },
 }

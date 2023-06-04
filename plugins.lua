@@ -78,6 +78,7 @@ local plugins = {
 
   {
     "lukas-reineke/indent-blankline.nvim",
+    enabled = false,
     opts = overrides.blankline,
   },
 
