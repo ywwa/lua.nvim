@@ -373,7 +373,6 @@ local plugins = {
     "ofirgall/open.nvim",
     config = function()
       require("open").setup()
-      -- require("custom.configs.external.open").openers() -- add custom openers
     end,
   },
 
