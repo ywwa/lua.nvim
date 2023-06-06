@@ -1,11 +1,10 @@
--- This file contains changable values for custom functions
-
 local M = {}
 
 M.settings = {
-  cc_size = "80", -- Color column neither pass list or string
-  so_size = 10, -- Scrolloff amount
+  cc_size = "80",
+  so_size = 10,
 
+  -- Blacklisted files where cc and so must be disabled
   blacklist = {
     "NvimTree",
     "nvdash",
@@ -14,9 +13,9 @@ M.settings = {
     "Trouble",
     "ship",
     "help",
-  }, -- Where to disable scrolloff and colorcolumn
+  },
 
-  discord_rpc = 2, -- value on how many nvim processes load presence.lua (1 - neovide, 2 - neovim)
+  discord_rpc = 2, -- "pgrep nvim | wc -l" - 1 neovide 2 nvim
 }
 
 return M

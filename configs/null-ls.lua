@@ -18,14 +18,9 @@ local sources = {
   },
   b.formatting.stylua,
 
-  -- b.diagnostics.eslint_d,
   b.diagnostics.php,
   b.diagnostics.jsonlint,
 
-  -- b.completion.luasnip,
-  -- b.completion.spell,
-
-  -- b.code_actions.gitsigns,
   b.code_actions.eslint_d,
   b.code_actions.refactoring,
 }

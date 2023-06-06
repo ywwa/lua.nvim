@@ -105,6 +105,7 @@ M.nvimtree = {
 
 M.nvterm = {
   terminals = {
+    shell = "/usr/bin/sh",
     type_opts = {
       float = {
         border = "none",
@@ -121,18 +122,7 @@ M.cmp = {
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
-    -- { name = "treesitter" },
     { name = "emoji" },
-    -- { name = "nvim_lsp_signature_help" },
-    -- {
-    --   name = "cmp-spell",
-    --   option = {
-    --     keep_all_entries = false,
-    --     enable_in_context = function()
-    --       return true
-    --     end,
-    --   },
-    -- },
   },
 }
 
