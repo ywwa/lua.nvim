@@ -4,26 +4,12 @@
     <a href="https://github.com/NvChad/NvChad">NvChad</a>
     config 
     <a href="https://yuukilla.github.io">V2.0</a>
-<p>
+</p>
 
-<h3 align="center">
 
-```lua
+![chadConfig](./img/dashboard.png)
+![preview1](./img/preview1.png)
 
-"▓██   ██▓ █     █░ █     █░ ▄▄▄      "
-" ▒██  ██▒▓█░ █ ░█░▓█░ █ ░█░▒████▄    "
-"  ▒██ ██░▒█░ █ ░█ ▒█░ █ ░█ ▒██  ▀█▄  "
-"  ░ ▐██▓░░█░ █ ░█ ░█░ █ ░█ ░██▄▄▄▄██ "
-"  ░ ██▒▓░░░██▒██▓ ░░██▒██▓  ▓█   ▓██▒"
-"   ██▒▒▒ ░ ▓░▒ ▒  ░ ▓░▒ ▒   ▒▒   ▓▒█░"
-" ▓██ ░▒░   ▒ ░ ░    ▒ ░ ░    ▒   ▒▒ ░"
-" ▒ ▒ ░░    ░   ░    ░   ░    ░   ▒   "
-" ░ ░         ░        ░          ░  ░"
-" ░ ░   git@github.com:yuukilla       "
-
-```
-<hr>
-</h3>
 
 ## List of plugins
 ```lua

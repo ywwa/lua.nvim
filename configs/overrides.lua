@@ -105,7 +105,6 @@ M.nvimtree = {
 
 M.nvterm = {
   terminals = {
-    shell = "/usr/bin/sh",
     type_opts = {
       float = {
         border = "none",
