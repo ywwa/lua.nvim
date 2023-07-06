@@ -278,10 +278,10 @@ local plugins = {
   },
 
   {
-    "cloudsftp/peek.nvim",
-    build = "deno task --quiet build:debug",
-    config = function()
-      require("custom.configs.tools.peek").setup()
+    "iamcco/markdown-preview.nvim",
+    ft = "markdown",
+    build = function()
+      vim.fn["mkdp#util#install"]()
     end,
   },
 
