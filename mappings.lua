@@ -3,44 +3,8 @@ local M = {}
 
 M.general = {
   n = {
-    [";"] = { ":", "Enter command mode", opts = { nowait = true } },
-    ["<ESC>"] = { ":noh <CR>", "Clear highlights", opts = { silent = true } },
-    ["<leader>h"] = {
-      function()
-        require("nvterm.terminal").toggle "horizontal"
-      end,
-      "Toggle horizontal terminal",
-    },
-    ["<leader>v"] = {
-      function()
-        require("nvterm.terminal").toggle "vertical"
-      end,
-      "Toggle vertical terminal",
-    },
-  },
-}
-
-M.disabled = {
-  n = {
-    ["<leader>h"] = "",
-    ["<leader>v"] = "",
-
-    ["<C-h>"] = "",
-    ["<C-j>"] = "",
-    ["<C-k>"] = "",
-    ["<C-l>"] = "",
-
-    ["<Up>"] = "",
-    ["<Down>"] = "",
-    ["<Left>"] = "",
-    ["<Right>"] = "",
-
-    ["<leader>gb"] = "",
-
-    ["H"] = "",
-    ["J"] = "",
-    ["K"] = "",
-    ["L"] = "",
+    [";"] = { ":", "enter command mode", opts = { nowait = true } },
+    ["<ESC>"] = { ":noh <CR>", "Clear highlights", opts = { nowait = true, silent = true } },
   },
 }
 
@@ -66,68 +30,6 @@ M.typing = {
   },
 }
 
-M.ship = {
-  n = {
-    ["<leader>sr"] = {
-      "<cmd> Ship <CR>",
-      "Run Http request",
-      opts = { silent = true },
-    },
-    ["<leader>sq"] = {
-      "<cmd> ShipCloseResponse <CR>",
-      "Close Ship response",
-      opts = { silent = true },
-    },
-  },
-}
-
-M.peek = {
-  n = {
-    ["<leader>mo"] = {
-      function()
-        require("peek").open()
-      end,
-      "Open markdown preview",
-    },
-    ["<leader>mq"] = {
-      function()
-        require("peek").close()
-      end,
-      "Close markdown preview",
-    },
-  },
-}
-
-M.tabufline = {
-  n = {
-    ["<leader>to"] = {
-      "<cmd> tabnew <CR>",
-      "Open new Tab",
-    },
-    ["<leader>tq"] = {
-      "<cmd> tabclose <CR>",
-      "Close tab",
-    },
-    ["<leader>tn"] = {
-      "<cmd> tabnext <CR>",
-      "Next Tab",
-    },
-    ["<leader>tp"] = {
-      "<cmd> tabprevious <CR>",
-      "Previous Tab",
-    },
-  },
-}
-
-M.trouble = {
-  n = {
-    ["<leader>tt"] = {
-      "<cmd> TroubleToggle <CR>",
-      "Toggle Trouble",
-    },
-  },
-}
-
 M.custom = {
   n = {
     ["<leader>tc"] = {
@@ -141,6 +43,10 @@ M.custom = {
       end,
       "Run tcd command",
     },
+    ["<leader>tt"] = {
+      "<cmd> TroubleToggle <CR>",
+      "Toggle Trouble",
+    },
   },
 }
 
@@ -153,15 +59,6 @@ M.git = {
   },
 }
 
-M.open = {
-  n = {
-    ["<leader>og"] = {
-      function()
-        require("open").open_cword()
-      end,
-      "Open github repo",
-    },
-  },
-}
+-- more keybinds!
 
 return M

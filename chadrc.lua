@@ -1,71 +1,78 @@
 ---@type ChadrcConfig
 local M = {}
 
+-- Path to overriding theme and highlights files
 local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "decay",
-  theme_toggle = { "decay", "decay" },
-  transparency = false,
-  hl_add = highlights.add,
-  hl_override = highlights.override,
+  theme = "catppuccin",
+  theme_toggle = { "catppuccin", "one_light" },
 
+  hl_override = highlights.override,
+  hl_add = highlights.add,
   cmp = {
     icons = true,
     style = "flat_dark",
-    selected_item_bg = "simple",
     lspkind_text = true,
+    selected_item_bg = "colored",
   },
-
-  lsp = {
-    signature = {
-      disabled = false,
-      silent = true,
-    },
-  },
-
   tabufline = {
-    enabled = true,
-    lazyload = true,
-    show_numbers = false,
-    -- overriden_modules = function() end,
+    overriden_modules = function()
+      return {
+        buttons = function()
+          return ""
+        end,
+      }
+    end,
+    lazyload = false,
+    show_numbers = true,
   },
-
-  telescope = { style = "bordered" },
-
-  statusline = {
-    theme = "minimal",
-  },
-
-  cheatsheet = {
-    theme = "grid",
-  },
-
   nvdash = {
-    load_on_startup = true,
     header = {
-      "▓██   ██▓ █     █░ █     █░ ▄▄▄      ",
-      " ▒██  ██▒▓█░ █ ░█░▓█░ █ ░█░▒████▄    ",
-      "  ▒██ ██░▒█░ █ ░█ ▒█░ █ ░█ ▒██  ▀█▄  ",
-      "  ░ ▐██▓░░█░ █ ░█ ░█░ █ ░█ ░██▄▄▄▄██ ",
-      "  ░ ██▒▓░░░██▒██▓ ░░██▒██▓  ▓█   ▓██▒",
-      "   ██▒▒▒ ░ ▓░▒ ▒  ░ ▓░▒ ▒   ▒▒   ▓▒█░",
-      " ▓██ ░▒░   ▒ ░ ░    ▒ ░ ░    ▒   ▒▒ ░",
-      " ▒ ▒ ░░    ░   ░    ░   ░    ░   ▒   ",
-      " ░ ░         ░        ░          ░  ░",
-      " ░ ░   git@github.com:yuukilla       ",
+      " ▄· ▄▌▄▄▌ ▐ ▄▌▄▄▌ ▐ ▄▌ ▄▄▄· ",
+      "▐█▪██▌██· █▌▐███· █▌▐█▐█ ▀█ ",
+      "▐█▌▐█▪██▪▐█▐▐▌██▪▐█▐▐▌▄█▀▀█ ",
+      " ▐█▀·.▐█▌██▐█▌▐█▌██▐█▌▐█ ▪▐▌",
+      "  ▀ •  ▀▀▀▀ ▀▪ ▀▀▀▀ ▀▪ ▀  ▀ ",
+      "      git@github:ywwa/      ",
     },
+    load_on_startup = true,
+  },
+  lsp_semantic_tokens = false,
+  statusline = {
+    theme = "vscode_colored",
   },
 }
-
-M.lazy_nvim = {
-  ui = {
-    border = "solid",
-  },
-}
-
-M.mappings = require "custom.mappings"
 
 M.plugins = "custom.plugins"
+
+-- check core.mappings for table structure
+M.mappings = require "custom.mappings"
+
+M.custom = {
+  -- Discord Rich Presence
+  -- When to load presence.nvim plugin
+  -- If set to event="VeryLazy" presence will overlap and cause bugs
+  -- e.g. Broken timer. So load only in first instance of neovim
+  -- to get value open neovim and then in new terminal execute command
+  -- `pgrep nvim | wc -l` and returned number enter here
+  presence = 3,
+
+  -- ScrollOff & ColorColumn
+  -- Whenever filetype matches `ignoreFt` entries disable scrolloff
+  -- and colorcolumn for that buffer
+  ignoreFt = {
+    "NvimTree",
+    "nvdash",
+    "nvcheatsheet",
+    "terminal",
+    "Trouble",
+    "help",
+    "man",
+  },
+
+  colorcolumn = "80",
+  scrolloff = 10,
+}
 
 return M
