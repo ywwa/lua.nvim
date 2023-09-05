@@ -296,11 +296,6 @@ local plugins = {
     cmd = "LazyGit",
   },
 
-  {
-    "jcdickinson/http.nvim",
-    build = "cargo build --workspace --release",
-  },
-
   -- MISC ---------------------------------------------------------------------
 
   {
