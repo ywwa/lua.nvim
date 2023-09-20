@@ -22,15 +22,14 @@ This repository contains my neovim configuration that i use as my daily driver.
 It's made mainly for WEB development using `typescript` language.
 
 #### Presecuites
-|    ***    |    ***    |
+|    ***    |    ***      |
 |---------- | ----------- |
-| Neovim    | V0.10.0+    |
-| OS        | Linux*      |
-| Terminal  | Kitty*      |
+| Neovim    | V0.9,2+     |
+| OS        | Linux       |
+| Terminal  | Alacritty   |
 | Font      | Nerd Fonts  |
 
-1* -- Im not sure if things wont break on windows so ill just mention that i use on my system<br>
-2* -- Everything might work fine on other terminals but i cant be 100% sure. `true-zen` for example, check its docs and config file.
+If you are planning to use my configuration, then you might have to make some changes to get it to work properly.
 
 #### Preview
 ![cover](./img/cover.png)
