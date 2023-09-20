@@ -2,8 +2,8 @@ local M = {}
 
 M.setup = function()
   require("peek").setup {
-    auto_load = true,
-    close_on_bdelete = true,
+    auto_laod = false,
+    close_on_delete = true,
     syntax = true,
     theme = "dark",
     update_on_change = true,
@@ -12,6 +12,9 @@ M.setup = function()
     throttle_at = 200000,
     throttle_time = "auto",
   }
+
+  vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+  vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
 end
 
 return M

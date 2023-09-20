@@ -9,9 +9,7 @@ M.setup = function()
         "*.tsx",
         "*.js",
         "*.jsx",
-        -- "*.json",
         "*.lua",
-        "*.vue",
       },
       chars = {
         horizontal_line = "─",
@@ -25,12 +23,8 @@ M.setup = function()
 
     indent = {
       enable = false,
-      use_treesitter = false,
-      -- You can uncomment to get more indented line look like
-      chars = {
-        "│",
-      },
-      -- you can uncomment to get more indented line style
+      use_treesitter = true,
+      chars = { "│" },
       style = {
         vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID "Whitespace"), "fg", "gui"),
       },
@@ -40,8 +34,8 @@ M.setup = function()
         terminal = true,
         dashboard = true,
         help = true,
+        trouble = true,
         lspinfo = true,
-        packer = true,
         checkhealth = true,
         man = true,
         mason = true,
@@ -52,21 +46,16 @@ M.setup = function()
 
     line_num = {
       enable = true,
-      support_filetypes = {
-        "...",
-      },
+      support_filetypes = { "..." },
       style = "#806d9c",
     },
 
     blank = {
-      enable = false,
-      chars = {
-        "",
-      },
+      enable = true,
+      chars = { "" },
       style = {
         vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID "Whitespace"), "fg", "gui"),
       },
-      exclude_filetype = "...",
     },
   }
 end

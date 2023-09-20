@@ -2,12 +2,14 @@ local M = {}
 
 M.setup = function()
   require("nvim-lastplace").setup {
-    lastplace_ignore_buftype = {
+    lastplace_ignore_bufftype = {
       "nvdash",
       "NvimTree",
       "terminal",
       "help",
       "Trouble",
+      "mason",
+      "lazy",
     },
     lastplace_ignore_filetype = {
       "nvdash",
@@ -15,6 +17,8 @@ M.setup = function()
       "terminal",
       "help",
       "Trouble",
+      "mason",
+      "lazy",
     },
     lastplace_open_folds = true,
   }

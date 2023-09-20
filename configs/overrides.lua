@@ -1,5 +1,19 @@
 local M = {}
 
+M.mason = {
+  ensure_installed = {
+    "lua-language-server",
+    "stylua",
+    "css-lsp",
+    "html-lsp",
+    "typescript-language-server",
+    "prettier",
+    "eslint-lsp",
+    "jsonlint",
+    "json-lsp",
+  },
+}
+
 M.treesitter = {
   ensure_installed = {
     "vim",
@@ -11,34 +25,11 @@ M.treesitter = {
     "tsx",
     "markdown",
     "markdown_inline",
+    "json",
+    "json5",
   },
   indent = {
     enable = true,
-  },
-}
-
-M.mason = {
-  ensure_installed = {
-    "lua-language-server",
-    "stylua",
-    "deno",
-    "css-lsp",
-    "html-lsp",
-    "typescript-language-server",
-    "prettier",
-  },
-}
-
-M.cmp = {
-  sources = {
-    { name = "nvim_lsp" },
-    { name = "codeium" },
-    { name = "nvim_lua" },
-    { name = "vim_lsp" },
-    { name = "luasnip" },
-    { name = "buffer" },
-    { name = "path" },
-    { name = "emoji" },
   },
 }
 
@@ -54,6 +45,19 @@ M.nvimtree = {
         git = false,
       },
     },
+  },
+}
+
+M.cmp = {
+  sources = {
+    { name = "nvim_lsp" },
+    { name = "codeium" },
+    { name = "nvim_lua" },
+    { name = "vim_lsp" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "path" },
+    { name = "emoji" },
   },
 }
 

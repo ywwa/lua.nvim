@@ -71,10 +71,7 @@ M.setup = function()
 
     integrations = {
       tmux = false,
-      kitty = {
-        enabled = true,
-        font = "+3",
-      },
+      kitty = false,
       twilight = false,
       lualine = false,
     },

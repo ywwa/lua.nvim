@@ -1,4 +1,5 @@
 local M = {}
+
 M.setup = function()
   require("lspsaga").setup {
     preview = {
@@ -17,4 +18,5 @@ M.setup = function()
     },
   }
 end
+
 return M

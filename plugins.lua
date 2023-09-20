@@ -3,12 +3,13 @@ local overrides = require "custom.configs.overrides"
 ---@type NvPluginSpec[]
 local plugins = {
 
-  -- Temp fix: /issues/591
   {
-    "lukas-reineke/indent-blankline.nvim",
-    commit = "b7aa0aed55887edfaece23f7b46ab22232fc8741",
+    "NvChad/nvcommunity",
+    { import = "nvcommunity.editor.biscuits" },
+    { import = "nvcommunity.motion.hop" },
   },
 
+  -- Overrides
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -41,6 +42,11 @@ local plugins = {
   },
 
   {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = overrides.blankline,
+  },
+
+  {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-emoji",
@@ -50,6 +56,8 @@ local plugins = {
     },
     opts = overrides.cmp,
   },
+
+  -- plugins
 
   {
     "max397574/better-escape.nvim",
@@ -66,17 +74,17 @@ local plugins = {
       ft = "javascriptreact",
     },
     config = function()
-      require("custom.configs.qol.comment").setup()
+      require("custom.configs.comment").setup()
     end,
   },
 
-  -- USER INTERFACE -----------------------------------------------------------
+  -- UI
 
   {
     "nvimdev/lspsaga.nvim",
     event = "LspAttach",
     config = function()
-      require("custom.configs.ui.lspsaga").setup()
+      require("custom.configs.lspsaga").setup()
     end,
   },
 
@@ -87,14 +95,14 @@ local plugins = {
       {
         "luukvbaal/statuscol.nvim",
         config = function()
-          require("custom.configs.ui.statuscol").setup()
+          require("custom.configs.statuscol").setup()
         end,
       },
     },
     event = "BufReadPost",
-    keys = require("custom.configs.ui.ufo").keys,
+    keys = require("custom.configs.ufo").keys,
     config = function()
-      require("custom.configs.ui.ufo").setup()
+      require("custom.configs.ufo").setup()
     end,
   },
 
@@ -120,57 +128,15 @@ local plugins = {
       },
     },
     config = function()
-      require("custom.configs.ui.prettyfold").setup()
+      require("custom.configs.prettyfold").setup()
     end,
   },
 
   {
-    "shellRaining/hlchunk.nvim",
-    event = "BufReadPost",
+    "Aasim-A/scrollEOF.nvim",
+    keys = { "<C-d>", "<C-u>" },
     config = function()
-      require("custom.configs.ui.hlchunk").setup()
-    end,
-  },
-
-  {
-    "kevinhwang91/nvim-hlslens",
-    event = "BufReadPost",
-    config = function()
-      require("hlslens").setup()
-    end,
-  },
-
-  {
-    "m-demare/hlargs.nvim",
-    event = "BufWinEnter",
-    config = function()
-      require("hlargs").setup {}
-    end,
-  },
-
-  {
-    "HiPhish/nvim-ts-rainbow2",
-    event = "BufWinEnter",
-    config = function()
-      require("custom.configs.ui.ts-rainbow").setup()
-    end,
-  },
-
-  {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    event = "BufWinEnter",
-    config = function()
-      require("custom.configs.ui.ts-textobjects").setup()
-    end,
-  },
-
-  {
-    "lukas-reineke/virt-column.nvim",
-    event = "BufWinEnter",
-    config = function()
-      require("virt-column").setup {
-        char = "┃",
-      }
+      require("scrollEOF").setup { insert_mode = true }
     end,
   },
 
@@ -188,12 +154,52 @@ local plugins = {
   },
 
   {
-    "Aasim-A/scrollEOF.nvim",
-    keys = { "<C-d>", "<C-u>" },
+    "lukas-reineke/virt-column.nvim",
+    event = "BufWinEnter",
     config = function()
-      require("scrollEOF").setup {
-        insert_mode = true,
+      require("virt-column").setup {
+        char = "│",
       }
+    end,
+  },
+
+  {
+    "shellRaining/hlchunk.nvim",
+    event = "BufReadPost",
+    config = function()
+      require("custom.configs.hlchunk").setup()
+    end,
+  },
+
+  {
+    "kevinhwang91/nvim-hlslens",
+    event = "BufReadPost",
+    config = function()
+      require("hlslens").setup()
+    end,
+  },
+
+  {
+    "m-demare/hlargs.nvim",
+    event = "BufWinEnter",
+    config = function()
+      require("custom.configs.hlargs").setup()
+    end,
+  },
+
+  {
+    "HiPhish/rainbow-delimiters.nvim",
+    event = "BufWinEnter",
+    config = function()
+      require("custom.configs.rainbow-delimiters").setup()
+    end,
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    event = "BufWinEnter",
+    config = function()
+      require("custom.configs.treesitter-textobjects").setup()
     end,
   },
 
@@ -206,7 +212,7 @@ local plugins = {
       "TZFocus",
     },
     config = function()
-      require("custom.configs.ui.truezen").setup()
+      require("custom.configs.truezen").setup()
     end,
   },
 
@@ -217,23 +223,21 @@ local plugins = {
       { "anuvyklack/middleclass" },
       { "anuvyklack/animation.nvim", enabled = true },
     },
-    keys = { { "<leader>Z", "<cmd>WindowsMaximize<cr>", desc = "Zoom" } },
+    keys = { { "<leader>Z", "<cmd>WindowsMaximize<cr>", desc = "zoom" } },
     config = function()
-      vim.o.winwidth = 10
+      vim.o.winwidth = 15
       vim.o.equalalways = false
       require("windows").setup {
-        animation = { enable = true, duration = 150 },
+        animation = { enabled = true, duration = 150 },
       }
     end,
   },
 
-  -- QOL ----------------------------------------------------------------------
-
   {
     "ethanholz/nvim-lastplace",
-    event = "VeryLazy",
+    event = "BufWinEnter",
     config = function()
-      require("custom.configs.qol.lastplace").setup()
+      require("custom.configs.lastplace").setup()
     end,
   },
 
@@ -241,19 +245,7 @@ local plugins = {
     "folke/todo-comments.nvim",
     event = "BufRead",
     config = function()
-      require("custom.configs.ui.todo").setup()
-    end,
-  },
-
-  -- TOOLS --------------------------------------------------------------------
-
-  {
-    "jcdickinson/codeium.nvim",
-    cmd = "Codeium",
-    event = "BufReadPost",
-    commit = "b1ff0d6c993e3d87a4362d2ccd6c660f7444599f",
-    config = function()
-      require("codeium").setup {}
+      require("custom.configs.todo-comments").setup()
     end,
   },
 
@@ -261,7 +253,7 @@ local plugins = {
     "folke/trouble.nvim",
     cmd = { "TroubleToggle", "Trouble" },
     config = function()
-      require("custom.configs.tools.trouble").setup()
+      require("custom.configs.trouble").setup()
     end,
   },
 
@@ -273,35 +265,38 @@ local plugins = {
       "javiorfo/nvim-popcorn",
     },
     config = function()
-      require("custom.configs.tools.ship").setup()
+      require("custom.configs.ship").setup()
     end,
   },
 
   {
-    "iamcco/markdown-preview.nvim",
+    "Saimo/peek.nvim",
     ft = "markdown",
-    build = function()
-      vim.fn["mkdp#util#install"]()
+    build = "deno task --quiet build:fast",
+    config = function()
+      require("custom.configs.peek").setup()
     end,
   },
 
   {
     "vuki656/package-info.nvim",
-    ft = { "json", "lua" },
+    ft = { "json" },
     config = true,
   },
 
   {
-    "kdheepak/lazygit.nvim",
-    cmd = "LazyGit",
-  },
-
-  -- MISC ---------------------------------------------------------------------
-
-  {
     "andweeb/presence.nvim",
     config = function()
-      require "custom.configs.misc.presence"
+      require("custom.configs.presence").setup()
+    end,
+  },
+
+  {
+    "jcdickinson/codeium.nvim",
+    cmd = "Codeium",
+    event = "BufReadPost",
+    config = function()
+      require("codeium").setup {}
     end,
   },
 }
