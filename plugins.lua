@@ -4,6 +4,16 @@ local overrides = require "custom.configs.overrides"
 local plugins = {
 
   {
+    "NvChad/nvterm",
+    enabled = false,
+  },
+
+  {
+    "NvChad/ui",
+    branch = "term",
+  },
+
+  {
     "NvChad/nvcommunity",
     { import = "nvcommunity.editor.biscuits" },
     { import = "nvcommunity.motion.hop" },
@@ -213,23 +223,6 @@ local plugins = {
     },
     config = function()
       require("custom.configs.truezen").setup()
-    end,
-  },
-
-  {
-    "anuvyklack/windows.nvim",
-    event = "WinNew",
-    dependencies = {
-      { "anuvyklack/middleclass" },
-      { "anuvyklack/animation.nvim", enabled = true },
-    },
-    keys = { { "<leader>Z", "<cmd>WindowsMaximize<cr>", desc = "zoom" } },
-    config = function()
-      vim.o.winwidth = 15
-      vim.o.equalalways = false
-      require("windows").setup {
-        animation = { enabled = true, duration = 150 },
-      }
     end,
   },
 

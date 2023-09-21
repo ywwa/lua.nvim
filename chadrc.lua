@@ -16,6 +16,7 @@ M.ui = {
   },
 
   tabufline = {
+    -- remove buttons on right side
     overriden_modules = function(modules)
       table.remove(modules, #modules)
     end,
@@ -24,6 +25,10 @@ M.ui = {
   statusline = {
     theme = "minimal",
   },
+  extended_integrations = {
+    "rainbowdelimiters",
+    "trouble"
+  }
 }
 
 M.plugins = "custom.plugins"
