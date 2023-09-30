@@ -7,7 +7,7 @@ M.statuscol = function()
     bt_ignore = {
       "nofile",
       "prompt",
-      "temrinal",
+      "terminal",
       "lazy"
     },
     ft_ignore = {
