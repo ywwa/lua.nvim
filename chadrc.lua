@@ -16,19 +16,26 @@ M.ui = {
   },
 
   tabufline = {
-    -- remove buttons on right side
+    -- remove buttons and padding
     overriden_modules = function(modules)
       table.remove(modules, #modules)
+      table.remove(modules, 1)
     end,
   },
-  lsp_semantic_tokens = false,
+
   statusline = {
     theme = "minimal",
+    overriden_modules = function(modules)
+      local StCCModules = require "custom.utils.statusline.colorcolumn"
+      table.insert(modules, 9, StCCModules.StMod_Cc_Width())
+      table.insert(modules, 11, StCCModules.StMod_Cc_Status())
+    end,
   },
-  extended_integrations = {
-    "rainbowdelimiters",
-    "trouble"
-  }
+
+  lsp = {
+    signature = false,
+    semantic_tokens = false,
+  },
 }
 
 M.plugins = "custom.plugins"

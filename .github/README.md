@@ -1,40 +1,94 @@
-<div align="center">
+<h1 align="center">chadConfig</h1>
+<p align="center" style="font-family: monospace">
+    <a href="https://github.com/NvChad">NvChad</a>
+    config for branch [ <b>v3.0</b> ]
+</p>
 
-```lua
-" ▄· ▄▌▄▄▌ ▐ ▄▌▄▄▌ ▐ ▄▌ ▄▄▄· ",
-"▐█▪██▌██· █▌▐███· █▌▐█▐█ ▀█ ",
-"▐█▌▐█▪██▪▐█▐▐▌██▪▐█▐▐▌▄█▀▀█ ",
-" ▐█▀·.▐█▌██▐█▌▐█▌██▐█▌▐█ ▪▐▌",
-"  ▀ •  ▀▀▀▀ ▀▪ ▀▀▀▀ ▀▪ ▀  ▀ ",
-"      git@github:ywwa/      ",
+### @info
+This is my personal configuration of NvChad on branch v3.0 mainly oriented for
+web development with Javascript/Typescript and PHP.
+
+### @plugins
+Plugin folder contians multiple files with self-explanatory names.
+
+
+#### #defaults.lua
+This file contains overrides for default NvChad plugins.
+```
+nvim-lspconfig
+    null-ls.nvim
+    typescript-tools.nvim
+mason.nvim
+nvim-treesitter
+    nvim-ts-context-commentstring
+nvim-cmp
+    cmp-emoji
+    cmp-treesitter
+    cmp-calc
+    cmp-nerdfont
+    cpm-npm
+    cpm-plugins
+telescope.nvim
+    telescope-file-browser.nvim
+better-escape.nvim
+Comment.nvim
+nvim-tree.lua
+indent-blankline.nvim
 ```
 
-Pretty Lazy
-<a href="https://github.com/NvChad/NvChad">NvChad</a>
-config
-<a href="https://ywwa.github.io">V3.0</a>!
+#### #ui.lua
+This file contains all user interface related plugins.
+```
+noice.nvim
+    nui.nvim
+lspsaga.nvim
+nvim-ufo
+    promise-async
+    statuscol.nvim
+pretty-fold.nvim
+    keymap-amend.nvim
+    fold-preview.nvim
+scrollEOF.nvim
+neoscroll.nvim
+virtcolumn.nvim
+hlchunk.nvim
+nvim-hlslens
+hlargs.nvim
+todo-comments.nvim
+zen-mode.nvim
+```
 
-</div>
+#### #tools.lua
+This file contains all tool plugins.
+```
+trouble.nvim
+nvim-ship
+    nvim-spinetta
+    nvim-popcorn
+peek.nvim
+package-info.nvim
+```
 
-##### Description
-This repository contains my neovim configuration that i use as my daily driver.
+#### #ai.lua
+This file contains all AI plugins.
+```
+codeium.nvim
+```
 
-It's made mainly for WEB development using `typescript` language.
+#### #misc.lua
+This file contains miscellaneous plugins.
+```
+presence.nvim
+nvim-lastplace
+```
 
-#### Presecuites
-|    ***    |    ***      |
-|---------- | ----------- |
-| Neovim    | V0.9,2+     |
-| OS        | Linux       |
-| Terminal  | Alacritty   |
-| Font      | Nerd Fonts  |
 
-If you are planning to use my configuration, then you might have to make some changes to get it to work properly.
+### @utils
+This folder contains some utility functions that i need for better experience.
 
-#### Preview
-![cover](./img/cover.png)
-![pw1](./img/pw1.png)
-![pw2](./img/pw2.png)
-
-#### Help
-In case you need any help with my configuration feel free to open new issue or contact me in official NvChad's <a href="https://discord.com/invite/gADmkJb9Fb">Discord Server</a> or <a href="https://t.me/nvchad_tg">Telegram channel</a>
+* colorcolumn.lua
+    - Handles how colorcolumn behaves.
+* scrolloff.lua
+    - Handles how scrolloff behaves.
+* presence.lua
+    - handles discord rpc plugin loading
