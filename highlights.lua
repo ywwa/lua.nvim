@@ -12,7 +12,7 @@ M.override = {
 M.add = {
   FoldColumn = {
     fg = "grey",
-    bg = "black",
+    bg = "NONE",
     bold = true,
     sp = "NONE"
   },

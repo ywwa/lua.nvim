@@ -6,6 +6,7 @@ local sources = {
   -- lua
   -- b.diagnostics.luacheck,
   b.formatting.stylua,
+  b.formatting.jq
 
 }
 

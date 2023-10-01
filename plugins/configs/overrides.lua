@@ -46,6 +46,9 @@ M.treesitter = {
     "c",
     "c_sharp",
     "cpp",
+
+    -- prisma
+    "prisma"
   },
   indent = { enable = true },
   context_commentstring = { enable = true },
