@@ -10,5 +10,7 @@ require("peek").setup {
   throttle_time = "auto",
 }
 
+require("core.utils").load_mappings("peek")
+
 -- vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
 -- vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
