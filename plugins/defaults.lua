@@ -5,9 +5,9 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       {
-        "jose-elias-alvarez/null-ls.nvim",
+        "nvimtools/none-ls.nvim",
         config = function()
-          require "custom.plugins.configs.defaults.null-ls"
+          require "custom.plugins.configs.defaults.none-ls"
         end,
       },
       {
