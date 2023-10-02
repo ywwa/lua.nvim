@@ -18,8 +18,10 @@ M.mason = {
 
     -- php
     "intelephense",
+
     -- misc
     "deno",
+    "emmet-ls"
   },
 }
 

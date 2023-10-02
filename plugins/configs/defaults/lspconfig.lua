@@ -15,7 +15,10 @@ local servers = {
   "tailwindcss",
 
   -- php
-  "intelephense"
+  "intelephense",
+
+  -- misc
+  "emmet_ls"
 }
 
 for _, lsp in ipairs(servers) do
