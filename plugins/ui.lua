@@ -8,7 +8,7 @@ return {
     },
     opts = {},
     config = function()
-      require "custom.plugins.configs.ui.noice"
+      require("custom.plugins.configs.ui.noice")
     end,
   },
 
@@ -16,7 +16,7 @@ return {
     "nvimdev/lspsaga.nvim",
     event = "LspAttach",
     config = function()
-      require "custom.plugins.configs.ui.lspsaga"
+      require("custom.plugins.configs.ui.lspsaga")
     end,
   },
 
@@ -50,7 +50,7 @@ return {
       },
     },
     config = function()
-      require "custom.plugins.configs.ui.pretty-fold"
+      require("custom.plugins.configs.ui.pretty-fold")
     end,
   },
 
@@ -59,11 +59,11 @@ return {
     event = "BufEnter",
     keys = { "<C-d>", "<C-u>" },
     config = function()
-      require("scrollEOF").setup {
+      require("scrollEOF").setup({
         pattern = "*",
         insert_mode = true,
         disabled_filetypes = { "NvimTree" },
-      }
+      })
     end,
   },
 
@@ -71,7 +71,7 @@ return {
     "karb94/neoscroll.nvim",
     keys = { "<C-d>", "<C-u>" },
     config = function()
-      require "custom.plugins.configs.ui.neoscroll"
+      require("custom.plugins.configs.ui.neoscroll")
     end,
   },
 
@@ -84,7 +84,7 @@ return {
     "shellRaining/hlchunk.nvim",
     event = "UIEnter",
     config = function()
-      require "custom.plugins.configs.ui.hlchunk"
+      require("custom.plugins.configs.ui.hlchunk")
     end,
   },
 
@@ -92,7 +92,7 @@ return {
     "kevinhwang91/nvim-hlslens",
     event = "BufReadPost",
     config = function()
-      require "custom.plugins.configs.ui.hlslens"
+      require("custom.plugins.configs.ui.hlslens")
     end,
   },
 
@@ -100,23 +100,23 @@ return {
     "m-demare/hlargs.nvim",
     event = "BufWinEnter",
     config = function()
-      require "custom.plugins.configs.ui.hlargs"
+      require("custom.plugins.configs.ui.hlargs")
     end,
   },
 
-  -- {
-  --   "HiPhish/rainbow-delimiters.nvim",
-  --   event = "BufWinEnter",
-  --   config = function()
-  --     require "custom.plugins.configs.ui.rainbow-delimiters"
-  --   end,
-  -- },
+  {
+    "HiPhish/rainbow-delimiters.nvim",
+    event = "BufWinEnter",
+    config = function()
+      require("custom.plugins.configs.ui.rainbow-delimiters")
+    end,
+  },
 
   {
     "folke/todo-comments.nvim",
     event = "BufRead",
     config = function()
-      require "custom.plugins.configs.ui.todo-comments"
+      require("custom.plugins.configs.ui.todo-comments")
     end,
   },
 
@@ -124,7 +124,7 @@ return {
     "folke/zen-mode.nvim",
     cmd = { "ZenMode" },
     config = function()
-      require "custom.plugins.configs.ui.zen-mode"
-    end
+      require("custom.plugins.configs.ui.zen-mode")
+    end,
   },
 }

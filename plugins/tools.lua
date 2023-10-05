@@ -4,7 +4,7 @@ return {
     "folke/trouble.nvim",
     cmd = { "TroubleToggle", "Trouble" },
     config = function()
-      require "custom.plugins.configs.tools.trouble"
+      require("custom.plugins.configs.tools.trouble")
     end,
   },
 
@@ -17,7 +17,7 @@ return {
       "javiorfo/nvim-popcorn",
     },
     config = function()
-      require "custom.plugins.configs.tools.ship"
+      require("custom.plugins.configs.tools.ship")
     end,
   },
 
@@ -27,7 +27,7 @@ return {
     keys = { "<leader>op", "<leader>pq" },
     build = "deno task --quiet build:fast",
     config = function()
-      require "custom.plugins.configs.tools.peek"
+      require("custom.plugins.configs.tools.peek")
     end,
   },
 
@@ -40,9 +40,17 @@ return {
   {
     "mbbill/undotree",
     keys = { "<leader>tu" },
-    -- cmd = { "UndotreeToggle" },
+    cmd = { "UndotreeToggle" },
     config = function()
-      require("core.utils").load_mappings "undotree"
+      require("core.utils").load_mappings("undotree")
+    end,
+  },
+
+  {
+    "stevearc/conform.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      require("custom.plugins.configs.tools.conform")
     end,
   },
 }

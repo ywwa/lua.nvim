@@ -1,15 +1,9 @@
-local overrides = require "custom.plugins.configs.overrides"
+local overrides = require("custom.plugins.configs.overrides")
 ---@type NvPluginSpec[]
 return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      {
-        "nvimtools/none-ls.nvim",
-        config = function()
-          require "custom.plugins.configs.defaults.none-ls"
-        end,
-      },
       {
         "pmizio/typescript-tools.nvim",
         ft = {
@@ -22,8 +16,8 @@ return {
       },
     },
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.plugins.configs.defaults.lspconfig"
+      require("plugins.configs.lspconfig")
+      require("custom.plugins.configs.defaults.lspconfig")
     end,
   },
 
@@ -51,16 +45,16 @@ return {
         "David-Kunz/cmp-npm",
         ft = "json",
         config = function()
-          require("cmp-npm").setup {}
+          require("cmp-npm").setup({})
         end,
       },
       {
         "KadoBOT/cmp-plugins",
         ft = "lua",
         config = function()
-          require("cmp-plugins").setup {
+          require("cmp-plugins").setup({
             files = { ".*\\.lua" },
-          }
+          })
         end,
       },
     },
@@ -79,9 +73,9 @@ return {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
     config = function()
-      require("better_escape").setup {
+      require("better_escape").setup({
         clear_empty_lines = true,
-      }
+      })
     end,
   },
 
@@ -91,7 +85,7 @@ return {
       "JoosepAlviste/nvim-ts-context-commentstring",
       ft = { "typescript", "javascriptreact" },
       config = function()
-        require "custom.plugins.configs.defaults.comment"
+        require("custom.plugins.configs.defaults.comment")
       end,
     },
   },

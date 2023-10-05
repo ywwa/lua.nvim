@@ -1,7 +1,7 @@
 ---@type ChadrcConfig
 local M = {}
 
-local highlights = require "custom.highlights"
+local highlights = require("custom.highlights")
 
 M.ui = {
   theme = "decay",
@@ -19,14 +19,14 @@ M.ui = {
     -- remove buttons and padding
     overriden_modules = function(modules)
       table.remove(modules, #modules)
-      table.remove(modules, 1)
+      -- table.remove(modules, 1)
     end,
   },
 
   statusline = {
     theme = "minimal",
     overriden_modules = function(modules)
-      local StCCModules = require "custom.utils.statusline.colorcolumn"
+      local StCCModules = require("custom.utils.statusline.colorcolumn")
       table.insert(modules, 9, StCCModules.StMod_Cc_Width())
       table.insert(modules, 11, StCCModules.StMod_Cc_Status())
     end,
@@ -39,6 +39,6 @@ M.ui = {
 }
 
 M.plugins = "custom.plugins"
-M.mappings = require "custom.mappings"
+M.mappings = require("custom.mappings")
 
 return M

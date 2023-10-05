@@ -3,7 +3,7 @@ return {
   {
     "andweeb/presence.nvim",
     config = function()
-      require "custom.plugins.configs.misc.presence"
+      require("custom.plugins.configs.misc.presence")
     end,
   },
 
@@ -11,15 +11,7 @@ return {
     "ethanholz/nvim-lastplace",
     event = "BufWinEnter",
     config = function()
-      require "custom.plugins.configs.misc.lastplace"
+      require("custom.plugins.configs.misc.lastplace")
     end,
   },
-
-  -- {
-  --   "kylechui/nvim-surround",
-  --   event = "BufReadPost",
-  --   config = function()
-  --     require("nvim-surround").setup {}
-  --   end,
-  -- },
 }

@@ -16,7 +16,6 @@ Plugin folder contians multiple files with self-explanatory names.
 This file contains overrides for default NvChad plugins.
 ```
 nvim-lspconfig
-    none-ls.nvim
     typescript-tools.nvim
 mason.nvim
 nvim-treesitter
@@ -54,6 +53,7 @@ virtcolumn.nvim
 hlchunk.nvim
 nvim-hlslens
 hlargs.nvim
+rainbow-delimiters.nvim
 todo-comments.nvim
 zen-mode.nvim
 ```
@@ -67,6 +67,8 @@ nvim-ship
     nvim-popcorn
 peek.nvim
 package-info.nvim
+undotree
+conform.nvim
 ```
 
 #### #ai.lua

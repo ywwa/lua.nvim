@@ -21,7 +21,10 @@ M.mason = {
 
     -- misc
     "deno",
-    "emmet-ls"
+    "emmet-ls",
+
+    -- prisma
+    "prisma-language-server"
   },
 }
 
