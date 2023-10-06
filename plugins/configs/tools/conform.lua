@@ -8,11 +8,6 @@ require("conform").setup({
     json = { "jq" },
   },
 
-  format_on_save = {
-    lsp_fallback = true,
-    async = false,
-    timeout_ms = 500,
-  },
   formatters = {
     prisma = {
       command = "prisma",
@@ -23,11 +18,3 @@ require("conform").setup({
 })
 
 require("core.utils").load_mappings("conform")
-
--- vim.api.nvim_set_keymap({ "n", "v" }, "<leader>fm", function()
---   require("conform").format({
---     lsp_fallback = true,
---     async = false,
---     timeout_ms = 500,
---   })
--- end)
