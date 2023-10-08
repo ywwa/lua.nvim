@@ -1,5 +1,4 @@
 vim.g.virtcolumn_char = "│"
--- vim.g.virtcolumn_char = "▕"
 vim.g.virtcolumn_priority = 50
 -- vim.opt.cc = "80"
 
