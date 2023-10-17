@@ -4,7 +4,7 @@ local M = {}
 local highlights = require("custom.highlights")
 
 M.ui = {
-  theme = "decay",
+  theme = "gatekeeper",
   hl_override = highlights.override,
   hl_add = highlights.add,
 
@@ -16,25 +16,27 @@ M.ui = {
   },
 
   tabufline = {
+    enabled = true,
     -- remove buttons and padding
     overriden_modules = function(modules)
       table.remove(modules, #modules)
-      -- table.remove(modules, 1)
     end,
   },
 
   statusline = {
-    theme = "minimal",
-    overriden_modules = function(modules)
-      local StCCModules = require("custom.utils.statusline.colorcolumn")
-      table.insert(modules, 9, StCCModules.StMod_Cc_Width())
-      table.insert(modules, 11, StCCModules.StMod_Cc_Status())
-    end,
+    theme = "vscode_colored",
+    -- overriden_modules = function(modules)
+    --   local StModules = require("custom.core.statusline.modules")
+    --   local StCCModules = require("custom.core.statusline.modules.colorcolumn")
+    --   table.insert(modules, 9, StCCModules.StMod_Cc_Width())
+    --   table.insert(modules, 11, StCCModules.StMod_Cc_Status())
+    --   table.insert(modules, 1, StModules.StModPadding())
+    -- end,
   },
 
   lsp = {
-    signature = false,
-    semantic_tokens = false,
+    signature = true,
+    semantic_tokens = true,
   },
 }
 

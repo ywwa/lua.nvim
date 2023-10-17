@@ -53,4 +53,18 @@ return {
       require("custom.plugins.configs.tools.conform")
     end,
   },
+
+  -- {
+  --   "m4xshen/hardtime.nvim",
+  --   event = { "BufReadPre", "BufNewFile" },
+  --   config = function()
+  --     require("hardtime").setup()
+  --   end,
+  -- },
+
+  {
+    "CRAG666/code_runner.nvim",
+    config = true,
+    event = "LspAttach",
+  },
 }

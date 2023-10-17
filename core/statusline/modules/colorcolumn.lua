@@ -36,9 +36,7 @@ M.StMod_Cc_Width = function()
     -- if cc enabled
     if vim.g.enableColorColumn then
       return "%#St_giticons#"
-        .. "[ "
         .. genString(vim.b.virtcolumn_items)
-        .. " ]"
         .. "%#ST_EmptySpace# "
     end
   end

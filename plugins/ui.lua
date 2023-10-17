@@ -1,5 +1,17 @@
 ---@type NvPluginSpec[]
 return {
+  -- {
+  --   "NvChad/ui",
+  --   branch = "v3.0",
+  --   commit = "7e9c0b4",
+  -- },
+  --
+  -- {
+  --   "NvChad/base46",
+  --   branch = "v3.0",
+  --   commit = "c1e6adf",
+  -- },
+  --
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -80,13 +92,13 @@ return {
     event = "BufWinEnter",
   },
 
-  {
-    "shellRaining/hlchunk.nvim",
-    event = "UIEnter",
-    config = function()
-      require("custom.plugins.configs.ui.hlchunk")
-    end,
-  },
+  -- {
+  --   "shellRaining/hlchunk.nvim",
+  --   event = "UIEnter",
+  --   config = function()
+  --     require("custom.plugins.configs.ui.hlchunk")
+  --   end,
+  -- },
 
   {
     "kevinhwang91/nvim-hlslens",
@@ -104,13 +116,13 @@ return {
     end,
   },
 
-  {
-    "HiPhish/rainbow-delimiters.nvim",
-    event = "BufWinEnter",
-    config = function()
-      require("custom.plugins.configs.ui.rainbow-delimiters")
-    end,
-  },
+  -- {
+  --   "HiPhish/rainbow-delimiters.nvim",
+  --   event = "BufWinEnter",
+  --   config = function()
+  --     require("custom.plugins.configs.ui.rainbow-delimiters")
+  --   end,
+  -- },
 
   {
     "folke/todo-comments.nvim",

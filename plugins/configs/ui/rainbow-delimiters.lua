@@ -1,6 +1,6 @@
-local rd = require "rainbow-delimiters"
+local rd = require("rainbow-delimiters")
 
-require "rainbow-delimiters.setup" {
+require("rainbow-delimiters.setup").setup({
   strategy = {
     [""] = rd.strategy["global"],
     vim = rd.strategy["local"],
@@ -19,4 +19,4 @@ require "rainbow-delimiters.setup" {
     "RainbowDelmitersCyan",
   },
   blacklist = { "c", "cpp" },
-}
+})

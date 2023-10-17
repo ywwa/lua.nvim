@@ -13,6 +13,13 @@ return {
           "typescriptreact",
         },
         opts = {},
+        config = function()
+          require("typescript-tools").setup({
+            on_attach = function(client, bufnr)
+              client.server_capabilities.semanticTokensProvider = nil
+            end,
+          })
+        end,
       },
     },
     config = function()
@@ -98,7 +105,8 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     opts = {
-      indent = { char = "│" },
+      -- indent = { char = "│" },
+      indent = { char = "" },
     },
   },
 }

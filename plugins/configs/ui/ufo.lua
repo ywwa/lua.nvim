@@ -34,15 +34,15 @@ M.statuscol = function()
       { text = { " " } },
       { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
       -- { text = { " " } },
-      -- {
-      --   sign = {
-      --     name = { ".*" },
-      --     maxwidth = 1,
-      --     colwidth = 1,
-      --   },
-      --   auto = true,
-      --   click = "v:lua.ScSa",
-      -- },
+      {
+        sign = {
+          name = { ".*" },
+          maxwidth = 1,
+          colwidth = 1,
+        },
+        auto = true,
+        click = "v:lua.ScSa",
+      },
       {
         text = { " ", " ", builtin.lnumfunc, " " },
         click = "v:lua.ScLa",

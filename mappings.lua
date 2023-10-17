@@ -147,4 +147,13 @@ M.telescope = {
   },
 }
 
+M.dev = {
+  n = {
+    ["<leader>rs"] = {
+      "redrawstatus",
+      "reload statusline",
+    },
+  },
+}
+
 return M

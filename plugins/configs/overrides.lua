@@ -35,6 +35,7 @@ M.treesitter = {
 
     -- js,ts
     "javascript",
+    "jsdoc",
     "typescript",
 
     -- html
@@ -53,7 +54,10 @@ M.treesitter = {
     "cpp",
 
     -- prisma
-    "prisma"
+    "prisma",
+
+    -- regex
+    "regex"
   },
   indent = { enable = true },
   context_commentstring = { enable = true },
@@ -84,9 +88,9 @@ M.nvimtree = {
   renderer = {
     add_trailing = true,
     group_empty = true,
-    root_folder_label = function()
-      return ""
-    end,
+    -- root_folder_label = function()
+    --   return ":~:s?$?/..?"
+    -- end,
     highlight_git = true,
     highlight_opened_files = "all",
     indent_markers = {
