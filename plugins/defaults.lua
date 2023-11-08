@@ -72,6 +72,8 @@ return {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-telescope/telescope-file-browser.nvim",
+      "barrett-ruth/telescope-http.nvim",
+      "danielvolchek/tailiscope.nvim",
     },
     opts = overrides.telescope,
   },

@@ -17,14 +17,14 @@ M.mason = {
     "tailwindcss-language-server",
 
     -- php
-    "intelephense",
+    "phpactor",
 
     -- misc
     "deno",
     "emmet-ls",
 
     -- prisma
-    "prisma-language-server"
+    "prisma-language-server",
   },
 }
 
@@ -57,7 +57,7 @@ M.treesitter = {
     "prisma",
 
     -- regex
-    "regex"
+    "regex",
   },
   indent = { enable = true },
   context_commentstring = { enable = true },
@@ -113,6 +113,9 @@ M.nvimtree = {
     git_ignored = true,
     dotfiles = true,
   },
+  sort = {
+    sorter = "case_sensitive",
+  },
 }
 
 M.telescope = {
@@ -120,12 +123,17 @@ M.telescope = {
     file_browser = {
       hijack_netrw = true,
     },
+    http = {
+      open_url = "xdg-open %s",
+    },
   },
   extensions_list = {
     "themes",
     "terms",
     "fzf",
     "file_browser",
+    "http",
+    "tailiscope",
   },
 }
 

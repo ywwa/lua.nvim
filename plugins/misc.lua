@@ -14,4 +14,12 @@ return {
       require("custom.plugins.configs.misc.lastplace")
     end,
   },
+
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+    config = function()
+      require("core.utils").load_mappings("navigation")
+    end
+  },
 }

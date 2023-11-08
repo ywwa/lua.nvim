@@ -1,7 +1,7 @@
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
-local lspconfig = require "lspconfig"
+local lspconfig = require("lspconfig")
 
 local servers = {
   -- lua
@@ -15,23 +15,23 @@ local servers = {
   "tailwindcss",
 
   -- php
-  "intelephense",
+  "phpactor",
 
   -- misc
   "emmet_ls",
 
   -- prisma
-  "prismals"
+  "prismals",
 }
 
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  lspconfig[lsp].setup({
     on_attach = on_attach,
     capabilities = capabilities,
-  }
+  })
 end
 
-lspconfig["lua_ls"].setup {
+lspconfig["lua_ls"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
@@ -47,12 +47,12 @@ lspconfig["lua_ls"].setup {
       },
       workspace = {
         library = {
-          [vim.fn.expand "$VIMRUNTIME/lua"] = true,
-          [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
-          [vim.fn.stdpath "data" .. "/lazy/ui/nvchad_types"] = true,
-          [vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy"] = true,
+          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+          [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+          [vim.fn.stdpath("data") .. "/lazy/ui/nvchad_types"] = true,
+          [vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy"] = true,
         },
       },
     },
   },
-}
+})

@@ -156,4 +156,42 @@ M.dev = {
   },
 }
 
+M.navigation = {
+  plugin = true,
+  n = {
+    ["<C-h>"] = {
+      "<cmd>TmuxNavigateLeft<CR>",
+      "Navigate Left",
+      opts = {
+        silent = true,
+        nowait = true,
+      },
+    },
+    ["<C-j>"] = {
+      "<cmd>TmuxNavigateDown<CR>",
+      "Navigate Down",
+      opts = {
+        silent = true,
+        nowait = true,
+      },
+    },
+    ["<C-k>"] = {
+      "<cmd>TmuxNavigateUp<CR>",
+      "Navigate Up",
+      opts = {
+        silent = true,
+        nowait = true,
+      },
+    },
+    ["<C-l>"] = {
+      "<cmd>TmuxNavigateRight<CR>",
+      "Navigate Right",
+      opts = {
+        silent = true,
+        nowait = true,
+      },
+    },
+  },
+}
+
 return M
