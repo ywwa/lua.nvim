@@ -1,70 +1,74 @@
 ---@type NvPluginSpec[]
 return {
-  {
-    "folke/trouble.nvim",
-    cmd = { "TroubleToggle", "Trouble" },
-    config = function()
-      require("custom.plugins.configs.tools.trouble")
-    end,
-  },
+	{ -- trouble
+		"folke/trouble.nvim",
+		event = "LspAttach",
+		cmp = { "TroubleToggle", "Trouble" },
+		config = function()
+			require("custom.core.plugin_configs.trouble")
+		end,
+	},
 
-  {
-    "javiorfo/nvim-ship",
-    ft = "ship",
-    cmd = { "ShipCreate", "ShipCreateEnv" },
-    dependencies = {
-      "javiorfo/nvim-spinetta",
-      "javiorfo/nvim-popcorn",
-    },
-    config = function()
-      require("custom.plugins.configs.tools.ship")
-    end,
-  },
+	-- { -- nvim-ship
+	--   "javiorfo/nvim-ship",
+	--   ft = "ship",
+	--   cmd = { "ShipCreate", "ShipCreateEnv" },
+	--   dependencies = {
+	--     "javiorfo/nvim-spinetta",
+	--     "javiorfo/nvim-popcorn",
+	--   },
+	--   config = function()
+	--     require "custom.core.plugin_configs.ship"
+	--   end,
+	-- },
 
-  {
-    "Saimo/peek.nvim",
-    ft = "markdown",
-    keys = { "<leader>op", "<leader>pq" },
-    build = "deno task --quiet build:fast",
-    config = function()
-      require("custom.plugins.configs.tools.peek")
-    end,
-  },
+	{ -- peek
+		"toppair/peek.nvim",
+		ft = { "markdown" },
+		build = "deno task --quiet build:fast",
+		config = function()
+			require("custom.core.plugin_configs.peek")
+		end,
+	},
 
-  {
-    "vuki656/package-info.nvim",
-    ft = { "json" },
-    config = true,
-  },
+	{ -- package info
+		"vuki656/package-info.nvim",
+		ft = { "json" },
+		config = true,
+	},
 
-  {
-    "mbbill/undotree",
-    keys = { "<leader>tu" },
-    cmd = { "UndotreeToggle" },
-    config = function()
-      require("core.utils").load_mappings("undotree")
-    end,
-  },
+	{ -- conform
+		"stevearc/conform.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			require("custom.core.plugin_configs.conform")
+		end,
+	},
 
-  {
-    "stevearc/conform.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    config = function()
-      require("custom.plugins.configs.tools.conform")
-    end,
-  },
+	{
+		"rest-nvim/rest.nvim",
+		ft = { "http" },
+		config = function()
+			require("custom.core.plugin_configs.rest")
+		end,
+	},
 
-  -- {
-  --   "m4xshen/hardtime.nvim",
-  --   event = { "BufReadPre", "BufNewFile" },
-  --   config = function()
-  --     require("hardtime").setup()
-  --   end,
-  -- },
+	{
+		"kylechui/nvim-surround",
+		version = "*",
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup()
+		end,
+	},
 
-  {
-    "CRAG666/code_runner.nvim",
-    config = true,
-    event = "LspAttach",
-  },
+	{ "rafcamlet/nvim-luapad", ft = "lua" },
+	{ "folke/neodev.nvim", opts = {}, ft = "lua" },
+	{
+		"ExaFunction/codeium.nvim",
+		event = "LspAttach",
+		config = function()
+			require("codeium").setup({})
+		end,
+	},
 }

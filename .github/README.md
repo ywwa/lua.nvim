@@ -1,96 +1,85 @@
 <h1 align="center">chadConfig</h1>
-<p align="center" style="font-family: monospace">
-    <a href="https://github.com/NvChad">NvChad</a>
-    config for branch [ <b>v3.0</b> ]
+<p align="center">
+    <a style="color: #DFC5FE" href="https://nvchad.com">NvChad</a>'s config for branch <b style="color: #DFC5FE">v3.0</b>
 </p>
 
-### @info
-This is my personal configuration of NvChad on branch v3.0 mainly oriented for
-web development with Javascript/Typescript and PHP.
-
-### @plugins
-Plugin folder contians multiple files with self-explanatory names.
-
-
-#### #defaults.lua
-This file contains overrides for default NvChad plugins.
-```
-nvim-lspconfig
-    typescript-tools.nvim
-mason.nvim
-nvim-treesitter
-    nvim-ts-context-commentstring
-nvim-cmp
-    cmp-emoji
-    cmp-treesitter
-    cmp-calc
-    cmp-nerdfont
-    cpm-npm
-    cpm-plugins
-telescope.nvim
-    telescope-file-browser.nvim
-better-escape.nvim
-Comment.nvim
-nvim-tree.lua
-indent-blankline.nvim
+```ts
+const repo = {
+  title: "chadConfig",
+  url: "git@github.com:ywwa/chadConfig.git",
+  description: "personal nvchad focused for web development",
+};
 ```
 
-#### #ui.lua
-This file contains all user interface related plugins.
-```
-noice.nvim
-    nui.nvim
-lspsaga.nvim
-nvim-ufo
-    promise-async
-    statuscol.nvim
-pretty-fold.nvim
-    keymap-amend.nvim
-    fold-preview.nvim
-scrollEOF.nvim
-neoscroll.nvim
-virtcolumn.nvim
-hlchunk.nvim
-nvim-hlslens
-hlargs.nvim
-rainbow-delimiters.nvim
-todo-comments.nvim
-zen-mode.nvim
+### plugin list
+
+```ts
+// plugins/base.lua
+const luaBase = {
+    "typescript-tools.nvim",
+    "nvim-ts-context-commentstring",
+    "nvim-ts-autotag",
+    "cmp-emoji",
+    "cmp-tresitter",
+    "cmp-nerdfont",
+    "tailwindcss-colorizer-cmp.nvim",
+    "telescope-file-browser.nvim",
+    "telescope-http.nvim",
+    "tailiscope.nvim",
+    "telescope-nodua"
+}
+
+// plugins/interface.lua
+const luaInterface = {
+    "lspsaga.nvim",
+    "nvim-ufo",
+    "promise-async",
+    "statuscol.nvim",
+    "pretty-fold.nvim",
+    "keymap-amend.nvim",
+    "fold-preview.nvim",
+    "scrollEOF.nvim",
+    "neoscroll.nvim",
+    "virtcolumn.nvim",
+    "nvim-hlslens",
+    "hlargs.nvim",
+    "todo-comments.nvim",
+    "zen-mode.nvim",
+    "tailwindcss-colorizer-cmp.nvim",
+    "numb.nvim"
+}
+
+// plugins/tools.lua
+const luaTools = {
+    "troble.nvim",
+    "peek.nvim",
+    "package-info.nvim",
+    "conform.nvim",
+    "rest.nvim",
+    "nvim-surround",
+    "nvim-luapad",
+    "neodev.nvim",
+    "codeium.nvim"
+}
+
+// plugins/extras.lua
+const luaExtras = {
+    "neocord",
+    "nvim-lastplace",
+    "vim-tmux-navigator",
+    "yuck.vim",
+    "bionic.nvim",
+    "tailwind-fold.nvim",
+}
 ```
 
-#### #tools.lua
-This file contains all tool plugins.
-```
-trouble.nvim
-nvim-ship
-    nvim-spinetta
-    nvim-popcorn
-peek.nvim
-package-info.nvim
-undotree
-conform.nvim
-```
+### custom functions
 
-#### #ai.lua
-This file contains all AI plugins.
-```
-codeium.nvim
-```
+some extra fnctions & commands that i have written
 
-#### #misc.lua
-This file contains miscellaneous plugins.
+```lua
+local ToggleColorColumn -- command that toggles colorcolumn in buffer
+
+local DiscordRPC = "AutoCommand that loads neocord plugin only in first neovim instance"
+local ScrollOff = "AutoCommand that handles scrolloff value in buffers (has blacklist)"
 ```
-presence.nvim
-nvim-lastplace
-```
-
-
-### @utils
-This folder contains some utility functions that i need for better experience.
-
-* colorcolumn.lua
-    - Handles how colorcolumn behaves.
-* scrolloff.lua
-    - Handles how scrolloff behaves.
-* presence.lua
-    - handles discord rpc plugin loading
