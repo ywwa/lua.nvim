@@ -11,6 +11,7 @@ local servers = {
 	"emmet_ls",
 	"prismals",
 	"marksman",
+  "intelephense"
 }
 
 for _, lsp in ipairs(servers) do

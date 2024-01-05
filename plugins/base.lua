@@ -49,7 +49,6 @@ return {
 					}
 				end,
 			},
-			"windwp/nvim-ts-autotag",
 		},
 		opts = overrides.treesitter,
 	},
@@ -72,9 +71,9 @@ return {
 				)
 			end
 
-      opts.experimental = {
-        ghost_text = true
-      }
+			opts.experimental = {
+				ghost_text = true,
+			}
 
 			opts.sources = {
 				{ name = "nvim_lsp" },
@@ -131,5 +130,10 @@ return {
 		opts = {
 			indent = { char = "" },
 		},
+	},
+
+	{
+		"windwp/nvim-autopairs",
+		enabled = false,
 	},
 }

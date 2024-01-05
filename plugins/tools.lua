@@ -53,15 +53,6 @@ return {
 		end,
 	},
 
-	{
-		"kylechui/nvim-surround",
-		version = "*",
-		event = "VeryLazy",
-		config = function()
-			require("nvim-surround").setup()
-		end,
-	},
-
 	{ "rafcamlet/nvim-luapad", ft = "lua" },
 	{ "folke/neodev.nvim", opts = {}, ft = "lua" },
 	{

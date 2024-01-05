@@ -17,6 +17,7 @@ M.mason = {
 
 		"prettier",
 		"marksman",
+		"intelephense",
 	},
 }
 
@@ -26,6 +27,7 @@ M.treesitter = {
 		"prisma",
 		"javascript",
 		"typescript",
+    "php",
 		"tsx",
 		"jsdoc",
 		"html",
@@ -33,10 +35,6 @@ M.treesitter = {
 		"scss",
 	},
 	indent = { enable = true },
-	autotag = {
-		enable = true,
-		enable_close_on_slash = false,
-	},
 }
 
 M.cmp = {
@@ -65,7 +63,6 @@ M.telescope = {
 	extensions_list = {
 		"themes",
 		"terms",
-		"fzf",
 		"file_browser",
 		"http",
 		"tailiscope",

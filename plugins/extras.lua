@@ -49,11 +49,11 @@ return {
 		cmd = { "Bionic", "BionicOn", "BionicOff" },
 	},
 
-	{
-		"razak17/tailwind-fold.nvim",
-		ft = { "html", "svelte", "astro", "vue", "typescriptreact" },
-		opts = {
-			min_chars = 50,
-		},
-	},
+	-- {
+	-- 	"razak17/tailwind-fold.nvim",
+	-- 	ft = { "html", "svelte", "astro", "vue", "typescriptreact" },
+	-- 	opts = {
+	-- 		min_chars = 50,
+	-- 	},
+	-- },
 }
