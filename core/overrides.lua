@@ -18,6 +18,8 @@ M.mason = {
 		"prettier",
 		"marksman",
 		"intelephense",
+
+		"clangd",
 	},
 }
 
@@ -27,7 +29,7 @@ M.treesitter = {
 		"prisma",
 		"javascript",
 		"typescript",
-    "php",
+		"php",
 		"tsx",
 		"jsdoc",
 		"html",
