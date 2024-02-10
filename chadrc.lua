@@ -4,24 +4,35 @@ local highlghts = require "custom.core.highlights"
 local M = {}
 
 M.ui = {
-  theme = "jellybeans",
+  theme = "ashes",
   hl_override = highlghts.override,
   hl_add = highlghts.add,
   cmp = {
     icons = true,
-    style = "default",
+    style = "flat_dark",
     lspkind_text = true,
     selected_item_bg = "colored",
   },
   tabufline = {
-    enabled = true,
+    lazyload = false,
+    show_numbers = true,
   },
   statusline = {
-    theme = "vscode_colored",
+    theme = "vscode",
   },
   lsp = {
     signature = false,
     semantic_tokens = false,
+  },
+  term = {
+    float = {
+      relative = "editor",
+      row = 0.12,
+      col = 0.15,
+      width = 0.70,
+      height = 0.70,
+      border = "single",
+    },
   },
 }
 
@@ -29,9 +40,10 @@ M.plugins = "custom.plugins"
 M.mappings = require "custom.core.mappings"
 
 M.lazy_nvim = {
+  checker = { enabled = true },
   change_detection = {
-    notify = false
-  }
+    notify = false,
+  },
 }
 
 return M
