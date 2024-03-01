@@ -1,4 +1,7 @@
+--type conform.options
 local options = {
+  lsp_fallback = true,
+
   formatters_by_ft = {
     lua = { "stylua" },
 
@@ -7,14 +10,15 @@ local options = {
     typescript = { "deno_fmt" },
     typescriptreact = { "deno_fmt" },
 
-    json = { "prettier" },
-    jsonc = { "prettier" },
     css = { "prettier" },
     html = { "prettier" },
-    markdown = { "deno_fmt" },
+
+    json = { "prettier" },
+    jsonc = { "prettier" },
+    markdown = { "prettier" },
+
+    sh = { "shfmt" },
   },
 }
 
 require("conform").setup(options)
-
-require("core.utils").load_mappings "conform"

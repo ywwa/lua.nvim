@@ -1,49 +1,71 @@
-local highlghts = require "custom.core.highlights"
-
 ---@type ChadrcConfig
 local M = {}
 
+local highlights = require "custom.highlights"
+
 M.ui = {
-  theme = "ashes",
-  hl_override = highlghts.override,
-  hl_add = highlghts.add,
+  theme = "jellybeans",
+
+  hl_override = highlights.override,
+  hl_add = highlights.add,
+
   cmp = {
-    icons = true,
     style = "flat_dark",
     lspkind_text = true,
     selected_item_bg = "colored",
   },
+
   tabufline = {
     lazyload = false,
-    show_numbers = true,
+    show_numbes = true,
   },
+
+  -- TODO: write own statusline theme
   statusline = {
     theme = "vscode",
   },
+
   lsp = {
     signature = false,
-    semantic_tokens = false,
+    sematic_tokens = false,
   },
+
   term = {
     float = {
       relative = "editor",
       row = 0.12,
       col = 0.15,
-      width = 0.70,
-      height = 0.70,
+      width = 0.7,
+      height = 0.7,
       border = "single",
     },
   },
 }
 
-M.plugins = "custom.plugins"
-M.mappings = require "custom.core.mappings"
-
-M.lazy_nvim = {
-  checker = { enabled = true },
-  change_detection = {
-    notify = false,
+---@diagnostic disable: inject-field
+M.utils = {
+  enable_rpc = true,
+  cc = {
+    enabled = true,
+    values = "80",
+  },
+  so = {
+    enabled = true,
+    value = 8,
+  },
+  blacklist = {
+    "NvimTree",
+    "nvdash",
+    "nvcheatsheet",
+    "terminal",
+    "Trouble",
+    "help",
+    "man",
+    "prompt",
+    "nofile",
   },
 }
+
+M.plugins = "custom.plugins"
 
 return M
