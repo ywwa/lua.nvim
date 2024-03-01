@@ -8,6 +8,7 @@ M.treesitter = {
     "css",
     "javascript",
     "typescript",
+    "prisma",
     "tsx",
     "php",
     "jsdoc",
