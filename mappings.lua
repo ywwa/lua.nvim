@@ -21,8 +21,8 @@ map(
 )
 
 -- indents
-map({ "n", "v" }, ">", "<gv", { desc = "Indent Line Right" })
-map({ "n", "v" }, "<", ">gv", { desc = "Indent Line Left" })
+map({ "v" }, ">", ">gv", { desc = "Indent Line Right" })
+map({ "v" }, "<", "<gv", { desc = "Indent Line Left" })
 
 -- navigation
 map({ "n", "t" }, "<C-h>", function()
