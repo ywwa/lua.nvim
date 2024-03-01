@@ -27,7 +27,7 @@ M.ui = {
 
   lsp = {
     signature = false,
-    sematic_tokens = false,
+    semantic_tokens= false,
   },
 
   term = {

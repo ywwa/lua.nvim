@@ -10,7 +10,7 @@ return {
       config = function()
         require("typescript-tools").setup {
           on_attach = function(client, _)
-            client.server_capabilities.sematicTokensProvider = nil
+            client.server_capabilities.semanticTokensProvider = nil
           end,
         }
       end,
