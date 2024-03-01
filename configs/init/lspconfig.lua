@@ -45,6 +45,14 @@ lspconfig["lua_ls"].setup {
   },
 }
 
+lspconfig["marksman"].setup {
+  on_attach = function(client, _)
+    client.server_capabilities.semanticTokensProvider = nil
+    on_attach(client)
+  end,
+  capabilities = capabilities,
+}
+
 lspconfig["tailwindcss"].setup {
   on_attach = on_attach,
   capabilities = capabilities,

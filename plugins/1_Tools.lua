@@ -15,6 +15,14 @@ return {
   },
 
   {
+    "stevearc/conform.nvim",
+    config = function()
+      ---@diagnostic disable: different-requires
+      require "custom.configs.Tools.conform"
+    end,
+  },
+
+  {
     "folke/trouble.nvim",
     event = "LspAttach",
     cmd = { "Trouble", "TroubleToggle" },

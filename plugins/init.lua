@@ -53,13 +53,6 @@ return {
     end,
   },
 
-  {
-    "stevearc/conform.nvim",
-    config = function()
-      ---@diagnostic disable: different-requires
-      require "custom.configs.init.conform"
-    end,
-  },
 
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -71,7 +64,6 @@ return {
     dependencies = { "hrsh7th/cmp-emoji" },
     opts = require "custom.configs.init.cmp"
   },
-
 
   -- disabled core plugins
   {
