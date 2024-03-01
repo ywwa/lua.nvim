@@ -17,7 +17,7 @@ M.ui = {
 
   tabufline = {
     lazyload = false,
-    show_numbes = true,
+    show_numbers = true,
   },
 
   -- TODO: write own statusline theme
