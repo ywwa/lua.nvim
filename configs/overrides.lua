@@ -45,6 +45,10 @@ M.mason = {
 }
 
 M.nvimtree = {
+  view = {
+    side = "right",
+    width = 35
+  },
   git = { enable = true },
   renderer = {
     add_trailing = true,

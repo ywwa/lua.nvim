@@ -4,7 +4,7 @@ local M = {}
 local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "jellybeans",
+  theme = "github_light",
 
   hl_override = highlights.override,
   hl_add = highlights.add,
@@ -18,6 +18,9 @@ M.ui = {
   tabufline = {
     lazyload = false,
     show_numbers = true,
+    overriden_modules = function(modules)
+      table.remove(modules, 1)
+    end,
   },
 
   -- TODO: write own statusline theme
@@ -27,7 +30,7 @@ M.ui = {
 
   lsp = {
     signature = false,
-    semantic_tokens= false,
+    semantic_tokens = false,
   },
 
   term = {
