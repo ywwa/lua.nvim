@@ -1,4 +1,4 @@
-local opts = {
+return {
   position = "bottom",
   height = 10,
   width = 50,
@@ -42,4 +42,3 @@ local opts = {
   },
   use_diagnostic_signs = true,
 }
-return opts

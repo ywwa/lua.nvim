@@ -1,8 +1,17 @@
-local opts = {
+return {
   ensure_installed = {
     "lua-language-server",
     "typescript-language-server",
     "stylua",
+    "css-lsp",
+    "html-lsp",
+    "prettier",
+    "deno",
+    "emmet-language-server",
+    "prisma-language-server",
+    "tailwindcss-language-server",
+    "intelephense",
+    "shfmt",
   },
   PATH = "skip",
   ui = {
@@ -24,4 +33,3 @@ local opts = {
   },
   max_concurrent_installers = 10,
 }
-return opts

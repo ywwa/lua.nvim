@@ -50,9 +50,25 @@ M.capabilities.textDocument.completion.completionItem = {
 }
 
 M.setup = function()
+  local lspconfig = require "lspconfig"
+  local servers = {
+    "html",
+    "cssls",
+    "emmet_language_server",
+    "prismals",
+    "marksman",
+    "intelephense",
+  }
   require "plugins.config.lsp"
 
-  local lspconfig = require "lspconfig"
+  for _, lsp in ipairs(servers) do
+    lspconfig[lsp].setup {
+      on_attach = M.on_attach,
+      capabilities = M.capabilities,
+      on_init = M.on_init,
+    }
+  end
+
   lspconfig.lua_ls.setup {
     on_attach = M.on_attach,
     capabilities = M.capabilities,

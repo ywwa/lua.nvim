@@ -7,11 +7,14 @@ g.mapleader = " "
 g.maplocalleader = " "
 
 opt.number = true
+opt.numberwidth = 2
 opt.relativenumber = true
 opt.ruler = false
 
 -- disable intro
 opt.shortmess:append "sI"
+-- wrap on line start/end
+opt.whichwrap:append "<>[]hl"
 
 -- indent
 opt.expandtab = true

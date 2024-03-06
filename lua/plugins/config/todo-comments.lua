@@ -1,4 +1,4 @@
-local opts = {
+return {
   keywords = {
     FIX = {
       icon = " ",
@@ -25,5 +25,3 @@ local opts = {
     test = { "Identifier", "#ff75a0" },
   },
 }
-
-return opts

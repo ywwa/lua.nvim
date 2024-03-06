@@ -1,4 +1,4 @@
-local opts = {
+return {
   keep_indentation = false,
   fill_char = " ",
   sections = {
@@ -19,4 +19,3 @@ local opts = {
     "toggleterm",
   },
 }
-return opts

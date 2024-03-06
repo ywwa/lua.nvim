@@ -65,7 +65,7 @@ local function border(hl_name)
   }
 end
 
-local options = {
+return {
   completion = {
     completeopt = "menu,menuone",
   },
@@ -140,7 +140,7 @@ local options = {
     end, { "i", "s" }),
   },
   sources = {
-    { name = "nvim_lsp" },
+    { name = "nvim_lsp", max_item_count = 30 },
     { name = "luasnip" },
     { name = "codeium" },
     { name = "buffer" },
@@ -148,4 +148,3 @@ local options = {
     { name = "path" },
   },
 }
-return options

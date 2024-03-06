@@ -1,13 +1,17 @@
+---@diagnostic disable: different-requires
 return {
   "nvim-tree/nvim-tree.lua",
   event = "UIEnter",
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  opts = {
-    sort = { sorter = "case_sensitive" },
-    view = { width = 30 },
-    renderer = { group_empty = true },
-    filters = { dotfiles = true },
-  },
+  -- opts = {
+  --   sort = { sorter = "case_sensitive" },
+  --   view = { width = 30 },
+  --   renderer = { group_empty = true },
+  --   filters = { dotfiles = true },
+  -- },
+  opts = function()
+    return require "plugins.config.nvim-tree"
+  end,
   config = function(_, opts)
     require("nvim-tree").setup(opts)
     vim.keymap.set("n", "<C-n>", function()

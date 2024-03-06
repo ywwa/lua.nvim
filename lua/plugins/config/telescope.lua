@@ -1,4 +1,4 @@
-local options = {
+return {
   extensions = {
     fzf = {
       fuzzy = true,
@@ -47,4 +47,3 @@ local options = {
     },
   },
 }
-return options

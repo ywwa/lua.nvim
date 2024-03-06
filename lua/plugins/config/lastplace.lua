@@ -1,4 +1,4 @@
-local opts = {
+return {
   lastplace_ignore_buftype = {
     "NvimTree",
     "terminal",
@@ -17,4 +17,3 @@ local opts = {
   },
   lastplace_open_folds = true,
 }
-return opts

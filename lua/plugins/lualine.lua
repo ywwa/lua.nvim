@@ -1,7 +1,9 @@
 return {
   "nvim-lualine/lualine.nvim",
   event = "UIEnter",
-  opts = {},
+  opts = {
+    theme = "decay"
+  },
   config = function(_, opts)
     require("lualine").setup(opts)
   end,

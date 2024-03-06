@@ -1,4 +1,4 @@
-local opts = {
+return {
   respect_scrolloff = false,
   cursor_scrolls_alone = true,
   pre_hook = function()
@@ -8,4 +8,3 @@ local opts = {
     vim.opt.eventignore:remove { "WinScrolled", "CursorMoved" }
   end,
 }
-return opts

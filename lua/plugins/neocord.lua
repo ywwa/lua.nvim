@@ -10,7 +10,7 @@ return {
       callback = function()
         -- check instance
         local function instance()
-          local handle = io.popen "pgrep nvim |wc -l"
+          local handle = io.popen "pgrep nvim | wc -l"
           local output = handle:read "*a"
           handle:close()
 

@@ -3,13 +3,11 @@ return {
   build = ":TSUpdate",
   event = { "BufReadPost", "BufNewFile" },
   cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+  opts = function()
+    return require "plugins.config.treesitter"
+  end,
   config = function(_, opts)
     local configs = require "nvim-treesitter.configs"
-    configs.setup {
-      ensure_installed = { "lua", "vim", "vimdoc" },
-      sync_install = false,
-      highlight = { enable = true },
-      indent = { enable = true },
-    }
+    configs.setup(opts)
   end,
 }
