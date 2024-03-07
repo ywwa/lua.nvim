@@ -13,6 +13,7 @@ opt.ruler = false
 
 -- disable intro
 opt.shortmess:append "sI"
+
 -- wrap on line start/end
 opt.whichwrap:append "<>[]hl"
 
@@ -47,6 +48,7 @@ opt.updatetime = 250
 
 opt.colorcolumn = "80"
 opt.scrolloff = 8
+opt.wrap = false
 
 g.loaded_python3_provider = 0
 g.loaded_ruby_provider = 0

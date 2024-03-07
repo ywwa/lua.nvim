@@ -1,3 +1,4 @@
+---@diagnostic disable: different-requires
 return {
   "folke/todo-comments.nvim",
   event = "BufRead",

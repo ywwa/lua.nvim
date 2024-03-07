@@ -2,14 +2,11 @@ local api = vim.api
 local fn = vim.fn
 local g = vim.g
 
--- local txt = require("nvchad.tabufline.utils").txt
 local txt = require("modules.ui.buflinent.utils").txt
 local btn = require("modules.ui.buflinent.utils").btn
 local strep = string.rep
 local style_buf = require("modules.ui.buflinent.utils").style_buf
 local cur_buf = api.nvim_get_current_buf
-
----------------------------------------------------------- btn onclick functions ----------------------------------------------
 
 vim.cmd "function! TbGoToBuf(bufnr,b,c,d) \n execute 'b'..a:bufnr \n endfunction"
 
@@ -23,18 +20,16 @@ vim.cmd "function! TbGotoTab(tabnr,b,c,d) \n execute a:tabnr ..'tabnext' \n endf
 vim.cmd "function! TbCloseAllBufs(a,b,c,d) \n lua require('modules.ui.buflinent').closeAllBufs() \n endfunction"
 vim.cmd "function! TbToggleTabs(a,b,c,d) \n let g:TbTabsToggled = !g:TbTabsToggled | redrawtabline \n endfunction"
 
--------------------------------------------------------- functions ------------------------------------------------------------
 
 local function getNvimTreeWidth()
   for _, win in pairs(api.nvim_tabpage_list_wins(0)) do
     if vim.bo[api.nvim_win_get_buf(win)].ft == "NvimTree" then
-      return api.nvim_win_get_width(win) + 1
+      return api.nvim_win_get_width(win)
     end
   end
   return 0
 end
 
-------------------------------------- modules -----------------------------------------
 local M = {}
 
 local function available_space()
@@ -51,7 +46,14 @@ local function available_space()
 end
 
 M.treeOffset = function()
-  return "%#NvimTreeNormal#" .. strep(" ", getNvimTreeWidth())
+  if getNvimTreeWidth() > 0 then
+    return "%#NvimTreeNormal#"
+      .. strep(" ", getNvimTreeWidth())
+      .. "%#NvimTreeWinSeparator#"
+      .. "│"
+  else
+    return ""
+  end
 end
 
 M.buffers = function()
