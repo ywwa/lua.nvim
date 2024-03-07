@@ -12,7 +12,23 @@ return {
     },
   },
   cmd = { "Telescope" },
-  keys = { "<leader>ff", "<leader>lg", "<leader>ca" },
+  -- keys = { "<leader>ff", "<leader>lg", "<leader>ca" },
+  keys = {
+    {
+      "<leader>ff",
+      function()
+        require("telescope.builtin").find_files()
+      end,
+      desc = "Telescope Find files",
+    },
+    {
+      "<leader>lg",
+      function()
+        require("telescope.builtin").live_grep()
+      end,
+      desc = "Telescope Live grep",
+    },
+  },
   opts = function()
     return require "plugins.config.telescope"
   end,

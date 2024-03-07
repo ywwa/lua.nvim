@@ -43,10 +43,16 @@ map({ "n", "t" }, "<C-l>", function()
 end, { desc = "Move right" })
 
 -- telescope mappings
-map("n", "<leader>ff", function()
-  require("telescope.builtin").find_files()
-end, { desc = "Telescope find_files" })
 
-map("n", "<leader>lg", function()
-  require("telescope.builtin").live_grep()
-end, { desc = "Telescope live_grep" })
+-- bufferline
+map("n", "<Tab>", function()
+  require('modules.ui.buflinent').next()
+end, { desc = "Next Buffer" })
+
+map("n", "<S-Tab>", function()
+  require('modules.ui.buflinent').prev()
+end, { desc = "Prev Buffer" })
+
+map("n", "<C-q>", function()
+  require('modules.ui.buflinent').close_buffer()
+end, { desc = "Close buffer" })

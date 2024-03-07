@@ -72,9 +72,9 @@ return {
 
   window = {
     completion = {
-      col_offset = 5,
+      col_offset = -1,
       side_padding = 0,
-      border = border "CmpDocBorder",
+      -- border = border "CmpDocBorder",
       --winhighlight = "Normal:CmpPmenu,CursorLine:CmpSel,Search:None",
       scrollbar = false,
     },

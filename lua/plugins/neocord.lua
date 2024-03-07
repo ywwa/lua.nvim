@@ -1,6 +1,7 @@
 ---@diagnostic disable: different-requires, need-check-nil
 return {
   "IogaMaster/neocord",
+  enabled = false,
   event = "UIEnter",
   opts = function()
     return require "plugins.config.neocord"

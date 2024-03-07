@@ -58,6 +58,7 @@ M.setup = function()
     "prismals",
     "marksman",
     "intelephense",
+    "tailwindcss",
   }
   require "plugins.config.lsp"
 

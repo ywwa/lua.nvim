@@ -45,6 +45,9 @@ opt.undofile = true
 
 opt.updatetime = 250
 
+opt.colorcolumn = "80"
+opt.scrolloff = 8
+
 g.loaded_python3_provider = 0
 g.loaded_ruby_provider = 0
 g.loaded_node_provider = 0
@@ -90,3 +93,21 @@ api.nvim_create_autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
     end
   end,
 })
+
+api.nvim_create_autocmd("BufWritePost", {
+  pattern = vim.tbl_map(
+    function(path)
+      return vim.fs.normalize(vim.loop.fs_realpath(path))
+    end,
+    vim.fn.glob(vim.fn.stdpath "config" .. "/lua/**/*.lua", true, true, true)
+  ),
+
+  group = api.nvim_create_augroup("RefreshConfig", {}),
+
+  callback = function(opts)
+    require("plenary.reload").reload_module "modules.ui.buflinent.modules"
+    vim.opt.tabline = "%!v:lua.require('modules.ui.buflinent.modules')()"
+  end,
+})
+
+require "modules.ui.buflinent.load"
