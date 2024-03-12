@@ -46,13 +46,35 @@ end, { desc = "Move right" })
 
 -- bufferline
 map("n", "<Tab>", function()
-  require('modules.ui.buflinent').next()
+  require("modules.ui.buflinent").next()
 end, { desc = "Next Buffer" })
 
 map("n", "<S-Tab>", function()
-  require('modules.ui.buflinent').prev()
+  require("modules.ui.buflinent").prev()
 end, { desc = "Prev Buffer" })
 
 map("n", "<C-q>", function()
-  require('modules.ui.buflinent').close_buffer()
+  require("modules.ui.buflinent").close_buffer()
 end, { desc = "Close buffer" })
+
+-- term
+map(
+  { "n", "t" },
+  "<A-h>",
+  "<cmd>ToggleTerm direction=horizontal name=term_h<cr>",
+  { desc = "Toggle horizontal term" }
+)
+
+map(
+  { "n", "t" },
+  "<A-v>",
+  "<cmd>ToggleTerm direction=vertical name=term_v<cr>",
+  { desc = "Toggle vertical term" }
+)
+
+map(
+  { "n", "t" },
+  "<A-f>",
+  "<cmd>ToggleTerm direction=float name=term_f<cr>",
+  { desc = "Toggle floating term" }
+)

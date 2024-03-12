@@ -27,7 +27,7 @@ vim.lsp.handlers["textDocument/signatureHelp"] =
     relative = "cursor",
   })
 
--- Borders for LspInfo winodw
+-- Borders for LspInfo window
 local win = require "lspconfig.ui.windows"
 local _default_opts = win.default_opts
 

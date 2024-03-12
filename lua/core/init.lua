@@ -106,7 +106,7 @@ api.nvim_create_autocmd("BufWritePost", {
 
   group = api.nvim_create_augroup("RefreshConfig", {}),
 
-  callback = function(opts)
+  callback = function(_)
     require("plenary.reload").reload_module "modules.ui.buflinent.modules"
     vim.opt.tabline = "%!v:lua.require('modules.ui.buflinent.modules')()"
   end,
