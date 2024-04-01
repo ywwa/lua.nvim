@@ -70,6 +70,10 @@ M.setup = function()
     }
   end
 
+  lspconfig.marksman.setup {
+    filetypes = { "markdown", "markdown.mdx", "mdx" }
+  }
+
   lspconfig.lua_ls.setup {
     on_attach = M.on_attach,
     capabilities = M.capabilities,

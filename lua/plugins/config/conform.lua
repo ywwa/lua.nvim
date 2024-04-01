@@ -16,5 +16,10 @@ return {
     json = { "prettier" },
     jsonc = { "prettier" },
     markdown = { "prettier" },
+    mdx = { "prettier" },
+
+    php = { "pint" },
+
+    sql = { "sqlfmt" }
   },
 }

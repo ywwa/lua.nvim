@@ -20,7 +20,6 @@ vim.cmd "function! TbGotoTab(tabnr,b,c,d) \n execute a:tabnr ..'tabnext' \n endf
 vim.cmd "function! TbCloseAllBufs(a,b,c,d) \n lua require('modules.ui.buflinent').closeAllBufs() \n endfunction"
 vim.cmd "function! TbToggleTabs(a,b,c,d) \n let g:TbTabsToggled = !g:TbTabsToggled | redrawtabline \n endfunction"
 
-
 local function getNvimTreeWidth()
   for _, win in pairs(api.nvim_tabpage_list_wins(0)) do
     if vim.bo[api.nvim_win_get_buf(win)].ft == "NvimTree" then

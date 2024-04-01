@@ -8,6 +8,7 @@ return {
   blacklist = {},
   file_assets = {},
   show_time = true,
+  global_timer = true,
   editing_text = "stackoverflowing %s",
   file_explorer_text = "scouting files in %s",
   git_commit_text = "Committing crimes",
@@ -17,7 +18,10 @@ return {
   reading_text = "AFKing in %s",
   workspace_text = function(project_name, file_name)
     if project_name ~= nil then
-      return "patching " .. project_name
+      if project_name == "portfolio" then
+        return "meow"
+      end
+      return "FUCKINGUP " .. project_name
     else
       return "FUCKINGUP " .. file_name
     end

@@ -15,6 +15,8 @@ return {
     "markdown",
     "markdown_inline",
     "tsx",
+    "sql",
+    "toml"
   },
   sync_install = false,
   auto_install = true,

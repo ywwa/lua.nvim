@@ -12,6 +12,8 @@ return {
     "tailwindcss-language-server",
     "intelephense",
     "shfmt",
+    "pint",
+    "sqlfmt"
   },
   PATH = "skip",
   ui = {
