@@ -28,18 +28,10 @@ return {
   event = { "BufReadPost", "BufNewFile" },
   cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
   opts = function()
-    return require "plugins.config.treesitter"
+    return require "env.config.treesitter"
   end,
   config = function(_, opts)
     local configs = require "nvim-treesitter.configs"
     configs.setup(opts)
-
-    -- register mdx ft
-    vim.filetype.add {
-      extension = { mdx = "mdx" },
-    }
-
-    vim.treesitter.language.register("markdown", "mdx")
-
   end,
 }

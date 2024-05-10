@@ -1,11 +1,10 @@
-# confign't
+# lua.nvim
 
-not a general purpose neovim config
+personal neovim configuration used as main work environment for my projects.
 
-
-### Install
-just clone repository into `~/.config/nvim`
-
-```bash
-git clone https://github.com/ywwa/confignt ~/.config/nvim && nvim
-```
+### required tools
+- ripgrep
+- node
+- nerd-fonts
+- gcc
+- nvim 0.9.5+
