@@ -39,7 +39,12 @@ M.keys = function()
       "<leader>;",
       "<cmd>ToggleTermToggleAll<CR>",
       desc = "Toggle All terminals",
-      mode = { "n", "t" },
+    },
+    {
+      "<ESC>",
+      "<cmd>ToggleTerm<CR>",
+      desc = "Close term in terminal mode",
+      mode = { "t" },
     },
   }
 end
