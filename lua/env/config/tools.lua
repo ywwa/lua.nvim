@@ -117,4 +117,16 @@ function M.peekKeys()
   }
 end
 
+M.zenMode = {
+  window = {
+    backdrop = 0.9,
+    width = 90,
+    height = 1,
+    plugins = {
+      tmux = { enabled = false },
+      wezterm = { enabled = false },
+    },
+  },
+}
+
 return M

@@ -1,8 +1,8 @@
 local M = {}
 
 M.neocord = {
-  logo = "https://i.pinimg.com/564x/07/ae/37/07ae3794f2353ee98f298960573f4bc8.jpg",
-  logo_tooltip = "Confign`t",
+  logo = "https://i.pinimg.com/564x/a7/2e/50/a72e50bd8bb773a9840ca7d848bdf6c6.jpg",
+  logo_tooltip = "vim",
   main_image = "logo",
   client_id = "1157438221865717891",
   log_level = nil,

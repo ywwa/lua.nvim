@@ -3,7 +3,7 @@ local config = require "env.config.visual"
 return {
   {
     "Aasim-A/scrollEOF.nvim",
-    keys = { "<C-d>", "<C-u>" },
+    event = { "CursorMoved", "WinScrolled" },
     opts = {
       pattern = "*",
       insert_mode = true,

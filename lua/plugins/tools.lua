@@ -50,4 +50,15 @@ return {
       require("peek").setup(opts)
     end,
   },
+
+  {
+    "folke/zen-mode.nvim",
+    cmd = { "ZenMode" },
+    opts = function()
+      return config.zenMode
+    end,
+    config = function(_, opts)
+      require("zen-mode").setup(opts)
+    end,
+  },
 }
