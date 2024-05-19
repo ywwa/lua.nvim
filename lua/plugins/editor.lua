@@ -28,6 +28,7 @@ return {
 
   {
     "lukas-reineke/indent-blankline.nvim",
+    version = "v3.5.4",
     event = "User FilePost",
     opts = {
       indent = { char = "." },

@@ -65,10 +65,35 @@ g.loaded_ruby_provider = 0
 g.loaded_node_provider = 0
 g.loaded_perl_provider = 0
 
--- TODO: Add option to add node_modules binaries to path aswell
--- (mostly for just typescript in nextjs projects)
-local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
-vim.env.PATH = vim.fn.stdpath "data"
-  .. "/mason/bin"
-  .. (is_windows and ";" or ":")
-  .. vim.env.PATH
+
+local cwd = vim.fn.getcwd()
+local tsserverBin = cwd .. "/node_modules/typescript/bin"
+
+local function is_dir(path)
+  local stat = vim.loop.fs_stat(path)
+  return stat and stat.type == "directory"
+end
+
+local function is_file(path)
+  local stat = vim.loop.fs_stat(path)
+  return stat and stat.type == "file"
+end
+
+-- add tsserver binary from node_modules to path 
+if is_dir(cwd .. "/node_modules") then
+  if is_file(tsserverBin .. "/tsserver") then
+    local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
+    vim.env.PATH = tsserverBin
+      .. (is_windows and ";" or ":")
+      .. vim.fn.stdpath "data"
+      .. "/mason/bin"
+      .. (is_windows and ";" or ":")
+      .. vim.env.PATH
+  end
+else
+  local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
+  vim.env.PATH = vim.fn.stdpath "data"
+    .. "/mason/bin"
+    .. (is_windows and ";" or ":")
+    .. vim.env.PATH
+end

@@ -9,8 +9,8 @@ M.conformConfig = {
 
     javascript = { "deno_fmt" },
     javascriptreact = { "deno_fmt" },
-    typescript = { "deno_fmt" },
-    typescriptreact = { "deno_fmt" },
+    typescript = { "prettierd" },
+    typescriptreact = { "prettierd" },
 
     css = { "prettier" },
     html = { "prettier" },
