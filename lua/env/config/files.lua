@@ -79,6 +79,9 @@ end
 
 M.nvimTree = {
   filters = { dotfiles = false },
+  sort = {
+    sorter = "case_sensitive"
+  },
   disable_netrw = true,
   hijack_netrw = true,
   hijack_cursor = true,
@@ -86,7 +89,7 @@ M.nvimTree = {
   sync_root_with_cwd = true,
   update_focused_file = { enable = true, update_root = false },
   view = {
-    side = "left",
+    side = "right",
     adaptive_size = true,
     width = 35,
     preserve_window_proportions = true,

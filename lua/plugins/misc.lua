@@ -20,7 +20,7 @@ return {
       end
     end
 
-    if instance() == 2 then
+    if instance() == 3 then
       require("neocord").setup(opts)
     end
   end,
