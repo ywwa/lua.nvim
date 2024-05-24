@@ -80,7 +80,7 @@ end
 M.nvimTree = {
   filters = { dotfiles = false },
   sort = {
-    sorter = "case_sensitive"
+    sorter = "case_sensitive",
   },
   disable_netrw = true,
   hijack_netrw = true,
@@ -89,7 +89,8 @@ M.nvimTree = {
   sync_root_with_cwd = true,
   update_focused_file = { enable = true, update_root = false },
   view = {
-    side = "right",
+    signcolumn = "no",
+    side = "left",
     adaptive_size = true,
     width = 35,
     preserve_window_proportions = true,
@@ -111,7 +112,7 @@ M.nvimTree = {
         file = true,
         folder = true,
         folder_arrow = true,
-        git = false,
+        git = true,
       },
 
       glyphs = {
@@ -132,9 +133,10 @@ M.nvimTree = {
           staged = "✓",
           unmerged = "",
           renamed = "➜",
-          untracked = "★",
+          untracked = "",
           deleted = "",
-          ignored = "◌",
+          ignored = "",
+          -- ignored = "◌",
         },
       },
     },
