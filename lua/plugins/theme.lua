@@ -68,6 +68,8 @@ return {
     config = function(_, opts)
       vim.o.background = "dark"
       require("decay").setup(opts)
+      vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#242931" })
+      vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#242931" })
     end,
   },
 }
