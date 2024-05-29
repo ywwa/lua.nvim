@@ -7,4 +7,4 @@ personal neovim configuration used as main work environment for my projects.
 - node
 - nerd-fonts
 - gcc
-- nvim 0.9.5+
+- nvim 0.10.0+

@@ -8,7 +8,14 @@ function M.statuscol()
     ft_ignore = { "help", "vim", "lazy" },
     segments = {
       { text = { " " } },
-      { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
+      {
+        text = { builtin.foldfunc },
+        click = "v:lua.ScFa",
+        maxwidth = 1,
+        colwidth = 1,
+        auto = false,
+      },
+      { text = { " " } },
       {
         sign = {
           name = { ".*" },
@@ -23,39 +30,28 @@ function M.statuscol()
         click = "v:lua.ScLa",
         condition = { true, builtin.not_empty },
       },
+      {
+        sign = {
+          namespace = { "gitsign.*" },
+          maxwidth = 1,
+          colwidth = 1,
+          auto = false,
+        },
+        click = "v:lua.ScSa",
+      },
+      {
+        text = { " " },
+        hl = "Normal",
+        condition = { true, builtin.not_empty },
+      },
     },
   }
 end
 
-function M.ufo()
-  return {
-    close_fold_kinds_for_ft = {
-      default = { "imports" },
-    },
-
-    provider_selector = function()
-      return { "treesitter", "indent" }
-    end,
-  }
-end
-
-M.prettyFold = {
-  keep_indentation = false,
-  fill_char = " ",
-  sections = {
-    left = {
-      function()
-        return string.rep("*", vim.v.foldlevel)
-      end,
-    },
-    right = {},
-  },
-  ft_ignore = {
-    "help",
-    "vim",
-    "Trouble",
-    "lazy",
-  },
+M.ufo = {
+  provider_selector = function()
+    return { "treesitter", "indent" }
+  end,
 }
 
 return M

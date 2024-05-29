@@ -7,9 +7,7 @@ return {
   "nvim-tree/nvim-web-devicons",
   {
     "lewis6991/gitsigns.nvim",
-    keys = function()
-      return gitsignsConfig.keys()
-    end,
+    event = "User FilePost",
     opts = function()
       return gitsignsConfig.config
     end,

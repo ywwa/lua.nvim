@@ -1,7 +1,9 @@
 local M = {}
 
 M.conformConfig = {
-  lsp_fallback = true,
+  lsp_fallback = false,
+
+  log_level = 1,
 
   formatters_by_ft = {
     lua = { "stylua" },
