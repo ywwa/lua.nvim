@@ -1,1 +1,1 @@
-require("env.bootstrap")
+require "hook"

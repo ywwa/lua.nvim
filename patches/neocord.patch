@@ -1,0 +1,13 @@
+diff --git a/lua/neocord/init.lua b/lua/neocord/init.lua
+index 49530b0..9b6d0ef 100644
+--- a/lua/neocord/init.lua
++++ b/lua/neocord/init.lua
+@@ -291,7 +291,7 @@ end
+ 
+ -- Find the Discord socket from temp runtime directories
+ function neocord:get_discord_socket_path()
+-  local sock_name = "discord-ipc-0"
++  local sock_name = "app/com.discordapp.Discord/discord-ipc-0"
+   local sock_path = nil
+ 
+   if self.os.is_wsl then
