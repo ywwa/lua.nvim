@@ -59,7 +59,7 @@ M.lsp_var = function(buf, line, min, max)
 
           if conf.mode == "virtual" then
             opts.hl_group = nil
-            opts.virt_text_post = "inline"
+            opts.virt_text_pos = "inline"
             opts.virt_text = { { conf.virt_text, hl_group } }
           end
 
